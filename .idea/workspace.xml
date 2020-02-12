@@ -25,7 +25,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -49,7 +49,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581513483156</updated>
-      <workItem from="1581513486265" duration="124000" />
+      <workItem from="1581513486265" duration="528000" />
     </task>
     <servers />
   </component>
@@ -62,10 +62,18 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="461" y="161" key="SettingsEditor" timestamp="1581513610133">
+    <state x="729" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581513997702">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="161" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581513610133" />
+    <state x="729" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581513997702" />
+    <state x="794" y="442" key="NewPhpFileDialog" timestamp="1581514029678">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="442" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581514029678" />
+    <state x="461" y="161" key="SettingsEditor" timestamp="1581514031802">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="161" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581514031802" />
     <state x="656" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1581513540328">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
