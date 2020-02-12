@@ -28,12 +28,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
@@ -51,9 +46,7 @@
       <created>1580928846266</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1580928846266</updated>
-      <workItem from="1580928847579" duration="28000" />
-      <workItem from="1580928877011" duration="8973000" />
+
     </task>
     <servers />
   </component>
@@ -61,16 +54,7 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="556" y="385" key="NewPhpFileDialog" timestamp="1580940882769">
-      <screen x="0" y="0" width="1440" height="920" />
-    </state>
-    <state x="556" y="385" key="NewPhpFileDialog/0.0.1440.920@0.0.1440.920" timestamp="1580940882769" />
-    <state x="222" y="104" key="SettingsEditor" timestamp="1580928890035">
-      <screen x="0" y="0" width="1440" height="920" />
-    </state>
-    <state x="222" y="104" key="SettingsEditor/0.0.1440.920@0.0.1440.920" timestamp="1580928890035" />
-    <state x="377" y="213" key="run.anything.popup" timestamp="1580937456652">
-      <screen x="0" y="0" width="1440" height="920" />
+
     </state>
     <state x="377" y="213" key="run.anything.popup/0.0.1440.920@0.0.1440.920" timestamp="1580937456652" />
   </component>
