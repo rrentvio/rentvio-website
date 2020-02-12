@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8b321bf-cb13-4ca3-b3be-0a050b9e3fc7" name="Default Changelist" comment="" />
+    <list default="true" id="6df9144c-5703-4fb8-b002-d429fd022d8f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,11 +12,14 @@
       <executable />
     </execution>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
-  <component name="ProjectId" id="1Xi0Cr1bCFcPafAeFcjUioNbyOE" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1XOtDB8lxMfpTajAkxjuqRl3Wop" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -25,60 +28,34 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.path.for.package.tslint" value="project" />
+
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\rentvio" />
+    </key>
   </component>
   <component name="SvnConfiguration">
-    <configuration>C:\Users\Mustafa\AppData\Roaming\Subversion</configuration>
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a8b321bf-cb13-4ca3-b3be-0a050b9e3fc7" name="Default Changelist" comment="" />
-      <created>1581513483156</created>
+      <changelist id="6df9144c-5703-4fb8-b002-d429fd022d8f" name="Default Changelist" comment="" />
+      <created>1580928846266</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1581513483156</updated>
-      <workItem from="1581513486265" duration="528000" />
+
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
-  </component>
   <component name="WindowStateProjectService">
-    <state x="729" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581513997702">
-      <screen x="0" y="0" width="1920" height="1040" />
+
     </state>
-    <state x="729" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581513997702" />
-    <state x="794" y="442" key="NewPhpFileDialog" timestamp="1581514029678">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="794" y="442" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581514029678" />
-    <state x="461" y="161" key="SettingsEditor" timestamp="1581514031802">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="161" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581514031802" />
-    <state x="656" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1581513540328">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="656" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581513540328" />
+    <state x="377" y="213" key="run.anything.popup/0.0.1440.920@0.0.1440.920" timestamp="1580937456652" />
   </component>
 </project>

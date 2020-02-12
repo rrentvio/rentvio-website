@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/navbar.css" />
-    <title>Rentvio</title>
+    <title>Document</title>
 </head>
 <body>
-
 <div id="navbar">
     <div class="logo">
         <a class="logo" href="index.php">
@@ -29,39 +29,9 @@
         </form>
     </div>
     <div class="navButton">
-        <a class="button" href="rent.php"> Rent!</a>
-    </div>
-    <div class="navButton">
         <a class="button" href="login.php"> Login</a>
     </div>
-
-
-</div>
-    <br>
-    <h1>hololooop</h1>
-    <br>
-    <h1>hololooop</h1>
-    <br>
-    <h1>hololooop</h1>
-    <br>
-    <h1>hololooop</h1><br>
-    <h1>hololooop</h1>
-    <br>
-    <h1>hololooop</h1>
-    <br>
-    <h1>hololooop</h1>
-    <br>
-    <h1>hololooop</h1>
-    <br>
-    <h1>hololooop</h1>
-    <br>
-    <h1>hololooop</h1>
-
-
 </div>
 </body>
 </html>
 <?php
-
-
-?>
