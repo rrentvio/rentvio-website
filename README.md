@@ -1,3 +1,0 @@
-# Rentvio Test branch
-Hello guys this is te branch that we upload our code first for test.
-Please it is important to dont mess working code... 
