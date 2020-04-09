@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 08 Nis 2020, 03:17:20
+-- Üretim Zamanı: 09 Nis 2020, 04:06:11
 -- Sunucu sürümü: 10.4.11-MariaDB
 -- PHP Sürümü: 7.2.28
 
@@ -35,6 +35,14 @@ CREATE TABLE `users` (
   `password` varchar(50) COLLATE utf8mb4_turkish_ci NOT NULL,
   `user_name` varchar(50) COLLATE utf8mb4_turkish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_turkish_ci;
+
+--
+-- Tablo döküm verisi `users`
+--
+
+INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `user_name`) VALUES
+(1, 'Mustafa Beyceoğlu', 'mustafa.beyceoglu@std.antalya.edu.tr', '81dc9bdb52d04dc20036dbd8313ed055', 'Mbeyceoglu'),
+(2, 'Berke Çakıroğlu', 'berke.cakiroglu@std.antalya.edu.tr', '81dc9bdb52d04dc20036dbd8313ed055', 'Bcakiroglu');
 
 -- --------------------------------------------------------
 
@@ -72,7 +80,7 @@ ALTER TABLE `user_product`
 -- Tablo için AUTO_INCREMENT değeri `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `user_product`
