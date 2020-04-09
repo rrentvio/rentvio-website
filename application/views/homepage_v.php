@@ -1,69 +1,67 @@
 <!doctype html>
-<html lang="tr">
+<html lang="tr" xmlns:display="http://www.w3.org/1999/xhtml" xmlns:align-items="http://www.w3.org/1999/xhtml"
+      xmlns:justify-content="http://www.w3.org/1999/xhtml" xmlns:flex-direction="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="ie=chrome">
     <title>Anasayfa</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css");?>">
+
 </head>
-<body style="background: #414345">
+<body class=" bg-secondary" >
 
-<div class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Rentvio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Profile</a>
+        </li>
+    </ul>
+    <form class="form-inline ml-auto">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline- my-2 my-sm-0" type="submit">Search</button>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active mr-auto">
+                <a class="nav-link" href="#">Exit</a>
+            </li>
+        </ul>
+    </form>
 
-                <div class="navbar-header">
-                    <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                    <a href="#" class="navbar-brand">Rentvio</a>
-                </div>
+</nav>
 
-                <div class="navbar-collapse collapse" id="mobile_menu">
-
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <form action="" class="navbar-form">
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input type="search" name="search" id="" placeholder="Search Anything Here..." class="form-control">
-                                        <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-                                    </div>
-                                </div>
-                            </form>
-                        </li>
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login / Sign Up <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Login</a></li>
-                                <li><a href="#">Sign Up</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="container Well bg-danger">
+<div class="container card ">
 
     <div class="row">
         <div class="col-md-6 offset-3 ">
-            Detaylar...
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-                architecto esse ex fugit labore omnis vel. Autem consectetur consequatur
-                dolorum!</p>
+            <h4>Added Items</h4>
+            <table class=" table table-hover table-striped table-bordered"  >
+            <thead>
+            <th>#id</th>
+            <th>Items</th>
+            </thead>
+            <tbody>
+            <tr>
+            <td>#1</td>
+            <td>"Monitör"</td></tr>
+            <tr>
+            <td>#1</td>
+            <td>"Monitör"</td></tr>
+            <tr>
+            <td>#1</td>
+            <td>"Monitör"</td></tr>
+            <tr>
+            <td>#1</td>
+            <td>"Monitör"</td></tr>
+            </tbody>
+            </table>
         </div>
     </div>
 </div>
+
+
 
 </body>
 </html>
