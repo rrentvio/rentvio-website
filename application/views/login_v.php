@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=chrome">
     <title>Login</title>
     <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css");?>">
+    <link rel="stylesheet" href="<?php echo base_url("assets\css\custom.css");?>">
 </head>
 <body>
 
@@ -15,7 +16,7 @@
 <hr>
 
 
-<div class="container">
+<div class="container giriskutusu">
 
     <div class="row">
         <div class="col-md-6 card card bg-secondary text-white offset-3">
