@@ -19,6 +19,12 @@ Class Users extends CI_Controller{
     public function login_form(){
         $this->load->view("login_v");
     }
+
+    public function sil(){
+        $this->session->unset_userdata("user_list");
+    }
+
+
     public function login(){
         $this->load->library("form_validation");
 
@@ -44,21 +50,20 @@ Class Users extends CI_Controller{
             )
             );
 
-            
-
             if ($user){
                 if ($this -> session -> userdata("user_list")){                 //eğer userlist diye bi array varsa:
                     $user_list= $this->session->userdata("user_list");          //userlist i çek bu seesionda  yani bir user_list oluştur onun içine eski verileri ata
+                    
                 }
                 else                                                            //eğer userlist diye bi array yoksa: 
                 {
                     $user_list = [];                                            //user_list diye boş bir array oluştur
                 }
-                $user_list[$user -> email] =$user;                              //(her koşulda )userlistin içine yeni user değerlerini ekle.
-            
+                $user_list[md5($user -> email)] =$user;                              //(her koşulda )userlistin içine yeni user değerlerini ekle.
                 $this->session->set_userdata("user_list", $user_list);          // bir sonraki session için userlist arrayini user_data da update et 
     
-                print_r($user_list);                                            // usr list arrayini yazdır 
+                //print_r($user_list);  
+                redirect((base_url("anasayfa/" .md5($user -> email) )));                                         // usr list arrayini yazdır 
             }else{
                 echo "No user found ";
                 $this->load->view("login_v");

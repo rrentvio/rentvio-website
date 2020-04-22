@@ -17,15 +17,15 @@
             <a class="nav-link" href="#">Rentvio</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Profile</a>
+            <a class="nav-link" href="#"> <?php echo $user->full_name; ?> </a>
         </li>
     </ul>
     <form class="form-inline ml-auto">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline- my-2 my-sm-0" type="submit">Search</button>
+        <button class="btn btn-outline- my-2 my-sm-0 text-light" type="submit">Search</button>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active mr-auto">
-                <a class="nav-link" href="#">Exit</a>
+                <a class="nav-link" href=<?php echo base_url("cikis");?>>Exit</a>
             </li>
         </ul>
     </form>
