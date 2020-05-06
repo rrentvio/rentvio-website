@@ -12,16 +12,23 @@ Class Users extends CI_Controller{
     }
 
     public function index(){
-        $this->load->view("login_v");
+        $user_list=  $this->session->userdata("user_list");
+        if ( $user_list){
+              $user = reset($user_list);
+
+              redirect(base_url("anasayfa/".md5($user->email)));
+
+
+        }
+        else{
+            redirect(base_url("giris"));
+        }
+        
     
     }
 
     public function login_form(){
         $this->load->view("login_v");
-    }
-
-    public function sil(){
-        $this->session->unset_userdata("user_list");
     }
 
 
@@ -65,8 +72,11 @@ Class Users extends CI_Controller{
                 //print_r($user_list);  
                 redirect((base_url("anasayfa/" .md5($user -> email) )));                                         // usr list arrayini yazdır 
             }else{
-                echo "No user found ";
                 $this->load->view("login_v");
+                echo '<script language="javascript">';
+                echo 'alert("Username or password not found! ")';
+                echo '</script>';
+                
 
             }
 
@@ -74,6 +84,39 @@ Class Users extends CI_Controller{
         }
 
         
+    }
+
+
+    public function logout($id){
+        $user_list= $this->session->userdata("user_list");
+        unset ($user_list[$id]);
+        $this->session->set_userdata("user_list",$user_list);
+        //redirect(base_url("users/listt")); // kontrol amaçlı ileride alttakiyle değiştir. v8 
+        redirect(base_url("giris"));
+    }
+
+    public function sil(){
+        $this->session->unset_userdata("user_list");
+    }
+
+    //listt function check amaçlı sonra sil 
+    
+    public function listt(){
+        echo "users still online: "; 
+        echo "<br/><br/>";
+        echo "<br/><br/>";
+
+        $user_list= $this->session->userdata("user_list");
+        if (!$user_list){
+            echo"no user active";
+        }
+        else{
+        foreach ($user_list as $id){
+            print_r($id->email);
+            echo "<br/><br/>";
+            }
+        }
+
     }
 
 }

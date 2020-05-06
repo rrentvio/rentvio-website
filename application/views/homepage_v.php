@@ -25,7 +25,7 @@
         <button class="btn btn-outline- my-2 my-sm-0 text-light" type="submit">Search</button>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active mr-auto">
-                <a class="nav-link" href=<?php echo base_url("cikis");?>>Exit</a>
+                <a class="nav-link" href=<?php echo base_url("cikis/" .md5($user -> email));?>>Exit</a>
             </li>
         </ul>
     </form>
@@ -39,22 +39,25 @@
             <h4>Added Items</h4>
             <table class=" table table-hover table-striped table-bordered"  >
             <thead>
-            <th>#id</th>
-            <th>Items</th>
+               <th>#id</th>
+               <th>Product Name</th>
+               <th>Price</th>
+               <th>Product Decrition </th>
+               <th>Product Category</th>
             </thead>
-            <tbody>
-            <tr>
-            <td>#1</td>
-            <td>"Monitör"</td></tr>
-            <tr>
-            <td>#1</td>
-            <td>"Monitör"</td></tr>
-            <tr>
-            <td>#1</td>
-            <td>"Monitör"</td></tr>
-            <tr>
-            <td>#1</td>
-            <td>"Monitör"</td></tr>
+            
+            <?php 
+            //print_r($products);                                               (deneme amaçlı kontrol gerekirse aktif edin pls )
+            foreach ($products as $product){?>
+                    <tr>
+                        <td>#<?php echo $product->id ?></td>
+                        <td><?php echo $product->product_name?></td>
+                        <td><?php echo $product->price?></td>
+                        <td><?php echo $product->product_description?></td>
+                        <td><?php echo $product->product_category?></td>
+                    </tr>
+                <?php }?>
+
             </tbody>
             </table>
         </div>
