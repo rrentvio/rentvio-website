@@ -15,10 +15,7 @@ Class Users extends CI_Controller{
         $user_list=  $this->session->userdata("user_list");
         if ( $user_list){
               $user = reset($user_list);
-
               redirect(base_url("anasayfa/".md5($user->email)));
-
-
         }
         else{
             redirect(base_url("giris"));
@@ -112,11 +109,14 @@ Class Users extends CI_Controller{
         }
         else{
         foreach ($user_list as $id){
+
             print_r($id->email);
             echo "<br/><br/>";
             }
         }
 
     }
+
+
 
 }

@@ -8,8 +8,7 @@ class Home extends CI_Controller{
         parent::__construct();
     }
 
-    public function homepage($id){
-        
+    public function homepage($id){        
         $user_list = $this -> session -> userdata("user_list");
         $activeuser = $user_list[$id];
         $viewData= new stdClass();
@@ -18,12 +17,12 @@ class Home extends CI_Controller{
        
         $this-> load-> model("user_product_model");
 
-         $viewData->products=$this-> user_product_model->get_all(
-            array(
-                "user_id" => $activeuser->id
-             )
-        );
+         $viewData->products=$this-> user_product_model->get_all();
         $this-> load-> view("homepage_v",$viewData);
-
     }
+
+
+
+
+    
 }

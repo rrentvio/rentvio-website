@@ -11,6 +11,4 @@ class User_product_model extends CI_Model{
         return $this->db->where($where)->get("user_product")->result();
     }
 
-
-
 }

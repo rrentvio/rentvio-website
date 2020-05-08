@@ -36,8 +36,8 @@
 
     <div class="row">
         <div class="col-md-6 offset-3 ">
-        <h4>HOME PAGE</h4>
             <h4>Added Items</h4>
+            <h4>USER PROFILE PAGE</h4>
             <table class=" table table-hover table-striped table-bordered"  >
             <thead>
                <th>#id</th>
