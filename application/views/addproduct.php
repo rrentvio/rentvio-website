@@ -17,43 +17,36 @@
 <form>
   <div class="form-group">
     <label for="productName">Product name</label>
-    <input type="text" class="form-control" id="pName" aria-describedby="emailHelp" placeholder="Enter Product Name">
+    <input type="text" class="form-control" id="pName" placeholder="Enter Product Name">
+  </div>
+  
+  <div class="form-group">
+    <label for="productDescription">Product Description</label>
+    <textarea class="form-control" id="productDescription" rows="3"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="categoryChooser">Choose Categroy</label>
+    <select class="form-control" id="categoryChooser">
+        <option value="1">Fotoğraf & Kamera </option>
+        <option value="2">Kitap Dergi       </option>
+        <option value="3">Spor Ekipmanları  </option>
+        <option value="4">Bahçe & Yapı Market</option>
+        <option value="5">Teknik Elektronik </option>
+        <option value="6">Diğer Herşey      </option>   
+    </select>
   </div>
   <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    <input type="checkbox" class="form-check-input" id="publish">
+    <label class="form-check-label" for="publish">Publish item</label>
   </div>
+  <form>
+  <div class="form-group">
+    <label for="imageInput">Enter product Image</label>
+    <input type="file" class="form-control-file" id="imageInput">
+  </div>
+</form>
   <button type="submit" class="btn btn-primary">Submit</button>
-
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect2">Example multiple select</label>
-    <select multiple class="form-control" id="exampleFormControlSelect2">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Example textarea</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-
 </form>
 </div>
     
