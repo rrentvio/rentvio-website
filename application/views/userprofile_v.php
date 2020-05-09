@@ -65,7 +65,10 @@
     </div>
 </div>
 
+<div>
+<a class="btn btn-primary" target="_blank" href=<?php echo base_url("addproduct/" .md5($user -> email));?> role="button">Add Product</a>
 
+</div>
 
 </body>
 </html>
