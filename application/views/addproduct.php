@@ -14,20 +14,20 @@
 <br><br><br><br>
 
 <div>
-<form>
+<form action=<?php echo(base_url("addproductdb")); ?> method="post">
   <div class="form-group">
-    <label for="productName"> <b> <i>Product name</i></b> </label>
-    <input type="text" class="form-control" id="pName" placeholder="Enter Product Name">
+    <label for="pName"> <b> <i>Product name</i></b> </label>
+    <input type="text" class="form-control" id="pName" name="pName" placeholder="Enter Product Name">
   </div>
   
   <div class="form-group">
-    <label for="productDescription">  <b> <i>Product Description </i></b></label>
-    <textarea class="form-control" id="productDescription" rows="3"></textarea>
+    <label for="pDescription">  <b> <i>Product Description </i></b></label>
+    <textarea class="form-control" id="pDescription" name="pDescription" rows="3"></textarea>
   </div>
     
   <div class="form-group">
-    <label for="categoryChooser"> <b><i>Choose Categroy </i></b> </label>
-    <select class="form-control" id="categoryChooser">
+    <label for="pCategory"> <b><i>Choose Categroy </i></b> </label>
+    <select class="form-control" id="pCategory"  name="pCategory">
         <option value="1">Fotoğraf & Kamera </option>
         <option value="2">Kitap Dergi       </option>
         <option value="3">Spor Ekipmanları  </option>
@@ -36,16 +36,20 @@
         <option value="6">Diğer Herşey      </option>   
     </select>
   </div>
+  <div class="form-group">
+    <label for="pPrice"> <b> <i>Price per hour </i></b> </label>
+    <input type="text" class="form-control" id="pPrice" name="pPrice" placeholder="Enter Product Name">
+  </div>
+
   <div class="custom-control custom-switch">
-  <input type="checkbox" class="custom-control-input" id="publish">
-  <label class="custom-control-label" for="publish"> <b><i>Publish when appored </i></b> </label>
+  <input type="checkbox" class="custom-control-input" id="pPublish" name="pPublish">
+  <label class="custom-control-label" for="pPublish"> <b><i>Publish when appored </i></b> </label>
     </div>
     <br>
   <div class="form-group">
-    <label for="imageInput">         <b><i>Enter product Image  </i></b>       </label>
-    <input type="file" class="form-control-file" id="imageInput">
+    <label for="pImage">         <b><i>Enter product Image  </i></b>       </label>
+    <input type="file" class="form-control-file" id="pImage" name="pImage">
   </div>
-
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>

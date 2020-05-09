@@ -56,6 +56,6 @@ $route['giris'] = "users/login_form";
 $route['giris-yap'] = "users/login";
 $route['anasayfa/(:any)'] = "home/homepage/$1";
 $route['cikis/(:any)'] = "users/logout/$1";     //temporary --7over  (not temprory anymore @v8) 
-$route['giris-yap'] = "users/login";
 $route['profile/(:any)'] = "userprofile/profile/$1";
 $route['addproduct/(:any)'] = "userprofile/addproduct/$1";
+$route['addproductdb'] = "fileupload/addproduct";        
