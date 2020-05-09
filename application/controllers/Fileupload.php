@@ -1,5 +1,4 @@
 <?php
-
 class fileupload extends CI_Controller{
 
     
@@ -36,7 +35,7 @@ class fileupload extends CI_Controller{
         echo"edit product <br>";
         $viewData= new stdClass();
         
-
+                
         $viewData ->list = $this-> user_product_model ->get_all(
             array(
                 "id" => $pid
@@ -53,3 +52,4 @@ class fileupload extends CI_Controller{
     
 
 }
+
