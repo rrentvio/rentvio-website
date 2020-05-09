@@ -15,5 +15,3 @@ body::after {
   -webkit-filter: blur(10px);
   transition: all 1000ms;
 }
-body::after {
-}
