@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Item Adding Page</title>
-    <link rel="stylesheet" href= <?php echo base_url("assets/css/bootstrap.min.css");?>>
+    <title>Edit Product</title>
+    <link rel="stylesheet" href=<?php 
+     base_url("assets/css/bootstrap.min.css");?>>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src=<?php echo base_url("assets/js/bootstrap.bundle.js");?>></script>
 </head>
 <body>
-    <h3 style="text-align: center">AddProduct Page</h3>
-    <h2 style="text-align: center">This will be pop up inside the user profile section </h2>
-    <h2 style="text-align: center"> <i>Göeryim seni berkee</i></h2>
 
-<br><br><br><br>
 
-<div>
+<?php print_r($list) ?>
+
 <form action=<?php echo(base_url("addproductdb")); ?> method="post">
   <div class="form-group">
     <label for="pName"> <b> <i>Product name</i></b> </label>
-    <input type="text" class="form-control" id="pName" name="pName" placeholder="Enter Product Name">
+    <input type="text" class="form-control" id="pName" name="pName" placeholder=<?php  print_r($list->product_name) ?>>
   </div>
   
   <div class="form-group">
     <label for="pDescription">  <b> <i>Product Description </i></b></label>
-    <textarea class="form-control" id="pDescription" name="pDescription" rows="3"></textarea>
+    <textarea class="form-control" id="pDescription" name="pDescription" rows="3" placeholder=<?php  print_r($list->product_description) ?>></textarea>
   </div>
     
   <div class="form-group">
@@ -38,11 +38,11 @@
   </div>
   <div class="form-group">
     <label for="pPrice"> <b> <i>Price per hour </i></b> </label>
-    <input type="text" class="form-control" id="pPrice" name="pPrice" placeholder="Enter Product Name">
+    <input type="text" class="form-control" id="pPrice" name="pPrice" placeholder=<?php  print_r($list->price) ?>>
   </div>
 
   <div class="custom-control custom-switch">
-  <input type="checkbox" class="custom-control-input" id="pPublish" name="pPublish">
+  <input type="checkbox" class="custom-control-input" id="pPublish" name="pPublish"  default=<?php  print_r($list->is_rented)?> >
   <label class="custom-control-label" for="pPublish"> <b><i>Publish when appored </i></b> </label>
     </div>
     <br>
@@ -50,9 +50,9 @@
     <label for="pImage">         <b><i>Enter product Image  </i></b>       </label>
     <input type="file" class="form-control-file" id="pImage" name="pImage">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Submit</button> 
 </form>
-</div>
+          
     
 </body>
 </html>

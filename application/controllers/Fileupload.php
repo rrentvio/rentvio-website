@@ -2,6 +2,15 @@
 
 class fileupload extends CI_Controller{
 
+    
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model("user_model");
+        $this->load->model("user_product_model");
+
+    }
+
     public function index (){
         $this->load->view("addproduct");
 
@@ -23,10 +32,20 @@ class fileupload extends CI_Controller{
         echo $pPublish. "<br>";
         echo $pImage. "<br>";
     }
-    public function editProduct(){
-        echo"edit product";
+    public function editProduct($pid){
+        echo"edit product <br>";
+        $viewData= new stdClass();
+        
+
+        $viewData ->list = $this-> user_product_model ->get_all(
+            array(
+                "id" => $pid
+            ) );
+        print_r($viewData);
+            $this->load->view("edit_v",$viewData);
     }
 
+    
 
     public function deleteProduct(){
         echo"delete  product";

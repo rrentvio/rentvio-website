@@ -58,4 +58,6 @@ $route['anasayfa/(:any)'] = "home/homepage/$1";
 $route['cikis/(:any)'] = "users/logout/$1";     //temporary --7over  (not temprory anymore @v8) 
 $route['profile/(:any)'] = "userprofile/profile/$1";
 $route['addproduct/(:any)'] = "userprofile/addproduct/$1";
-$route['addproductdb'] = "fileupload/addproduct";        
+$route['addproductdb'] = "fileupload/addproduct";
+$route['editproductdb/(:any)'] = "fileupload/editproduct/$1";
+$route['deleteproductdb/(:any)'] = "fileupload/deleteproduct/$1";          
