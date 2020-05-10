@@ -20,8 +20,6 @@ Class Users extends CI_Controller{
         else{
             redirect(base_url("giris"));
         }
-        
-    
     }
 
     public function login_form(){
