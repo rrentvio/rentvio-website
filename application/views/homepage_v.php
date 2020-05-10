@@ -35,9 +35,11 @@
         <li class="nav-item">
             <a class="nav-link" href=<?php echo base_url("profile/" .md5($user -> email));?> > <?php echo $user->full_name; ?> </a>
         </li>
-        <li class="nav-item mr-20">
+        </ul>
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn btn-outline-light dropdown-toggle xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Fotoğraf & Kamera
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -49,7 +51,7 @@
           </li>
           <li class="nav-item">
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn btn-outline-light dropdown-toggle xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Kitap Dergi
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -61,7 +63,7 @@
           </li>
           <li class="nav-item">
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn btn-outline-light dropdown-toggle xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Spor Ekipmanları
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -73,7 +75,7 @@
           </li>
           <li class="nav-item">
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn btn-outline-light dropdown-toggle xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Bahçe Yapı Market
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -85,7 +87,7 @@
           </li>
           <li class="nav-item">
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn btn-outline-light dropdown-toggle xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Teknik Elektronik
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -97,7 +99,7 @@
           </li>
           <li class="nav-item">
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn btn-outline-light dropdown-toggle xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Diğer Herşey
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -108,7 +110,7 @@
             </div>
           </li>
 
-
+          </ul>
 
 
 
