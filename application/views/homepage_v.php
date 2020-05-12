@@ -8,6 +8,8 @@
     <title>Anasayfa</title>
     <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css");?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom2.css");?>">
+    <link rel="stylesheet" href="<?php echo base_url("assets/Fonts/AIFRAGME.TTF");?>">
+    
 
 </head>
 <body class=" bg-secondary" >
@@ -27,114 +29,54 @@
       crossorigin="anonymous"
     ></script>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-10 mt-10">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <a class="nav-link" href=<?php echo base_url("anasayfa/" .md5($user -> email));?>>Rentvio</a>
+            <a class="nav-link diffont" href=<?php echo base_url("anasayfa/" .md5($user -> email));?>>rentvio</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href=<?php echo base_url("profile/" .md5($user -> email));?> > <?php echo $user->full_name; ?> </a>
         </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
         <li class="nav-item">
             <div class="dropdown">
-              <button class="btn btn-outline-light dropdown-toggle xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Fotoğraf & Kamera
+              <button class="btn btn-outline-light dropdown-toggle col-12 xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                All Products
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">Photograph and Video</a>
+                <a class="dropdown-item" href="#">Book and Magazines</a>
+                <a class="dropdown-item" href="#">Sport Equitments</a>
+                <a class="dropdown-item" href="#">Home Improvemnet and Tools</a>
+                <a class="dropdown-item" href="#">Technical Electronics</a>
+                <a class="dropdown-item" href="#">Other Stuff</a>
               </div>
             </div>
           </li>
-          <li class="nav-item">
-            <div class="dropdown">
-              <button class="btn btn-outline-light dropdown-toggle xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Kitap Dergi
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item">
-            <div class="dropdown">
-              <button class="btn btn-outline-light dropdown-toggle xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Spor Ekipmanları
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item">
-            <div class="dropdown">
-              <button class="btn btn-outline-light dropdown-toggle xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Bahçe Yapı Market
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item">
-            <div class="dropdown">
-              <button class="btn btn-outline-light dropdown-toggle xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Teknik Elektronik
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item">
-            <div class="dropdown">
-              <button class="btn btn-outline-light dropdown-toggle xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Diğer Herşey
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-          </li>
+          
+    </ul>  
+ 
 
-          </ul>
-
-
-
-
-    </ul>
-    <form class="form-inline ml-auto">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline- my-2 my-sm-0 text-light" type="submit">Search</button>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active mr-auto">
-                <a class="nav-link" href=<?php echo base_url("cikis/" .md5($user -> email));?>>Exit</a>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item bg-danger active">
+                <a class="nav-link bgbetter" href=<?php echo base_url("cikis/" .md5($user -> email));?>>Sign In</a>
             </li>
-        </ul>
-    </form>
+    </ul>
+
+    
 
 </nav>
 
-<div class="container card ">
+<div class="container card bgbetter">
 
     <div class="row">
         <div class="col-md-6 offset-3 ">
+        <br>    
         <h4>HOME PAGE</h4>
+            <br>
+            
             <h4>Added Items</h4>
-            <table class=" table table-hover table-striped table-bordered"  >
+            
+            <br><table class=" table table-hover table-striped table-bordered bgbetter"  >
             <thead>
                <th>#id</th>
                <th>Product Name</th>
@@ -147,11 +89,11 @@
             //print_r($products);                                               (deneme amaçlı kontrol gerekirse aktif edin pls )
             foreach ($products as $product){?>
                     <tr>
-                        <td>#<?php echo $product->id ?></td>
-                        <td><?php echo $product->product_name?></td>
-                        <td><?php echo $product->price?></td>
-                        <td><?php echo $product->product_description?></td>
-                        <td><?php echo $product->product_category?></td>
+                        <td class="text-light">#<?php echo $product->id ?></td>
+                        <td class="text-light"><?php echo $product->product_name?></td>
+                        <td class="text-light"><?php echo $product->price?></td>
+                        <td class="text-light"><?php echo $product->product_description?></td>
+                        <td class="text-light"><?php echo $product->product_category?></td>
                     </tr>
                 <?php }?>
 

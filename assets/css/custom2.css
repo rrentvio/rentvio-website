@@ -1,3 +1,4 @@
+/* DROP DOWN MENU*/
 .dropdown:hover > .dropdown-menu {
   display: block;
 }
@@ -18,6 +19,18 @@
   margin-left: 0.1rem;
   margin-right: 0.1rem;
 }
-.xd {
-  margin-right: 20px;
+/* --------------- */
+
+/* FONT TYPE FOR LOGO */
+@font-face {
+  font-family: myFirstFont;
+  src: url("../Fonts/AIFRAGME.TTF");
+}
+
+.diffont {
+  font-family: myFirstFont;
+}
+/* ------------- */
+.bgbetter {
+  background-color: rgb(125, 147, 180);
 }
