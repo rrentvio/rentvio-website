@@ -63,12 +63,19 @@
               </div>
             </div>
           </li>
+          <li>
+            <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2 ml-3" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline text-deneme-bg text-white my-2 ml-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </li>
           
     </ul>  
+
  
 
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item bg-danger active">
+        <li class="nav-item text-deneme-bg active ">
         
         <?php 
             if (isset($user -> email)){ 
@@ -77,11 +84,11 @@
             <?php
             }
             else{
-              echo'<a  class="nav-link bgbetter" data-toggle="modal" data-target="#signinModal" data-whatever="buraya istediğin bir veriyi gir"  id="sign"> Log in</a>';
+              echo'<a  class="nav-link bgbetter" href="" data-toggle="modal" data-target="#signinModal" data-whatever="buraya istediğin bir veriyi gir"  id="sign"> Log in</a>';
               //echo base_url("giris"); echo"> Signin</a>"; 
               }
             ?>
-            <a  class="nav-link bgbetter d-none " data-toggle="modal" data-target="#signUp" data-whatever="buraya istediğin bir veriyi gir"  id="signup"> Sign in</a>
+            <a  class="nav-link d-none " data-toggle="modal" data-target="#signUp" data-whatever="buraya istediğin bir veriyi gir"  id="signup"> Sign in</a>
             </li>
     </ul>
 
@@ -90,14 +97,46 @@
   <div class="container card bgbetter">
 
     <div class="row">
-        <div class="col-md-6 offset-3 ">
+        <div class="col-md-10 offset-1 ">  <?php// offset baştan kaç boşluk bırakıcağın ?>
         <br>    
         <h4>HOME PAGE</h4>
             <br>
             
             <h4>Added Items</h4>
+            <br>
+            <div class="row">
+            <div class="col-md-4">
+              <div class="jumbotron bg-warning text-white text-center">
+              
+                <div class="row ">
+                  <div class="col-md-8 ">
+                    <div class="jumbotron bg-succsess mt-0 mb-0"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="jumbotron bg-warning text-white text-center">
+                col md - 4
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="jumbotron bg-warning text-white text-center">
+                col md - 4
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="jumbotron bg-warning text-white text-center">
+                col md - 4
+              </div>
+            </div>
+            </div>
             
-            <br><table class=" table table-hover table-striped table-bordered bgbetter"  >
+
+
+            
+
+            <table class=" table table-hover table-striped table-bordered bgbetter"  >
             <thead>
                <th>#id</th>
                <th>Product Name</th>
@@ -120,6 +159,9 @@
 
             </tbody>
             </table>
+
+
+            
         </div>
     </div>
   </div>
