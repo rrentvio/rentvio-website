@@ -19,3 +19,10 @@ body::after {
   width: 200px;
   height: 200px;
 }
+span {
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+span.fadee {
+  opacity: 1;
+}

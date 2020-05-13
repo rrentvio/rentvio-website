@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom.css");?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom2.css");?>">
     
+    
 
   </head>
   <body class=" bg-secondary">
@@ -23,9 +24,7 @@
               echo'<a class="nav-link diffont h3 m-0 m-0 text-deneme " style="  padding: 0px 5px 0px 0px" href=';
               echo base_url("homepage/".md5($user -> email));   echo("  >Rentvio<</a>");
             }
-            //elseif(){
 
-            //}
             else{
               echo'<a class="nav-link text-bold diffont h3 m-0  text-deneme " style=" padding: 0px 5px 0px 0px" href=';
               echo base_url("homepage")." > Rentvio<</a>";
@@ -39,12 +38,8 @@
               echo base_url("profile/" .md5($user -> email)); echo ">",$user->full_name,"</a>";  ?> 
             <?php
             }
-            else{
-              
+            else{              
               }
-  
-              
-
             ?>
 
         </li>
@@ -72,7 +67,6 @@
           
     </ul>  
 
- 
 
     <ul class="navbar-nav ml-auto">
         <li class="nav-item text-deneme-bg active ">
@@ -99,15 +93,11 @@
     <div class="row">
         <div class="col-md-10 offset-1 ">  <?php// offset baştan kaç boşluk bırakıcağın ?>
         <br>    
-        <h4>HOME PAGE</h4>
+        <h1 class="text-white diffont text-center fancy">Everything You Need. All Right Here.</h1>
             <br>
             
-            <h4>Added Items</h4>
-            <br>
             <div class="row">
-            
-              
-                
+                           
                   <?php
 
                   foreach ($products as $product){?>
@@ -118,46 +108,19 @@
                               <img src="<?php echo base_url("assets/pictures/Z.png");?>" alt="" class="no-image">
                               <br><br>
                               <h6 class="text-light text-left"><?php echo $product->product_name?></h6>
-                              <h6 class="text-light text-left"><?php echo $product->price?></h6>
+                              <hr>
+                              <h6 class="text-light text-left"><?php echo $product->price?>$ Per Hour</h6>
+                              <hr>
                               <h6 class="text-light text-left"><?php echo $product->product_category?></h6>
                             </div>
                           </div>
                         </div>
                       </div>
                   <?php }?>
-                    
-                        
-
-            <table class=" table table-hover table-striped table-bordered bgbetter"  >
-            <thead>
-               <th>#id</th>
-               <th>Product Name</th>
-               <th>Price</th>
-               <th>Product Decrition </th>
-               <th>Product Category</th>
-            </thead>
-            
-            <?php 
-            //print_r($products);                                               (deneme amaçlı kontrol gerekirse aktif edin pls )
-            foreach ($products as $product){?>
-                    <tr>
-                        <td class="text-light">#<?php echo $product->id ?></td>
-                        <td class="text-light"><?php echo $product->product_name?></td>
-                        <td class="text-light"><?php echo $product->price?></td>
-                        <td class="text-light"><?php echo $product->product_description?></td>
-                        <td class="text-light"><?php echo $product->product_category?></td>
-                    </tr>
-                <?php }?>
-
-            </tbody>
-            </table>
-
-
-            
+          
         </div>
     </div>
   </div>
-
 
   <!--Sign in modal -->
   <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
@@ -197,7 +160,6 @@
                         <br>
                     </form>
 
-
                     <div class="text-center" >
                     <p >Hala bir hesabın yokmu ? </p>
                     </div>
@@ -213,7 +175,6 @@
     </div>
   </div>
   </div>
-
 
   <!--sign up Modal -->
 
@@ -278,9 +239,10 @@
       </div>
     </div>
            
-
     </div>
   </div>
+
+
 
 <?php
 
@@ -309,8 +271,6 @@ if (isset($fromsignup)){
   ';
 }
 
-
-
 ?>
 <!--
 <script>
@@ -323,6 +283,7 @@ function myFunction() {
 }
 </script>
 -->
+<script src="<?php echo base_url("assets/js/custom.js");?>"></script>
 <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
