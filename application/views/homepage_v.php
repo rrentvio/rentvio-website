@@ -105,36 +105,28 @@
             <h4>Added Items</h4>
             <br>
             <div class="row">
-            <div class="col-md-4">
-              <div class="jumbotron bg-warning text-white text-center">
+            
               
-                <div class="row ">
-                  <div class="col-md-8 ">
-                    <div class="jumbotron bg-succsess mt-0 mb-0"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="jumbotron bg-warning text-white text-center">
-                col md - 4
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="jumbotron bg-warning text-white text-center">
-                col md - 4
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="jumbotron bg-warning text-white text-center">
-                col md - 4
-              </div>
-            </div>
-            </div>
-            
+                
+                  <?php
 
-
-            
+                  foreach ($products as $product){?>
+                      <div class="col-md-4">
+                        <div class="jumbotron p-3 text-deneme-bg text-white text-center">
+                          <div class="row ">
+                            <div class="col-md-8 offset-1 ">
+                              <img src="<?php echo base_url("assets/pictures/Z.png");?>" alt="" class="no-image">
+                              <br><br>
+                              <h6 class="text-light text-left"><?php echo $product->product_name?></h6>
+                              <h6 class="text-light text-left"><?php echo $product->price?></h6>
+                              <h6 class="text-light text-left"><?php echo $product->product_category?></h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <?php }?>
+                    
+                        
 
             <table class=" table table-hover table-striped table-bordered bgbetter"  >
             <thead>
@@ -221,7 +213,6 @@
     </div>
   </div>
   </div>
-
 
 
   <!--sign up Modal -->

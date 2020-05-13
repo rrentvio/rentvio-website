@@ -16,8 +16,6 @@ body::after {
   transition: all 1000ms;
 }
 .no-image {
-  width: 100px;
-  height: 100px;
-  background-image: url("../pictures/Z.png");
-  object-fit: cover;
+  width: 200px;
+  height: 200px;
 }
