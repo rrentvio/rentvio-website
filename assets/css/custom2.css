@@ -35,8 +35,8 @@
 }
 /* ------------- */
 .bgbetter {
-  background-color: rgb(112, 112, 112);
+  background-color: rgba(112, 112, 112, 0.8);
 }
-.text-deneme{
- color: #FFA5A5 !important;
+.text-deneme {
+  color: #ffa5a5 !important;
 }
