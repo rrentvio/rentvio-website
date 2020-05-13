@@ -16,9 +16,10 @@ class userProfile extends CI_Controller{
               redirect(base_url("profile/".md5($user->email)));
         }
         else{
-            redirect(base_url("giris"));
+            redirect(base_url("homepage"));
         }
     }
+    
     public function profile($id){        
         $user_list = $this -> session -> userdata("user_list");
         $activeuser = $user_list[$id];
