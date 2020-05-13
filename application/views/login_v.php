@@ -12,10 +12,6 @@
 <body>
 
 
-<h3 class="text-center">Giriş</h3>
-<hr>
-
-
 <div class="container giriskutusu">
 
     <div class="row">
@@ -38,6 +34,10 @@
                    <br>
                    <hr>
                 </div>
+                <?php if (isset($userconfirm)){ ?>
+                <div class="text-center">
+                     <p class=  "font-weight-bold text-danger" >  <?php print_r( $userconfirm[0]->conferror); ?> </p> </div>
+                <?php } ?>
                 <button type="submit" class=" btn btn-primary  btn-block ">Giriş</button>
                 <br>
             </form>

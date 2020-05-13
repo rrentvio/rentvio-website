@@ -15,15 +15,15 @@ Class Users extends CI_Controller{
         $user_list=  $this->session->userdata("user_list");
         if ( $user_list){
               $user = reset($user_list);
-              redirect(base_url("anasayfa/".md5($user->email)));
+              redirect(base_url("homepage/".md5($user->email)));
         }
         else{
-            redirect(base_url("giris"));
+            redirect(base_url("homepage"));
         }
     }
 
     public function login_form(){
-        $this->load->view("login_v");
+        $this->load->view("homepage_v");
     }
 
 
@@ -42,7 +42,10 @@ Class Users extends CI_Controller{
         if ($this->form_validation->run()=== FALSE){
             $viewData = new stdClass();
             $viewData->form_error = true;
-            $this->load->view("login_v", $viewData);
+            $viewData->fromlogin= true;
+            $this-> load-> model("user_product_model");
+             $viewData->products=$this-> user_product_model->get_all();
+            $this->load->view("homepage_v", $viewData);
         }
         else{
             $user = $this->user_model->get(
@@ -65,14 +68,15 @@ Class Users extends CI_Controller{
                 $this->session->set_userdata("user_list", $user_list);          // bir sonraki session için userlist arrayini user_data da update et 
     
                 //print_r($user_list);  
-                redirect((base_url("anasayfa/" .md5($user -> email) )));                                         // usr list arrayini yazdır 
+                redirect((base_url("homepage/" .md5($user -> email) )));                                         // usr list arrayini yazdır 
             }else{
-                $this->load->view("login_v");
-                echo '<script language="javascript">';
-                echo 'alert("Username or password not found! ")';
-                echo '</script>';
                 
-
+                $viewData = new stdClass();
+                $viewData->userconfirm= 'Username or password is incorrect. <br>Please try again';
+                $viewData->fromlogin= true;
+                $this-> load-> model("user_product_model");
+             $viewData->products=$this-> user_product_model->get_all();
+                $this->load->view("homepage_v",$viewData);
             }
 
              
@@ -87,7 +91,7 @@ Class Users extends CI_Controller{
         unset ($user_list[$id]);
         $this->session->set_userdata("user_list",$user_list);
         //redirect(base_url("users/listt")); // kontrol amaçlı ileride alttakiyle değiştir. v8 
-        redirect(base_url("giris"));
+        redirect(base_url("homepage"));
     }
 
     public function sil(){

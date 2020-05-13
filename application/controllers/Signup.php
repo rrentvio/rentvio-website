@@ -11,14 +11,6 @@ class signUp extends CI_Controller{
 
     }
 
-    public function index(){
-        $this->load->view("signup_v");
-    }
-
-
-
-
-
     public function addusr(){
 
         $this->load->library("form_validation");
@@ -35,11 +27,12 @@ class signUp extends CI_Controller{
 
         if ($this->form_validation->run() === FALSE){
             //echo validation_errors(); 
-
+            $this-> load-> model("user_product_model");
             $viewData= new stdClass();
+            $viewData->products=$this-> user_product_model->get_all();
             $viewData->form_error = true;
-
-            $this->load->view("signup_v",$viewData);
+            $viewData->fromsignup =true;
+            $this->load->view("homepage_v",$viewData);
         }
         else {
             $email          =$this->input->post("email");          // "name" attribute of the variable!!
@@ -56,6 +49,7 @@ class signUp extends CI_Controller{
                 print_r($newUser);
                 echo"<br>";       
                 $insert = $this->db->insert("users",$newUser);
+                echo"Buraya (burası signup controller )oto giriş eklenecek..";
                 redirect(base_url("giris/"));            
         }}
 

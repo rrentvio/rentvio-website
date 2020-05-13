@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport">
     <meta http-equiv="X-UA-Compatible" content="ie=chrome">
-    <title>Anasayfa</title>
+    <title><?php echo$user ->name?></title>
     <link rel="stylesheet" href=<?php echo base_url("assets/css/bootstrap.min.css");?>>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src=<?php echo base_url("assets/js/bootstrap.bundle.js");?>></script>
@@ -16,7 +16,7 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <a class="nav-link" href=<?php echo base_url("anasayfa/" .md5($user -> email));?>>Rentvio</a>
+            <a class="nav-link" href=<?php echo base_url("homepage/" .md5($user -> email));?>>Rentvio</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href=<?php echo base_url("profile/" .md5($user -> email));?> > <?php echo $user->full_name; ?> </a>
@@ -27,7 +27,7 @@
         <button class="btn btn-outline- my-2 my-sm-0 text-light" type="submit">Search</button>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active mr-auto">
-                <a class="nav-link" href=<?php echo base_url("cikis/" .md5($user -> email));?>>Exit</a>
+                <a class="nav-link" href=<?php echo base_url("logout/" .md5($user -> email));?>>Exit</a>
             </li>
         </ul>
     </form>
