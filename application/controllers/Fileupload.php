@@ -7,7 +7,6 @@ class fileupload extends CI_Controller{
         parent::__construct();
         $this->load->model("user_model");
         $this->load->model("user_product_model");
-
     }
 
     public function index (){
@@ -63,7 +62,8 @@ class fileupload extends CI_Controller{
         );
 
         $insert = $this->db->insert("user_product",$newProduct);
-        redirect(base_url("profile/"));
+        //redirect(base_url("profile"));                            //Deneme 
+    
         }
 
         

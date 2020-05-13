@@ -91,7 +91,7 @@
   <div class="container card bgbetter">
 
     <div class="row">
-        <div class="col-md-10 offset-1 ">  <?php// offset baştan kaç boşluk bırakıcağın ?>
+        <div class="col-md-10 offset-1 ">  <!-- // offset baştan kaç boşluk bırakıcağın ?> -->
         <br>    
         <h1 class="text-white diffont text-center fancy">Everything You Need. All Right Here.</h1>
             <br>
