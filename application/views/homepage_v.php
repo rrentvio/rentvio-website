@@ -27,7 +27,7 @@
 
             else{
               echo'<a class="nav-link text-bold diffont h3 m-0  text-deneme " style=" padding: 0px 5px 0px 0px" href=';
-              echo base_url("homepage")." > Rentvio<</a>";
+              echo base_url()." > Rentvio<</a>";
             }
             ?>
         </li>

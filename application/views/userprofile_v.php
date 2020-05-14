@@ -59,7 +59,12 @@
                         <td><?php echo $product->price?></td>
                         <td><?php echo $product->product_description?></td>
                         <td><?php echo $product->product_category?></td>
-                        <td> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editModal" data-whatever=<?php echo($product->id); ?>  >Edit</button>
+                        <td> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editModal" 
+                        data-prodid=<?php echo($product->id); ?>
+                        data-prodname=<?php echo($product->product_name); ?>
+                        data-proddesc=<?php echo($product->product_description); ?>
+                        data-prodprice=<?php echo($product->price); ?> 
+                        ?> Edit</button>
                             <a class="btn btn-danger" href=  <?php echo (base_url("deleteproductdb/" .$product->id)); ?> role="button">Delete</a> </td>
                     </tr>
                 <?php }?>
@@ -71,7 +76,7 @@
 </div>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-anan = "dasdasd" data-target="#addProduct">
+<button type="button" class="btn btn-primary" data-toggle="modal" id="productAdd" data-target="#addProduct">
   Add Product
 </button>
 
@@ -91,11 +96,17 @@
   <div class="form-group">
     <label for="pName"> <b> <i>Product name</i></b> </label>
     <input type="text" class="form-control" id="pName" name="pName" placeholder="Enter Product Name">
+    <?php if(isset($form_error)) {?>
+                    <small class="float-right"><?php echo form_error("pName") ?></small>
+                   <?php } ?>
   </div>
   
   <div class="form-group">
     <label for="pDescription">  <b> <i>Product Description </i></b></label>
     <textarea class="form-control" id="pDescription" name="pDescription" rows="3"></textarea>
+    <?php if(isset($form_error)) {?>
+                    <small class="float-right"><?php echo form_error("pDescription") ?></small>
+                   <?php } ?>
   </div>
     
   <div class="form-group">
@@ -108,10 +119,17 @@
         <option value="5">Teknik Elektronik </option>
         <option value="6">Diğer Herşey      </option>   
     </select>
+    <?php if(isset($form_error)) {?>
+                    <small class="float-right"><?php echo form_error("pCategory") ?></small>
+                   <?php } ?>
   </div>
   <div class="form-group">
     <label for="pPrice"> <b> <i>Price per hour </i></b> </label>
     <input type="text" class="form-control" id="pPrice" name="pPrice" placeholder="EnterPrice ">
+    <?php if(isset($form_error)) {?>
+                    <small class="float-right"> <b> <?php echo form_error("pPrice") ?> </b> </small>
+                   <?php } ?>
+    
   </div>
 
   <div class="custom-control custom-switch">
@@ -204,15 +222,51 @@
 <script>
   $('#editModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
-  var recipient = button.data('whatever') // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  var prodId = button.data('prodid') // Extract info from data-* attributes
+  var prodName = button.data('prodname')
+  var prodDesc = button.data('proddesc')
+  var prodPrice = button.data('prodprice')
+  var prodCat = button.data('prodcat')  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
   // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
   var modal = $(this)
   //modal.find('.modal-title').text('New message to ' + recipient)
-  modal.find('.modal-body #productId ').val(recipient)
+  modal.find('.modal-body #productId ').val(prodId)
+  modal.find('.modal-body #pName ').val(prodName)
+  modal.find('.modal-body #pDescription ').val(prodDesc)
+  modal.find('.modal-body #pCategory ').val(prodCat)
+  modal.find('.modal-body #pPrice ').val(prodPrice)
 })
 </script>
 
+<?php
+if (isset($form_error)){
+echo '
+<script>
+window.onload = function() {
+  loginModal();
+};
+function loginModal() {
+  document.getElementById("productAdd").click();
+}
+</script>
+';
+}
+?>
   
+<script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
 </body>
 </html>

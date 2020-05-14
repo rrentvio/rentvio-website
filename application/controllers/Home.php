@@ -12,6 +12,7 @@ class Home extends CI_Controller{
             $this-> load-> model("user_product_model");
              $viewData->products=$this-> user_product_model->get_all();
             $this-> load-> view("homepage_v",$viewData);
+            
     }
     public function homepage($id){        
         $user_list = $this -> session -> userdata("user_list");
