@@ -30,6 +30,10 @@
   font-family: secondOne;
   src: url("../Fonts/Painter.ttf");
 }
+@font-face {
+  font-family: fancyy;
+  src: url("../Fonts/Pangolin-Regular.ttf");
+}
 .diffont {
   font-family: secondOne;
 }
@@ -42,4 +46,16 @@
 }
 .text-deneme-bg {
   background-color: #ffa5a5;
+}
+.text-ekle-bg {
+  background-color: #809252;
+}
+.text-sil-bg {
+  background-color: #ff5252;
+}
+.text-edit-bg {
+  background-color: #ffd252;
+}
+.fancy-font {
+  font-family: fancyy;
 }

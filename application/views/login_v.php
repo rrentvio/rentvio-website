@@ -11,7 +11,6 @@
 </head>
 <body>
 
-
 <div class="container giriskutusu">
 
     <div class="row">

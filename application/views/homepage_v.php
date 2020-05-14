@@ -35,7 +35,7 @@
         <li class="nav-item">
             <?php 
             if (isset($user -> email)){
-              echo '<a class="nav-link" href= ';
+              echo '<a class="nav-link fancy-font " href= ';
               echo base_url("profile/" .md5($user -> email)); echo ">",$user->full_name,"</a>";  ?> 
             <?php
             }
@@ -46,23 +46,23 @@
         </li>
         <li class="nav-item">
             <div class="dropdown">
-              <button class="btn btn-outline-light dropdown-toggle col-12 xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn btn-outline-light fancy-font dropdown-toggle col-12 xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Photograph and Video</a>
-                <a class="dropdown-item" href="#">Book and Magazines</a>
-                <a class="dropdown-item" href="#">Sport Equitments</a>
-                <a class="dropdown-item" href="#">Home Improvemnet and Tools</a>
-                <a class="dropdown-item" href="#">Technical Electronics</a>
-                <a class="dropdown-item" href="#">Other Stuff</a>
+                <a class="dropdown-item fancy-font" href="#">Photograph and Video</a>
+                <a class="dropdown-item fancy-font" href="#">Book and Magazines</a>
+                <a class="dropdown-item fancy-font" href="#">Sport Equitments</a>
+                <a class="dropdown-item fancy-font" href="#">Home Improvemnet and Tools</a>
+                <a class="dropdown-item fancy-font" href="#">Technical Electronics</a>
+                <a class="dropdown-item fancy-font" href="#">Other Stuff</a>
               </div>
             </div>
           </li>
           <li>
             <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2 ml-3" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline text-deneme-bg text-white my-2 ml-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control fancy-font mr-sm-2 ml-3" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline fancy-font text-deneme-bg text-white my-2 ml-2 my-sm-0" type="submit">Search</button>
         </form>
       </li>
           
@@ -74,19 +74,18 @@
         
         <?php 
             if (isset($user -> email)){ 
-              echo'<a class="nav-link bgbetter" href=';
+              echo'<a class="nav-link fancy-font bgbetter" href=';
               echo base_url("logout/" .md5($user -> email));?>  <?php echo">Log out</a>"; ?>
             <?php
             }
             else{
-              echo'<a  class="nav-link bgbetter" href="" data-toggle="modal" data-target="#signinModal" data-whatever="buraya istediğin bir veriyi gir"  id="sign"> Log in</a>';
+              echo'<a  class="nav-link fancy-font bgbetter" href="" data-toggle="modal" data-target="#signinModal" data-whatever="buraya istediğin bir veriyi gir"  id="sign"> Log in</a>';
               //echo base_url("giris"); echo"> Signin</a>"; 
               }
             ?>
-            <a  class="nav-link d-none " data-toggle="modal" data-target="#signUp" data-whatever="buraya istediğin bir veriyi gir"  id="signup"> Sign in</a>
+            <a  class="nav-link fancy-font d-none " data-toggle="modal" data-target="#signUp" data-whatever="buraya istediğin bir veriyi gir"  id="signup"> Sign in</a>
             </li>
     </ul>
-
   </nav>
 
   <div class="container card bgbetter">
@@ -108,11 +107,11 @@
                             <div class="col-md-8 offset-1 ">
                               <img src="<?php if(isset($product->product_picture)){echo $product->product_picture;} else echo base_url("assets/pictures/Z.png");?>" alt="" class="no-image">
                               <br><br>
-                              <h6 class="text-light text-left"><?php echo $product->product_name?></h6>
+                              <h6 class="text-light fancy-font text-left"><?php echo $product->product_name?></h6>
                               <hr>
-                              <h6 class="text-light text-left"><?php echo $product->price?>$ Per Hour</h6>
+                              <h6 class="text-light fancy-font text-left"><?php echo $product->price?>$ Per Hour</h6>
                               <hr>
-                              <h6 class="text-light text-left"><?php echo $product->product_category?></h6>
+                              <h6 class="text-light fancy-font text-left"><?php echo $product->product_category?></h6>
                             </div>
                           </div>
                         </div>

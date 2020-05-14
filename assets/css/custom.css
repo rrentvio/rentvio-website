@@ -33,7 +33,7 @@ span.fadee {
   height: 100vh;
   width: 100%;
   z-index: -1;
-  position: absolute;
+  position: fixed;
 }
 .wwww {
   width: 100%;

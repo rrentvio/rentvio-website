@@ -9,36 +9,72 @@
     <link rel="stylesheet" href=<?php echo base_url("assets/css/bootstrap.min.css");?>>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src=<?php echo base_url("assets/js/bootstrap.bundle.js");?>></script>
-
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/custom.css");?>">
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/custom2.css");?>">
 </head>
 <body class=" bg-secondary" >
+<img src="<?php echo base_url("assets/pictures/giris.jpg");?>" alt="" class="keke" srcset="">
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-10 mt-10 position-fixed wwww">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <a class="nav-link" href=<?php echo base_url("homepage/" .md5($user -> email));?>>Rentvio</a>
+            <?php 
+            if (isset($user -> email)){
+              echo'<a class="nav-link diffont h3 m-0 m-0 text-deneme " style="  padding: 0px 5px 0px 0px" href=';
+              echo base_url("homepage/".md5($user -> email));   echo("  >Rentvio<</a>");
+            }
+
+            else{
+              echo'<a class="nav-link text-bold diffont h3 m-0  text-deneme " style=" padding: 0px 5px 0px 0px" href=';
+              echo base_url()." > Rentvio<</a>";
+            }
+            ?>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href=<?php echo base_url("profile/" .md5($user -> email));?> > <?php echo $user->full_name; ?> </a>
-        </li>
-    </ul>
-    <form class="form-inline ml-auto">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline- my-2 my-sm-0 text-light" type="submit">Search</button>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active mr-auto">
-                <a class="nav-link" href=<?php echo base_url("logout/" .md5($user -> email));?>>Exit</a>
+            <?php 
+            if (isset($user -> email)){
+              echo '<a class="nav-link fancy-font" href= ';
+              echo base_url("profile/" .md5($user -> email)); echo ">",$user->full_name,"</a>";  ?> 
+            <?php
+            }
+            else{              
+              }
+            ?>
+          </li>
+          <li class="nav-item">
+            <!-- Button trigger modal -->
+          <button type="button " class="btn text-ekle-bg fancy-font ml-4" data-toggle="modal" id="productAdd" data-target="#addProduct">
+              Add Product
+          </button>
+          </li>
+          </ul> 
+          <ul class="navbar-nav ml-auto">
+        <li class="nav-item text-deneme-bg active ">
+        
+        <?php 
+            if (isset($user -> email)){ 
+              echo'<a class="nav-link bgbetter fancy-font" href=';
+              echo base_url("logout/" .md5($user -> email));?>  <?php echo">Log out</a>"; ?>
+            <?php
+            }
+            else{
+              echo'<a  class="nav-link bgbetter" href="" data-toggle="modal" data-target="#signinModal" data-whatever="buraya istediğin bir veriyi gir"  id="sign"> Log in</a>';
+              //echo base_url("giris"); echo"> Signin</a>"; 
+              }
+            ?>
+            <a  class="nav-link fancy-font d-none " data-toggle="modal" data-target="#signUp" data-whatever="buraya istediğin bir veriyi gir"  id="signup"> Sign in</a>
             </li>
-        </ul>
-    </form>
-
-</nav>
-
-<div class="container card ">
+    </ul>
+          </nav>
+<div class="container card bgbetter ">
 
     <div class="row">
-        <div class="col-md-6 offset-3 ">
-            <h4>Added Items</h4>
+        <div class="col-md-6 offset-3">
+          <div class="row">
+          <div class="col-md-5">
+          <br><br><br><br>
+            <h4 class="fancy-font">Added Items</h4>
+            <h4 class="">Added Items</h4>
             <h4>USER PROFILE PAGE</h4>
             <table class=" table table-hover table-striped table-bordered"  >
             <thead>
@@ -71,14 +107,15 @@
 
             </tbody>
             </table>
+            <div class="col-md-5 jumbotron">
+              asloşhdnşoashdşaosdşasdhnşasdşasd
+            </div>      
+        </div>
+        </div>
         </div>
     </div>
 </div>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" id="productAdd" data-target="#addProduct">
-  Add Product
-</button>
 
 <!-- add product Modal -->
 <div class="modal fade" id="addProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
