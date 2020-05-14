@@ -1,6 +1,6 @@
 body {
   background: rgba(190, 169, 169, 0.9);
-  background-image: url("../pictures/giris.jpg");
+  background-image: url("../pictures/giris.jpgg");
 }
 .giriskutusu::hover {
   background-image: url("../pictures/giris.jpg");
@@ -25,4 +25,17 @@ span {
 }
 span.fadee {
   opacity: 1;
+}
+.keke {
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+}
+.wwww {
+  width: 100%;
+  z-index: 2;
 }
