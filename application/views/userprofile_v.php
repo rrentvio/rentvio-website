@@ -66,14 +66,26 @@
             </li>
     </ul>
           </nav>
-<div class="container card bgbetter ">
+<div class="container bgbetter ">
 
     <div class="row">
         <div class="col-md-6 offset-3">
+      
+         
           <div class="row">
+          
           <div class="col-md-5">
-          <br><br><br><br>
-            <h4 class="fancy-font">Added Items</h4>
+          <br><br><br><br><br><br>
+         
+            <h4 class="fancy-font">a <?php 
+            if (isset($user -> email)){
+              echo '<a class="nav-link fancy-font" href= ';
+              echo base_url("profile/" .md5($user -> email)); echo ">",$user->full_name,"</a>";  ?> 
+            <?php
+            }
+            else{              
+              }
+            ?></h4>
             <h4 class="">Added Items</h4>
             <h4>USER PROFILE PAGE</h4>
             <table class=" table table-hover table-striped table-bordered"  >
