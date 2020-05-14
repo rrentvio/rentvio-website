@@ -14,6 +14,29 @@ class fileupload extends CI_Controller{
 
     }
 
+    public function send($viewData){
+        $user_list=  $this->session->userdata("user_list");
+        if ( $user_list){
+            $user = reset($user_list);
+            $email=md5($user->email);
+          }
+          else{
+              redirect(base_url("homepage"));
+          }
+            $user_list = $this -> session -> userdata("user_list");
+            $activeuser = $user_list[$email];
+            $viewData->user= $activeuser;
+            $this-> load-> model("user_product_model");
+    
+             $viewData->products=$this-> user_product_model->get_all(
+                array(
+                    "user_id" => $activeuser->id
+                 )
+            );
+            $this->load->view("userprofile_v", $viewData);
+    }
+
+
     public function catagory($i){
         if ($i == "1") {
             return "Fotoğraf & Kamera";
@@ -42,6 +65,28 @@ class fileupload extends CI_Controller{
 
     public function addProduct($uid){
 
+        $this->load->library("form_validation");
+        $this->form_validation->set_rules("pName","Product Name","required|trim");
+        $this->form_validation->set_rules("pDescription","Product Description","required|trim");    
+        $this->form_validation->set_rules("pPrice","Price","required|trim|decimal");
+        // after sahur tasks :     form validation öğren codeigniter videosuna bakmayı unutma !!
+        $this->form_validation->set_message(array( 
+            'required' => "<b> {field} </b> area required!",
+            "decimal"=>"Please separate the fractioned prices with the '.' symbol."
+        ));
+        $viewData= new stdClass();
+        if ($this->form_validation->run() === FALSE){
+            //echo validation_errors(); 
+            $this-> load-> model("user_product_model");
+            
+            $viewData->products=$this-> user_product_model->get_all();
+            $viewData->form_error = true;
+            $viewData->fromsignup =true;
+            $this->send($viewData);
+            //$this->load->view("homepage_v",$viewData);
+        }
+        else{
+
         $pName          = $this->input->post("pName");          // "name" attribute of the variable!!
         $pDescription   = $this->input->post("pDescription");
         $pCategory      = $this->catagory($this->input->post("pCategory"));
@@ -63,8 +108,9 @@ class fileupload extends CI_Controller{
 
         $insert = $this->db->insert("user_product",$newProduct);
         //redirect(base_url("profile"));                            //Deneme 
-    
+        $this->send($viewData);
         }
+    }
 
         
     public function editProduct($uid){
