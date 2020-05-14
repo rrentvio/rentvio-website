@@ -59,12 +59,13 @@
                         <td><?php echo $product->price?></td>
                         <td><?php echo $product->product_description?></td>
                         <td><?php echo $product->product_category?></td>
-                        <td> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editModal" 
-                        data-prodid=<?php echo($product->id); ?>
-                        data-prodname=<?php echo($product->product_name); ?>
-                        data-proddesc=<?php echo($product->product_description); ?>
-                        data-prodprice=<?php echo($product->price); ?> 
-                        ?> Edit</button>
+                        <td> <button type="button" id="edit" class="btn btn-success" data-toggle="modal" data-target="#editModal" 
+                        data-prodid="<?php echo($product->id); ?>"
+                        data-prodname="<?php echo($product->product_name); ?>"
+                        data-proddesc="<?php echo($product->product_description); ?>"
+                        data-prodprice="<?php echo($product->price); ?>" 
+                        data-prodcat="<?php echo(catagory($product->product_category));?>" 
+                        > Edit</button>
                             <a class="btn btn-danger" href=  <?php echo (base_url("deleteproductdb/" .$product->id)); ?> role="button">Delete</a> </td>
                     </tr>
                 <?php }?>
@@ -162,7 +163,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="editModalLabel">New message</h5>
+        <h5 class="modal-title" id="editModalLabel">Edit Product</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -176,11 +177,17 @@
         <div class="form-group">
             <label for="pName"> <b> <i> Product name </i></b> </label>
             <input type="text" class="form-control" id="pName" name="pName" placeholder="Enter Product Name">
+            <?php if(isset($form_error)) {?>
+                    <small class="float-right"> <b> <?php echo form_error("pName") ?> </b> </small>
+                   <?php } ?>
           </div>
           
           <div class="form-group">
             <label for="pDescription">  <b> <i>Product Description </i></b></label>
             <textarea class="form-control" id="pDescription" name="pDescription" rows="3"></textarea>
+            <?php if(isset($form_error)) {?>
+                    <small class="float-right"> <b> <?php echo form_error("pDescription") ?> </b> </small>
+                   <?php } ?>
           </div>
            
           <div class="form-group">
@@ -193,10 +200,16 @@
                 <option value="5">Teknik Elektronik </option>
                 <option value="6">Diğer Herşey      </option>   
             </select>
+            <?php if(isset($form_error)) {?>
+                    <small class="float-right"> <b> <?php echo form_error("pCatagory") ?> </b> </small>
+                   <?php } ?>
           </div>
           <div class="form-group">
             <label for="pPrice"> <b> <i>Price per hour </i></b> </label>
             <input type="text" class="form-control" id="pPrice" name="pPrice" placeholder="EnterPrice ">
+            <?php if(isset($form_error)) {?>
+                    <small class="float-right"> <b> <?php echo form_error("pPrice") ?> </b> </small>
+                   <?php } ?>
           </div>
           <div class="custom-control custom-switch">
           <input type="checkbox" class="custom-control-input" id="isPublish" name="isPublish">
@@ -239,7 +252,7 @@
 </script>
 
 <?php
-if (isset($form_error)){
+if (isset($formadd)){
 echo '
 <script>
 window.onload = function() {
@@ -250,6 +263,34 @@ function loginModal() {
 }
 </script>
 ';
+}
+if (isset($formedit)){
+  echo '
+  <script>
+  window.onload = function() {
+    loginModal();
+  };
+  function loginModal() {
+    document.getElementById("edit").click();
+  }
+  </script>
+  ';
+  }
+
+function catagory($i){
+  if ($i == "Fotoğraf & Kamera") {
+      return "1";
+  } elseif ($i == "Kitap Dergi") {
+      return "2";
+  } elseif ($i == "Spor Ekipmanları") {
+      return "3";
+  }elseif ($i == "Bahçe & Yapı Market") {
+      return "4";
+  }elseif ($i == "Teknik Elektronik") {
+      return "5";
+  }elseif ($i == "Diğer Herşey") {
+      return "6";
+  }
 }
 ?>
   

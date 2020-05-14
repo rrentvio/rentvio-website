@@ -68,11 +68,11 @@ class fileupload extends CI_Controller{
         $this->load->library("form_validation");
         $this->form_validation->set_rules("pName","Product Name","required|trim");
         $this->form_validation->set_rules("pDescription","Product Description","required|trim");    
-        $this->form_validation->set_rules("pPrice","Price","required|trim|decimal");
+        $this->form_validation->set_rules("pPrice","Price","required|trim|numeric");
         // after sahur tasks :     form validation öğren codeigniter videosuna bakmayı unutma !!
         $this->form_validation->set_message(array( 
             'required' => "<b> {field} </b> area required!",
-            "decimal"=>"Please separate the fractioned prices with the '.' symbol."
+            "numeric"=>"Please separate the fractioned prices with the '.' symbol."
         ));
         $viewData= new stdClass();
         if ($this->form_validation->run() === FALSE){
@@ -81,6 +81,7 @@ class fileupload extends CI_Controller{
             
             $viewData->products=$this-> user_product_model->get_all();
             $viewData->form_error = true;
+            $viewData->fromadd= true;
             $viewData->fromsignup =true;
             $this->send($viewData);
             //$this->load->view("homepage_v",$viewData);
@@ -103,7 +104,7 @@ class fileupload extends CI_Controller{
             "product_description"   =>  $pDescription,
             "product_category"      =>  $pCategory,
             "publish"             =>  isSet($pPublish),
-            "product_picture"       =>  0
+            "product_picture"       =>  null
         );
 
         $insert = $this->db->insert("user_product",$newProduct);
@@ -114,6 +115,29 @@ class fileupload extends CI_Controller{
 
         
     public function editProduct($uid){
+
+        $this->load->library("form_validation");
+        $this->form_validation->set_rules("pName","Product Name","required|trim");
+        $this->form_validation->set_rules("pDescription","Product Description","required|trim");    
+        $this->form_validation->set_rules("pPrice","Price","required|trim|numeric");
+        // after sahur tasks :     form validation öğren codeigniter videosuna bakmayı unutma !!
+        $this->form_validation->set_message(array( 
+            'required' => "<b> {field} </b> area required!",
+            "numeric"=>"Please separate the fractioned prices with the '.' symbol."
+        ));
+        $viewData= new stdClass();
+        if ($this->form_validation->run() === FALSE){
+            //echo validation_errors(); 
+            $this-> load-> model("user_product_model");
+            $viewData->formedit= true;
+            $viewData->products=$this-> user_product_model->get_all();
+            $viewData->form_error = true;
+            $this->send($viewData);
+            //$this->load->view("homepage_v",$viewData);
+        }
+
+
+        else{
         $pId            = $this->input->post("productId");  
         $pDescription   = $this->input->post("pDescription");
         $pName          = $this->input->post("pName");          // "name" attribute of the variable!!
@@ -135,7 +159,7 @@ class fileupload extends CI_Controller{
 
         $insert = $this->db->where("id",$pId)->update("user_product",$newProduct);
         redirect(base_url("profile/"));
-        }
+        }}
 
     public function deleteProduct($did){
 
