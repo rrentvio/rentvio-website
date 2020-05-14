@@ -82,7 +82,6 @@ class fileupload extends CI_Controller{
             $viewData->products=$this-> user_product_model->get_all();
             $viewData->form_error = true;
             $viewData->fromadd= true;
-            $viewData->fromsignup =true;
             $this->send($viewData);
             //$this->load->view("homepage_v",$viewData);
         }
