@@ -14,9 +14,10 @@
 
   </head>
   <body class=" bg-secondary">
+    <img src="<?php echo base_url("assets/pictures/giris.jpg");?>" alt="" class="keke" srcset="">
 
 
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-10 mt-10">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-10 mt-10 position-fixed wwww">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
             <?php 
@@ -92,12 +93,12 @@
 
     <div class="row">
         <div class="col-md-10 offset-1 ">  <!-- // offset baştan kaç boşluk bırakıcağın ?> -->
-        <br>    
+        <br>   <br><br><br>  
         <h1 class="text-white diffont text-center fancy">Everything You Need. All Right Here.</h1>
             <br>
             
             <div class="row">
-                           
+                            
                   <?php
 
                   foreach ($products as $product){?>
