@@ -2,6 +2,7 @@
 <html lang="tr" xmlns:display="http://www.w3.org/1999/xhtml" xmlns:align-items="http://www.w3.org/1999/xhtml"
       xmlns:justify-content="http://www.w3.org/1999/xhtml" xmlns:flex-direction="http://www.w3.org/1999/xhtml">
 <head>
+  
     <meta charset="UTF-8">
     <meta name="viewport">
     <meta http-equiv="X-UA-Compatible" content="ie=chrome">
@@ -41,11 +42,10 @@
               }
             ?>
           </li>
-          <li class="nav-item">
-            <!-- Button trigger modal -->
-          <button type="button " class="btn text-ekle-bg fancy-font ml-4" data-toggle="modal" id="productAdd" data-target="#addProduct">
+          <li class="nav-item" >
+          <button type="button"  id="productadd" class="btn text-ekle-bg fancy-font ml-4" data-toggle="modal"  data-target="#addProduct" >
               Add Product
-          </button>
+            </button>
           </li>
           </ul> 
           <ul class="navbar-nav ml-auto">
@@ -67,6 +67,7 @@
     </ul>
           </nav>
 <div class="container bgbetter ">
+
 
     <div class="row">
         <div class="col-md-6 offset-3">
@@ -121,7 +122,7 @@
             </tbody>
             </table>
             <div class="col-md-5 jumbotron">
-              asloşhdnşoashdşaosdşasdhnşasdşasd
+              amına koyam
             </div>      
         </div>
         </div>
@@ -269,8 +270,6 @@
                 <label for="pPicture"> <b> <i>Picture of the product </i></b> </label>
                 <input type="file" class="form-control-file" id="pPicture" name="pPicture" placeholder="EnterPrice ">
             </div>
-          
-        
       </div>
       <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  
@@ -301,18 +300,18 @@
 </script>
 
 <?php
-if (isset($formadd)){
-echo '
-<script>
+if (isset($fromadd)){
+echo '<script>
 window.onload = function() {
-  loginModal();
+  signupModal();
 };
-function loginModal() {
-  document.getElementById("productAdd").click();
+function signupModal() {
+  document.getElementById("productadd").click();
 }
 </script>
 ';
-}
+}?>
+<?php
 if (isset($formedit)){
   echo '
   <script>
