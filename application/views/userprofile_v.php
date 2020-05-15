@@ -47,7 +47,7 @@
           </li>
           <li class="nav-item" >
           <button type="button"  id="productadd" class="btn text-ekle-bg fancy-font ml-4" data-toggle="modal"  data-target="#addProduct" >
-              Add Product
+              Add Product &nbsp;&nbsp; <i class="fas fa-folder-plus fa-lg "></i>
             </button>
           </li>
           </ul> 
@@ -76,9 +76,9 @@
           <br><br><br><br><br>
             <h1 class="fancy-font text-center"><?php 
             if (isset($user -> email)){
-              echo '<a class=" fancy-font text-deneme"';
+              echo '<a class=" fancy-font text-white"';
               echo base_url("profile/" .md5($user -> email)); 
-              echo ">",$user->full_name, "</a>";  ?> 
+              echo ">",$user->full_name, "</a>";  ?><i class="fas fa-cogs ml-4 text-white pointer" ></i><br>
             <?php
             }
             else{              
@@ -112,8 +112,8 @@
                         data-proddesc="<?php echo($product->product_description); ?>"
                         data-prodprice="<?php echo($product->price); ?>" 
                         data-prodcat="<?php echo(catagory($product->product_category));?>" 
-                        > Edit</button>
-                            <a class="btn btn-danger customwidth text-sil-bg" href=  <?php echo (base_url("deleteproductdb/" .$product->id)); ?> role="button">Delete</a> </td>
+                        > Edit &nbsp; <i class="far fa-edit"></i></button>
+                            <a class="btn btn-danger customwidth text-sil-bg " href=  <?php echo (base_url("deleteproductdb/" .$product->id)); ?> role="button">Delete &nbsp;<i class="far fa-trash-alt"></i></a> </td>
                     </tr>
                 <?php }?>
 

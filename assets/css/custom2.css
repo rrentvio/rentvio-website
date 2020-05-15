@@ -62,3 +62,6 @@
 .fancy-font {
   font-family: fancyy;
 }
+.pointer {
+  cursor: pointer;
+}
