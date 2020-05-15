@@ -7,6 +7,10 @@ class Home extends CI_Controller{
     {
         parent::__construct();
     }
+    
+    //dropzone deneme amaçlı silinecekk
+
+
     public function index(){
         $viewData= new stdClass();           
             $this-> load-> model("user_product_model");

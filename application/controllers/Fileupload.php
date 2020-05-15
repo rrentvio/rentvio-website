@@ -7,13 +7,15 @@ class fileupload extends CI_Controller{
         parent::__construct();
         $this->load->model("user_model");
         $this->load->model("user_product_model");
+        
+    
+
     }
 
     public function index (){
         $this->load->view("addproduct");
 
     }
-
     public function send($viewData){
         $user_list=  $this->session->userdata("user_list");
         if ( $user_list){
@@ -35,8 +37,6 @@ class fileupload extends CI_Controller{
             );
             $this->load->view("userprofile_v", $viewData);
     }
-
-
     public function catagory($i){
         if ($i == "1") {
             return "Fotoğraf & Kamera";
@@ -53,7 +53,6 @@ class fileupload extends CI_Controller{
         }
 
     }
-
     public function isSet($i){
         if ($i== null&&$i==0&&$i=="0"&&$i==""){
             return 0;
@@ -62,7 +61,6 @@ class fileupload extends CI_Controller{
             return 1;
         }
     }
-
     public function addProduct($uid){
 
         $this->load->library("form_validation");
@@ -110,9 +108,7 @@ class fileupload extends CI_Controller{
         //redirect(base_url("profile"));                            //Deneme 
         $this->send($viewData);
         }
-    }
-
-        
+    }    
     public function editProduct($uid){
 
         $this->load->library("form_validation");
@@ -164,8 +160,41 @@ class fileupload extends CI_Controller{
 
         $this->db->where("id",$did)->delete("user_product");
         redirect(base_url("profile/"));
-        }
-    
+    }
 
-}
+
+    //dropzone denneme amaçlı silinecekkk 
+
+    public function dropzone(){
+        $viewData["images"] = $this->db->get("images")->result();
+        $this-> load-> view("dropbox_v",$viewData);
+    }
+
+    public function upload($pid){
+
+        $config["allowed_types"] = "jpg|gif|png|webm";
+        $config["upload_path"] ="product_images/";
+
+        $this->load->library("upload",$config);
+
+        if($this->upload->do_upload("file")){
+            //upload gerçekleşir ise true çakar
+            $pic_name = ($this->upload->data("file_name"));  //Dropzone dan dönen arraydan file ın name i ni çek 
+            $pic_data= array(
+                "pic_name" => $pic_name,
+                "pic_url" => base_url("product_images/$pic_name"),
+                "product_id"=> $pid
+            );
+            $insert = $this->db->insert("images",$pic_data);
+        }
+        else{
+            echo "Upload Failed!";
+        }
+
+    }
+
+    //Drop zone burada bitiyor...
+
+
+    }
 
