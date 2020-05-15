@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom2.css");?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/dropzone/dropzone.js");?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/dropzone/dropzone.css");?>">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 </head>
 <body class=" bg-secondary" >
 <img src="<?php echo base_url("assets/pictures/giris.jpg");?>" alt="" class="keke" srcset="">
@@ -42,6 +43,7 @@
             else{              
               }
             ?>
+            
           </li>
           <li class="nav-item" >
           <button type="button"  id="productadd" class="btn text-ekle-bg fancy-font ml-4" data-toggle="modal"  data-target="#addProduct" >
@@ -68,67 +70,58 @@
     </ul>
           </nav>
 <div class="container bgbetter ">
-
-
     <div class="row">
-        <div class="col-md-6 offset-3">
       
-         
-          <div class="row">
-          
-          <div class="col-md-5">
-          <br><br><br><br><br><br>
-         
-            <h4 class="fancy-font">a <?php 
+         <div class="col-md-12 ">
+          <br><br><br><br><br>
+            <h1 class="fancy-font text-center"><?php 
             if (isset($user -> email)){
-              echo '<a class="nav-link fancy-font" href= ';
-              echo base_url("profile/" .md5($user -> email)); echo ">",$user->full_name,"</a>";  ?> 
+              echo '<a class=" fancy-font text-deneme"';
+              echo base_url("profile/" .md5($user -> email)); 
+              echo ">",$user->full_name, "</a>";  ?> 
             <?php
             }
             else{              
               }
-            ?></h4>
-            <h4 class="">Added Items</h4>
-            <h4>USER PROFILE PAGE</h4>
-            <table class=" table table-hover table-striped table-bordered"  >
+            ?>
+            
+          </h1>
+            <button type="button" class="btn btn-info text-pubrent-bg offset-4 mr-5 customwidth2">Published Items</button>
+            <button type="button" class="btn btn-info text-pubrent-bg customwidth2">Rented Items</button>
+            <br><br><br>
+            <table class=" table table-hover text-deneme-bg"  >
             <thead>
-               <th>#id</th>
-               <th>Product Name</th>
-               <th>Price</th>
-               <th>Product Decrition </th>
-               <th>Product Category</th>
-               <th>Edit/delete</th>
+              <th class="text-white fancy-font font-weight-normal">Product Name</th>
+              <th class="text-white fancy-font font-weight-normal">Price</th>
+              <th class="text-white fancy-font font-weight-normal">Product Decrition</th>
+              <th class="text-white fancy-font font-weight-normal">Cathegory</th>
+              <th class="text-white fancy-font font-weight-normal">Update</th>
             </thead>
             
             <?php 
             //print_r($products);                                               (deneme amaçlı kontrol gerekirse aktif edin pls )
             foreach ($products as $product){?>
                     <tr>
-                        <td>#<?php echo $product->id ?></td>
-                        <td><?php echo $product->product_name?></td>
-                        <td><?php echo $product->price?></td>
-                        <td><?php echo $product->product_description?></td>
-                        <td><?php echo $product->product_category?></td>
-                        <td> <button type="button" id="edit" class="btn btn-success" data-toggle="modal" data-target="#editModal" 
-                        data-prodid="<?php echo($product->id); ?>"
+                        <td class="text-white fancy-font"><?php echo $product->product_name?></td>
+                        <td class="text-white fancy-font" ><?php echo $product->price?></td>
+                        <td class="text-white fancy-font" ><?php echo $product->product_description?></td>
+                        <td class="text-white fancy-font" ><?php echo $product->product_category?></td>
+                        <td class="text-white fancy-font" > <button type="button" id="edit" class="btn btn-warning mr-3 text-edit-bg customwidth" data-toggle="modal" data-target="#editModal" 
+
                         data-prodname="<?php echo($product->product_name); ?>"
                         data-proddesc="<?php echo($product->product_description); ?>"
                         data-prodprice="<?php echo($product->price); ?>" 
                         data-prodcat="<?php echo(catagory($product->product_category));?>" 
                         > Edit</button>
-                            <a class="btn btn-danger" href=  <?php echo (base_url("deleteproductdb/" .$product->id)); ?> role="button">Delete</a> </td>
+                            <a class="btn btn-danger customwidth text-sil-bg" href=  <?php echo (base_url("deleteproductdb/" .$product->id)); ?> role="button">Delete</a> </td>
                     </tr>
                 <?php }?>
 
             </tbody>
-            </table>
-            <div class="col-md-5 jumbotron">
-              amına koyam
-            </div>      
-        </div>
-        </div>
+            </table> 
         </div>
     </div>
+</div>
 </div>
 
 
@@ -360,3 +353,4 @@ function catagory($i){
     ></script>
 </body>
 </html>
+
