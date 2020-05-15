@@ -93,7 +93,7 @@
     <div class="row">
         <div class="col-md-10 offset-1 ">  <!-- // offset baştan kaç boşluk bırakıcağın ?> -->
         <br>   <br><br><br>  
-        <h1 class="text-white diffont text-center fancy">Everything You Need. All Right Here.</h1>
+        <h1 class="text-white diffont text-center fancy">Everything  &nbsp; You &nbsp; Need. &nbsp; All &nbsp; Right &nbsp; Here.</h1>
             <br>
             
             <div class="row">

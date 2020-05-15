@@ -19,11 +19,12 @@ body::after {
   width: 200px;
   height: 200px;
 }
-span {
+.plsol {
   opacity: 0;
   transition: all 0.02s ease;
+  display: inline-flex;
 }
-span.fadee {
+.plsol.fadee {
   opacity: 1;
 }
 .keke {
