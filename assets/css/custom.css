@@ -1,6 +1,6 @@
 body {
   background: rgba(190, 169, 169, 0.9);
-  background-image: url("../pictures/giris.jpgg");
+  background-image: url("../pictures/giris.jpg");
 }
 .giriskutusu::hover {
   background-image: url("../pictures/giris.jpg");
@@ -39,3 +39,14 @@ span.fadee {
   width: 100%;
   z-index: 2;
 }
+
+/* berke burayı ben yazdım bdropzone ile alakalı table içerisindeki resmin
+ boyurunu ayarlamak amacı ile yazdım haberin olsun eğer comment ve altındaki
+  css hala duruyorsa silmeden önce dropbox_v viewindeki table için bişeler ayarla öyle devam et :* love u  */
+
+   td img{
+     width: 150px;
+   }
+   tr td:first-child{
+     width: 150px;
+   }

@@ -12,10 +12,11 @@
     <script src=<?php echo base_url("assets/js/bootstrap.bundle.js");?>></script>
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom.css");?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom2.css");?>">
+    <link rel="stylesheet" href="<?php echo base_url("assets/dropzone/dropzone.js");?>">
+    <link rel="stylesheet" href="<?php echo base_url("assets/dropzone/dropzone.css");?>">
 </head>
 <body class=" bg-secondary" >
 <img src="<?php echo base_url("assets/pictures/giris.jpg");?>" alt="" class="keke" srcset="">
-
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-10 mt-10 position-fixed wwww">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
