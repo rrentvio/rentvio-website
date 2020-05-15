@@ -54,9 +54,6 @@
 </div>
 
 
-
-
-
 <script> //recursive çalışması için (sayfayı yenşlemeden çalışması adına bu script önem arz ediyor...)
     Dropzone.autoDiscover = false;
     $(function(){
@@ -70,10 +67,7 @@
             var tr = "<tr><td>" +img +" </td><td>"+imgname+"</td></tr>";
             $(".table tbody").append(tr)
         })
-
     })
-
-
 </script>
 
 
