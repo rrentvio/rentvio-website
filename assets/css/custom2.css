@@ -45,7 +45,7 @@
   color: #ffa5a5 !important;
 }
 .text-deneme-bg {
-  background-color: #ffa5a5;
+  background-color: #b98080;
 }
 .text-ekle-bg {
   background-color: #809252;
@@ -55,6 +55,9 @@
 }
 .text-edit-bg {
   background-color: #ffd252;
+}
+.text-pubrent-bg {
+  background-color: rgba(78, 151, 149, 0.801);
 }
 .fancy-font {
   font-family: fancyy;

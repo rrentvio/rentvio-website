@@ -9,7 +9,7 @@ body {
   opacity: 0.8;
 }
 body::after {
-  background: rgba(190, 169, 169, 0.9);
+  background: rgba(165, 146, 146, 0.9);
   background-image: url("../pictures/giris.jpg");
   filter: blur(10px);
   -webkit-filter: blur(10px);
@@ -38,4 +38,10 @@ span.fadee {
 .wwww {
   width: 100%;
   z-index: 2;
+}
+.customwidth {
+  width: 100px !important;
+}
+.customwidth2 {
+  width: 150px !important;
 }
