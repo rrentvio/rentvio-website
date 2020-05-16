@@ -27,12 +27,20 @@ public function getdetails($id){
                     "id" => $id
                  )
     );
-    $viewData->product_images=$this-> image_model->get_all(
+    
+
+    $pics=$this-> image_model->get_all(
         array(
             "product_id" => $id
          )
     );
-
+    if(empty($pics)){
+        echo ("No pic avabliable Pic ");
+    }
+    else{
+        print_r($pics);
+        $viewData->product_images =$pics;
+    }
     $user_id= (reset($viewData->product_details)->user_id);
 
     $viewData->user=$this-> user_model->get(
@@ -42,6 +50,5 @@ public function getdetails($id){
     );
 
     $this->load->view("product_v", $viewData);
-
 }
 }

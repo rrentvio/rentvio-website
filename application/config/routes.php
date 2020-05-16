@@ -68,3 +68,4 @@ $route['sign-up'] = "signup/addusr";
 $route['signup/(:any)'] = "signup/$1";
 $route['dropzone/(:any)'] = "fileupload/dropzone/$1)"; //dropzone deneme amaçlı silinecek ()
 $route['deleteimage/(:any)'] = "fileupload/deletedropzone/$1)";
+$route['product/(:any)'] = "product/getdetails/$1)";
