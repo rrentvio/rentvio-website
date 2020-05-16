@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport">
     <meta http-equiv="X-UA-Compatible" content="ie=chrome">
-    <title><?php echo$user ->name?></title>
+    <title> <?php echo ($user ->full_name) ?></title>
     <link rel="stylesheet" href=<?php echo base_url("assets/css/bootstrap.min.css");?>>
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom.css");?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom2.css");?>">
