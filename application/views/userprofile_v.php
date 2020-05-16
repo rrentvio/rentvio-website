@@ -104,7 +104,7 @@
               <th class="text-white fancy-font font-weight-normal">Price</th>
               <th class="text-white fancy-font font-weight-normal">Product Decrition</th>
               <th class="text-white fancy-font font-weight-normal">Cathegory</th>
-              <th class="text-white fancy-font font-weight-normal">Update</th>
+              <th class="text-white fancy-font font-weight-normal text-center">Update</th>
             </thead>
             
             <?php 
@@ -115,7 +115,7 @@
                         <td class="text-white fancy-font" ><?php echo $product->price?></td>
                         <td class="text-white fancy-font" ><?php echo $product->product_description?></td>
                         <td class="text-white fancy-font" ><?php echo $product->product_category?></td>
-                        <td class="text-white fancy-font" > <button type="button" id="edit" class="btn btn-warning mr-3 text-edit-bg customwidth" data-toggle="modal" data-target="#editModal" 
+                        <td class="text-white fancy-font d-flex justify-content-center " > <button type="button" id="edit" class="btn btn-warning mr-3 text-edit-bg customwidth" data-toggle="modal" data-target="#editModal" 
 
                         data-prodname="<?php echo($product->product_name); ?>"
                         data-proddesc="<?php echo($product->product_description); ?>"
