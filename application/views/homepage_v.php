@@ -103,8 +103,8 @@
                   foreach ($products as $product){?>
                       <div class="col-md-4">
                         <div class="jumbotron p-3 text-deneme-bg text-white text-center">
-                          <div class="row ">
-                            <div class="col-md-8 offset-1 ">
+                          <div class="row pointer " href="">  <!-- BURAYA İD --> 
+                            <div class="col-md-8 offset-1">
                               <img src="<?php if(isset($product->product_picture)){echo $product->product_picture;} else echo base_url("assets/pictures/Z.png");?>" alt="" class="no-image">
                               <br><br>
                               <h6 class="text-light fancy-font text-left"><?php echo $product->product_name?></h6>

@@ -98,13 +98,13 @@
             <button type="button" class="btn btn-info text-pubrent-bg offset-4 mr-5 customwidth2">Published Items</button>
             <button type="button" class="btn btn-info text-pubrent-bg customwidth2">Rented Items</button>
             <br><br><br>
-            <table class=" table table-hover text-deneme-bg borderthickness border-top-1"  >
+            <table class=" table table-hover text-deneme-bg ">
             <thead>
               <th class="text-white fancy-font font-weight-normal">Product Name</th>
               <th class="text-white fancy-font font-weight-normal">Price</th>
               <th class="text-white fancy-font font-weight-normal">Product Decrition</th>
               <th class="text-white fancy-font font-weight-normal">Cathegory</th>
-              <th class="text-white fancy-font font-weight-normal">Update</th>
+              <th class="text-white fancy-font font-weight-normal text-center">Update</th>
             </thead>
             
             <?php 
