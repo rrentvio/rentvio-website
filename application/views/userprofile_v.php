@@ -74,8 +74,14 @@
     <div class="row">
       
          <div class="col-md-12 ">
+          
           <br><br><br><br><br>
-            <h1 class="fancy-font text-center"><?php 
+          <div class="row">
+          <div class="col-md-4">
+            <img src="<?php echo base_url("assets/pictures/userpp.jpg");?>" class="userr-image float-right rounded-circle" alt="">  <!-- KULLANICI RESMİNİ BURAYA ÇEK -->
+            </div>
+            <div class="col-md-6">
+              <h1 class="fancy-font text-left mt-3 ml-4"><?php 
             if (isset($user -> email)){
               echo '<a class=" fancy-font text-white"';
               echo base_url("profile/" .md5($user -> email)); 
@@ -87,6 +93,8 @@
             ?>
             
           </h1>
+          </div>
+          </div>
             <button type="button" class="btn btn-info text-pubrent-bg offset-4 mr-5 customwidth2">Published Items</button>
             <button type="button" class="btn btn-info text-pubrent-bg customwidth2">Rented Items</button>
             <br><br><br>

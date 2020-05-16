@@ -19,6 +19,11 @@ body::after {
   width: 200px;
   height: 200px;
 }
+.userr-image {
+  width: 90px;
+  height: 90px;
+}
+
 .plsol {
   opacity: 0;
   transition: all 0.02s ease;
@@ -45,12 +50,12 @@ body::after {
  boyurunu ayarlamak amacı ile yazdım haberin olsun eğer comment ve altındaki
   css hala duruyorsa silmeden önce dropbox_v viewindeki table için bişeler ayarla öyle devam et :* love u  */
 
-   td img{
-     width: 150px;
-   }
-   tr td:first-child{
-     width: 150px;
-   }
+td img {
+  width: 150px;
+}
+tr td:first-child {
+  width: 150px;
+}
 .customwidth {
   width: 100px !important;
 }
