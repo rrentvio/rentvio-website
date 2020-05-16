@@ -57,8 +57,11 @@ tr td:first-child {
   width: 150px;
 }
 .customwidth {
-  width: 100px !important;
+  width: 110px !important;
 }
 .customwidth2 {
   width: 150px !important;
+}
+.borderthickness {
+  border: 6px solid rgb(177, 177, 177);
 }
