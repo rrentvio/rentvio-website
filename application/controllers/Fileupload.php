@@ -90,7 +90,6 @@ class fileupload extends CI_Controller{
         $pCategory      = $this->catagory($this->input->post("pCategory"));
         $pPrice         = $this->input->post("pPrice");
         $pPublish       = $this->input->post("pPublish");
-        $pImage         = $this->input->post("pImage");
 
         
         $newProduct = array(
@@ -100,8 +99,7 @@ class fileupload extends CI_Controller{
             "price"                 =>  $pPrice,
             "product_description"   =>  $pDescription,
             "product_category"      =>  $pCategory,
-            "publish"             =>  isSet($pPublish),
-            "product_picture"       =>  null
+            "publish"             =>  isSet($pPublish)
         );
 
         $insert = $this->db->insert("user_product",$newProduct);
@@ -139,7 +137,6 @@ class fileupload extends CI_Controller{
         $pCategory      = $this->catagory($this->input->post("pCategory"));
         $pPrice         = $this->input->post("pPrice");
         $pPublish       = $this->input->post("isPublish");
-        $pImage         = $this->input->post("pImage");
 
         $newProduct = array(
             "id"                    =>  $pId,
@@ -149,7 +146,6 @@ class fileupload extends CI_Controller{
             "product_description"   =>  $pDescription,
             "product_category"      =>  $pCategory,
             "publish"               =>  isSet($pPublish),
-            "product_picture"       =>  null
         );
 
         $insert = $this->db->where("id",$pId)->update("user_product",$newProduct);
@@ -159,18 +155,49 @@ class fileupload extends CI_Controller{
     public function deleteProduct($did){
 
         $this->db->where("id",$did)->delete("user_product");
+        $this->deleteAll($did);
         redirect(base_url("profile/"));
     }
 
 
-    //dropzone denneme amaçlı silinecekkk 
+    
 
-    public function dropzone(){
-        $viewData["images"] = $this->db->get("images")->result();
-        $this-> load-> view("dropbox_v",$viewData);
+    public function getImages($id){
+        $viewData= new stdClass();
+        $viewData->imageget= true;
+        $viewData->productId= $id;
+
+        $this-> load-> model("image_model");
+             $viewData->images=$this-> image_model->get_all(
+                array(
+                    "product_id" => $id
+                 )
+            );
+    $this->send($viewData);
+}
+
+
+//dropzone denneme amaçlı silinecekkk 
+
+    public function deleteAll($pid){
+        $this->db->where("product_id",$pid)->delete("images");    
+    }   
+
+
+    public function deletedropzone($id){
+        $this->load->model("image_model");
+        $a=$this-> image_model->get_all(
+            array(
+                "id" => $id
+             )
+        );
+
+        $pid=(reset($a)->product_id);
+        $this->db->where("id",$id)->delete("images");
+        $this->getImages($pid);    
     }
 
-    public function upload($pid){
+    public function dropzone($pid){
 
         $config["allowed_types"] = "jpg|gif|png|webm";
         $config["upload_path"] ="product_images/";

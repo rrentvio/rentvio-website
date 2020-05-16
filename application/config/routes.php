@@ -66,4 +66,5 @@ $route['profile'] = "userprofile";
 $route['signup'] = "signup";
 $route['sign-up'] = "signup/addusr";  
 $route['signup/(:any)'] = "signup/$1";
-$route['dropzone'] = "fileupload/dropzone"; //dropzone deneme amaçlı silinecek ()
+$route['dropzone/(:any)'] = "fileupload/dropzone/$1)"; //dropzone deneme amaçlı silinecek ()
+$route['deleteimage/(:any)'] = "fileupload/deletedropzone/$1)";

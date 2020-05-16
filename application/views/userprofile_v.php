@@ -116,14 +116,15 @@
                         <td class="text-white fancy-font pointer" ><?php echo $product->product_description?></td>
                         <td class="text-white fancy-font pointer" ><?php echo $product->product_category?></td>
                         <td class="text-white fancy-font pointer" > <button type="button" id="edit" class="btn btn-warning mr-3 text-edit-bg customwidth" data-toggle="modal" data-target="#editModal" 
-
+                        data-prodId="<?php echo($product->id); ?>"
                         data-prodname="<?php echo($product->product_name); ?>"
                         data-proddesc="<?php echo($product->product_description); ?>"
                         data-prodprice="<?php echo($product->price); ?>" 
                         data-prodcat="<?php echo(catagory($product->product_category));?>" 
                         > Edit &nbsp; <i class="far fa-edit"></i></button>
                             <a class="btn btn-danger customwidth text-sil-bg mr-3 " href=  <?php echo (base_url("deleteproductdb/" .$product->id)); ?> role="button">Delete &nbsp;<i class="far fa-trash-alt"></i></a> 
-                            <button type="button" class="btn btn-success customwidth mr-0">Picture &nbsp; <i class="far fa-image"></i></button>
+                            <a  class="nav-link fancy-font d-none " data-toggle="modal"  data-prodId="<?php echo($product->id); ?>" data-target="#imageUpload"  id="ioad">hidden modal sender</a>
+                            <a type="button"  id="imagload" href="<?php echo base_url("fileupload/getImages/$product->id")?>" class=" btn btn-success customwidth mr-0">Pictures &nbsp; <i class="far fa-image"></i></a>
                           </td>
                     </tr>
                 <?php }?>
@@ -288,54 +289,49 @@
       </div>
       <div class="modal-body">
     <div class="container">
-        <form action="/file-upload"
+        <form action="<?php echo base_url("dropzone/$productId")?>"
           class="dropzone"
           id="pimageDropzone">
         </form>
         <hr>
-
         <h3>Product Pictures</h3>
         <table class="table table-bordered table-striped table-hover ">
             <thead>
                 <th>Preview</th>
                 <th>File Name</th>
+                <th>???????</th>
+
             </thead>
-            <tbody>
-            <?php foreach($images as $image){ ?>
+            <tbody class="newImage">
+            <small>Press <b><i>F5</i></b> to see newly added pictures. </small>
+            <?php
+            
+            foreach($images as $image){ ?>
                 <tr>
-                    <td>
-                        <img src="<?php echo $image->pic_url;?>" alt="uff.sss">
+                    <td class="dropzoneimageClass" >
+                        <img class=" newImage  " src="<?php echo $image->pic_url;?>" alt="uff.sss">
                     </td>
-                    <td>
+                    <td class ="dropzoneimageNameClass">
                         <?php echo $image->pic_name; ?>
                     </td>
-                </tr>
-                        <?php }?>    
+                     
+                    <td>
+                    <a class="btn btn-danger customwidth text-sil-bg mr-3 " href=  <?php echo (base_url("deleteimage/" .$image->id)); ?> role="button">Delete &nbsp;<i class="far fa-trash-alt"></i></a>
+                    </td>
+                    
+                </tr><?php }?>    
             </tbody>
         </table>
-
-</div>
-    
-    
     </div>
-      </div>
+    </div>
+      
       <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  
         <button type="submit" class="btn btn-primary">Submit</button> 
-
       </div>
     </div>
+    </div>
   </div>
-</div>
-
-
-
-
-
-
-
-
-
 
 <script>
   $('#editModal').on('show.bs.modal', function (event) {
@@ -356,6 +352,20 @@
 })
 </script>
 
+
+<script>
+  $('#imageUpload').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var prodId = button.data('prodid') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  //modal.find('.modal-title').text('New message to ' + recipient)
+  modal.find('.modal-body #productId ').val(prodId)
+})
+</script>
+
+
 <?php
 if (isset($fromadd)){
 echo '<script>
@@ -367,7 +377,21 @@ function signupModal() {
 }
 </script>
 ';
-}?>
+}
+
+if (isset($imageget)){
+  echo '<script>
+window.onload = function() {
+  signupModal();
+};
+function signupModal() {
+  document.getElementById("ioad").click();
+}
+</script>
+';
+}
+
+?>
 <?php
 if (isset($formedit)){
   echo '
@@ -398,6 +422,7 @@ function catagory($i){
   }
 }
 ?>
+
   
 <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
