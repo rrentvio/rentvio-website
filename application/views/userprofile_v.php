@@ -8,14 +8,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=chrome">
     <title><?php echo$user ->name?></title>
     <link rel="stylesheet" href=<?php echo base_url("assets/css/bootstrap.min.css");?>>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <script src=<?php echo base_url("assets/js/bootstrap.bundle.js");?>></script>
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom.css");?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom2.css");?>">
-    <link rel="stylesheet" href="<?php echo base_url("assets/dropzone/dropzone.js");?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/dropzone/dropzone.css");?>">
+    <link rel="stylesheet" href="<?php echo base_url("assets/dropzone/basic.css");?>">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src=<?php echo base_url("assets/js/bootstrap.bundle.js");?>></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
-</head>
+    <script src="<?php echo base_url("assets/dropzone/dropzone.js");?>"></script>
+  </head>
 <body class=" bg-secondary" >
 <img src="<?php echo base_url("assets/pictures/giris.jpg");?>" alt="" class="keke" srcset="">
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-10 mt-10 position-fixed wwww">
@@ -182,12 +183,10 @@
   <label class="custom-control-label" for="pPublish"> <b><i>Publish when appored </i></b> </label>
     </div>
     <br>
-  <div class="form-group">
-    <label for="pImage">         <b><i>Enter product Image  </i></b>       </label>
-    <input type="file" class="form-control-file" id="pImage" name="pImage">
-  </div>
-  
 
+    <!-- Drop zone eklenecek-->
+    <div class="dropzone" id="addDropzone" ></div>
+    
     </div>
       </div>
       <div class="modal-footer">
@@ -273,6 +272,22 @@
     </div>
   </div>
 </div>
+<script>
+Dropzone.autoDiscover = false;
+	jQuery(document).ready(function() {
+    
+    var myDropzone = new Dropzone("div#addDropzone", { 
+      autoProcessQueue: false,
+      url: "<?php echo base_url("fileupload/upload/");?>",
+      parallelUploads: 10
+    });
+    $('#uploadfiles').click(function(){
+   myDropzone.processQueue();
+});
+
+	});
+    </script>
+
 
 <script>
   $('#editModal').on('show.bs.modal', function (event) {
