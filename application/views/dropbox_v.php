@@ -16,7 +16,7 @@
 <body>
 <script src="<?php echo base_url("assets/dropzone/dropzone.js");?>"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <script src=<?php echo base_url("assets/js/bootstrap.bundle.js");?>></script>
+<script src=<?php echo base_url("assets/js/bootstrap.bundle.js");?>></script>
   <h1 class ="text-center">Dropzone</h1>
 <h2 class ="text-center">Deneme amaçlıdır silinecek !!! </h2>    
 
