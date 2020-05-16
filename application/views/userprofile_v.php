@@ -193,10 +193,6 @@
   <label class="custom-control-label" for="pPublish"> <b><i>Publish when appored </i></b> </label>
     </div>
     <br>
-
-    <!-- Drop zone eklenecek-->
-    <div class="dropzone" id="addDropzone" ></div>
-    
     </div>
       </div>
       <div class="modal-footer">
@@ -269,10 +265,6 @@
           <label class="custom-control-label" for="isPublish"> <b><i>Publish when appored </i></b> </label>
           </div>
           <br>
-            <div class="form-group">
-                <label for="pPicture"> <b> <i>Picture of the product </i></b> </label>
-                <input type="file" class="form-control-file" id="pPicture" name="pPicture" placeholder="EnterPrice ">
-            </div>
       </div>
       <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  
@@ -282,21 +274,67 @@
     </div>
   </div>
 </div>
-<script>
-Dropzone.autoDiscover = false;
-	jQuery(document).ready(function() {
-    
-    var myDropzone = new Dropzone("div#addDropzone", { 
-      autoProcessQueue: false,
-      url: "<?php echo base_url("fileupload/upload/");?>",
-      parallelUploads: 10
-    });
-    $('#uploadfiles').click(function(){
-   myDropzone.processQueue();
-});
 
-	});
-    </script>
+<!-- Image upload modal -->
+
+<div class="modal fade" id="imageUpload" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editModalLabel">Edit Product</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+    <div class="container">
+        <form action="/file-upload"
+          class="dropzone"
+          id="pimageDropzone">
+        </form>
+        <hr>
+
+        <h3>Product Pictures</h3>
+        <table class="table table-bordered table-striped table-hover ">
+            <thead>
+                <th>Preview</th>
+                <th>File Name</th>
+            </thead>
+            <tbody>
+            <?php foreach($images as $image){ ?>
+                <tr>
+                    <td>
+                        <img src="<?php echo $image->pic_url;?>" alt="uff.sss">
+                    </td>
+                    <td>
+                        <?php echo $image->pic_name; ?>
+                    </td>
+                </tr>
+                        <?php }?>    
+            </tbody>
+        </table>
+
+</div>
+    
+    
+    </div>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  
+        <button type="submit" class="btn btn-primary">Submit</button> 
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
 
 
 <script>
