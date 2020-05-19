@@ -97,9 +97,7 @@ Class Users extends CI_Controller{
     public function sil(){
         $this->session->unset_userdata("user_list");
     }
-
-    //listt function check amaçlı sonra sil 
-    
+    //listt function check amaçlı sonra sil  
     public function listt(){
         echo "users still online: "; 
         echo "<br/><br/>";
@@ -118,7 +116,5 @@ Class Users extends CI_Controller{
         }
 
     }
-
-
-
+    
 }

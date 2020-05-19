@@ -129,7 +129,6 @@ class fileupload extends CI_Controller{
             //$this->load->view("homepage_v",$viewData);
         }
 
-
         else{
         $pId            = $this->input->post("productId");  
         $pDescription   = $this->input->post("pDescription");
@@ -138,7 +137,7 @@ class fileupload extends CI_Controller{
         $pPrice         = $this->input->post("pPrice");
         $pPublish       = $this->input->post("isPublish");
 
-        $newProduct = array(
+        $editProduct = array(
             "id"                    =>  $pId,
             "user_id"               =>  $uid,
             "product_name"          =>  $pName,
@@ -148,7 +147,7 @@ class fileupload extends CI_Controller{
             "publish"               =>  isSet($pPublish),
         );
 
-        $insert = $this->db->where("id",$pId)->update("user_product",$newProduct);
+        $insert = $this->db->where("id",$pId)->update("user_product",$editProduct);
         redirect(base_url("profile/"));
         }}
 
@@ -158,10 +157,7 @@ class fileupload extends CI_Controller{
         $this->deleteAll($did);
         redirect(base_url("profile/"));
     }
-
-
     
-
     public function getImages($id){
         $viewData= new stdClass();
         $viewData->imageget= true;

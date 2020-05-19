@@ -14,7 +14,9 @@ class Home extends CI_Controller{
     public function index(){
         $viewData= new stdClass();           
             $this-> load-> model("user_product_model");
-             $viewData->products=$this-> user_product_model->get_all();
+            $this-> load-> model("image_model");
+            $viewData->images=$this-> image_model->get_all();
+            $viewData->products=$this-> user_product_model->get_all();
             $this-> load-> view("homepage_v",$viewData);
             
     }
@@ -23,6 +25,8 @@ class Home extends CI_Controller{
         if (isset( $user_list[$id])){
              $activeuser = $user_list[$id];
              $viewData= new stdClass();
+            $this-> load-> model("image_model");
+            $viewData->images=$this-> image_model->get_all();
         $viewData->user= $activeuser;
 
        
@@ -32,7 +36,10 @@ class Home extends CI_Controller{
         $this-> load-> view("homepage_v",$viewData);
         }
         else{
-            $viewData= new stdClass();           
+            $viewData= new stdClass(); 
+            
+            $this-> load-> model("image_model");
+            $viewData->images=$this-> image_model->get_all();          
             $this-> load-> model("user_product_model");
              $viewData->products=$this-> user_product_model->get_all();
             $this-> load-> view("homepage_v",$viewData);

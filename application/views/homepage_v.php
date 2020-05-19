@@ -100,15 +100,19 @@
                             
                   <?php
 
-                  foreach ($products as $product){?>
+                  foreach ($products as $product){ ?>
                       <div class="col-md-4">
                         <div class="jumbotron p-3 text-deneme-bg text-white text-center">
-                          <a    href="<?php echo base_url( "product/".$product->id)?>">
+                          <a    href=" <?php echo base_url( "product/".$product->id)?>">
                           <div class="row pointer " >  <!-- BURAYA İD --> 
                             <div class="col-md-8 offset-1">
-                              <img src="<?php if(isset($product->product_picture)){echo $product->product_picture;} else echo base_url("assets/pictures/Z.png");?>" alt="" class="no-image">
+                              <img src="<?php 
+                                foreach($images as $image){
+                                  if ($image->product_id == $product->id){
+                                    $url = $image->pic_url;break;} 
+                                    else{ $url=  base_url("assets/pictures/Z.png");}} echo$url; ?> " alt="" class="no-image">
                               <br><br>
-                              <h6 class="text-light fancy-font text-left"><?php echo $product->product_name?></h6>
+                              <h6 class="text-light fancy-font text-left"><?php echo $product->product_name; ?></h6>
                               <hr>
                               <h6 class="text-light fancy-font text-left"><?php echo $product->price?>$ Per Hour</h6>
                               <hr>
@@ -117,8 +121,8 @@
                           </div></a>
                         </div>
                       </div>
-                  <?php }?>
-          
+                  <?php  }?>
+
         </div>
     </div>
   </div>
@@ -189,7 +193,7 @@
         </button>
       </div>
         <div class="modal-body">
-        <form action="<?php  echo base_url("sign-up")?>" method="post">
+        <form action="<?php  echo base_url("sign-up") ?>" method="post">
     
     <div id=email  class="form-group">
         <br>
@@ -284,7 +288,7 @@ function myFunction() {
 }
 </script>
 -->
-<script src="<?php echo base_url("assets/js/custom.js");?>"></script>
+<script src="<?php echo base_url("assets/js/custom.js"); ?> "></script>
 <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -302,7 +306,3 @@ function myFunction() {
     ></script>
 </body>
 </html>
-
-
-
-

@@ -85,7 +85,8 @@
             if (isset($user -> email)){
               echo '<a class=" fancy-font text-white"';
               echo base_url("profile/" .md5($user -> email)); 
-              echo ">",$user->full_name, "</a>";  ?><i class="fas fa-cogs ml-4 text-white pointer" ></i><br>
+              echo ">",$user->full_name, "</a>";  ?> <i class="fas fa-cogs ml-4 text-white pointer" > </i> <br>  
+              <a href=" <?php echo base_url("pedit/".md5($user -> email))?>"> Bunu ayar işaretinin içine al  </a>
             <?php
             }
             else{              
@@ -327,7 +328,7 @@
       
       <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  
-        <button type="submit" class="btn btn-primary">Submit</button> 
+        <button class="btn btn-primary" onClick="window.location.reload();">Upload</button>
       </div>
     </div>
     </div>
