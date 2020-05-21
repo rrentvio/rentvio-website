@@ -30,7 +30,11 @@
         echo("Yükleyen kişi name i (başka bir veri lazım sa bir üst line a bak...)= ".$uploader."<br>");
         //print_r($product_images);
         echo "<br><br><br>";
-        echo '<a href="'.base_url().'">Anasayfa</a>';
+        //bir sayfa geriye gitmek amaçlı script için şu partı silmemen lazım = onclick="goBack()"
+        echo '<button onclick="goBack()" >Go Back </button>';
+        
+
+
 
         //örnek resim çekme kodu
         echo "<br><br><br>";
@@ -53,3 +57,9 @@
         
 </body>
 </html>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>

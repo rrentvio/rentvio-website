@@ -20,17 +20,33 @@ class userProfile extends CI_Controller{
         }
     }
     
-    public function profile($id){        
+    public function profile($id){      
+        $exp= explode("%20",$id);
+        $id=$exp[0];
         $user_list = $this -> session -> userdata("user_list");
         $activeuser = $user_list[$id];
         $viewData= new stdClass();
         $viewData->user= $activeuser;
+        if ( !empty($exp[1])){
+        echo$exp[1];
         $this-> load-> model("user_product_model");
         $viewData->products=$this-> user_product_model->get_all(
             array(
-                "user_id" => $activeuser->id
+                "renter_id" => $activeuser->id
              )
         );
+        }
+        else {
+            $this-> load-> model("user_product_model");
+            $viewData->rented = true;
+            $viewData->products=$this-> user_product_model->get_all(
+                array(
+                    "user_id" => $activeuser->id
+                 )
+            );
+        }  
+        
+        
         $this->load->view("userprofile_v", $viewData);
     }
 

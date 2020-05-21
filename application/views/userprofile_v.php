@@ -78,7 +78,11 @@
           <br><br><br><br><br>
           <div class="row">
           <div class="col-md-4">
-            <img src="<?php echo base_url("assets/pictures/userpp.jpg");?>" class="userr-image float-right rounded-circle" alt="">  <!-- KULLANICI RESMİNİ BURAYA ÇEK -->
+            <img src="<?php 
+            if ($user->user_pic == null)
+            echo base_url("assets/pictures/users/nousrpp.png");
+            else echo ($user->user_pic);
+            ?>" class="userr-image float-right rounded-circle" alt="">  <!-- KULLANICI RESMİNİ BURAYA ÇEKildi ✅ -->
             </div>
             <div class="col-md-6">
               <h1 class="fancy-font text-left mt-3 ml-4"><?php 
@@ -86,7 +90,8 @@
               echo '<a class=" fancy-font text-white"';
               echo base_url("profile/" .md5($user -> email)); 
               echo ">",$user->full_name, "</a>";  ?> <i class="fas fa-cogs ml-4 text-white pointer" > </i> <br>  
-              <a href=" <?php echo base_url("pedit/".md5($user -> email))?>"> Bunu ayar işaretinin içine al  </a>
+              <a href=" <?php echo base_url("pedit/".md5($user -> email))?>"> Bunu ayar işaretinin içine al yada istersen profil fotonun içinelink olarak 
+              ekle hover olunca yayar işareti gelsin oradan devam etisin </a>
             <?php
             }
             else{              
@@ -96,9 +101,9 @@
           </h1>
           </div>
           </div>
-            <button type="button" class="btn btn-info text-pubrent-bg offset-4 mr-5 customwidth2">Published Items</button>
-            <button type="button" class="btn btn-info text-pubrent-bg customwidth2">Rented Items</button>
-            <br><br><br>
+            <a type="button" href="<?php echo base_url("profile/".md5($user->email)); ?>" class="btn btn-info text-pubrent-bg text-white offset-4 mr-5 customwidth2">Published Items</a>
+            <a type="button" href="<?php echo base_url("profile/".md5($user->email)." rented" ); ?>" class="btn btn-info text-pubrent-bg text-white customwidth2">Rented Items</a>
+            <br><br>
             <table class=" table table-hover text-deneme-bg ">
             <thead>
               <th class="text-white fancy-font font-weight-normal">Product Name</th>
@@ -108,15 +113,22 @@
               <th class="text-white fancy-font font-weight-normal text-center">Update</th>
             </thead>
             
-            <?php 
-            //print_r($products);                                               (deneme amaçlı kontrol gerekirse aktif edin pls )
-            foreach ($products as $product){?>
-                    <tr class="borderthickness">
-                        <td class="text-white fancy-font pointer"><?php echo $product->product_name?></td>
+
+
+
+
+
+
+            <?php foreach ($products as $product){?>
+            <tbody>                    
+                    <tr>
+                        <td data-href="<?php echo base_url( "product/".$product->id);  ?>"
+                         class="text-white fancy-font pointer"><?php echo $product->product_name?></td>
                         <td class="text-white fancy-font pointer" ><?php echo $product->price?></td>
                         <td class="text-white fancy-font pointer" ><?php echo $product->product_description?></td>
                         <td class="text-white fancy-font pointer" ><?php echo $product->product_category?></td>
-                        <td class="text-white fancy-font pointer" > <button type="button" id="edit" class="btn btn-warning mr-3 text-edit-bg customwidth" data-toggle="modal" data-target="#editModal" 
+                        <td class="text-white fancy-font pointer" > 
+                        <button type="button" id="edit" class="btn btn-warning mr-3 text-edit-bg customwidth" data-toggle="modal" data-target="#editModal" 
                         data-prodId="<?php echo($product->id); ?>"
                         data-prodname="<?php echo($product->product_name); ?>"
                         data-proddesc="<?php echo($product->product_description); ?>"
@@ -129,14 +141,14 @@
                           </td>
                     </tr>
                 <?php }?>
-
+               
+                
             </tbody>
             </table> 
         </div>
     </div>
 </div>
 </div>
-
 
 <!-- add product Modal -->
 <div class="modal fade" id="addProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -166,7 +178,6 @@
                     <small class="float-right"><?php echo form_error("pDescription") ?></small>
                    <?php } ?>
   </div>
-    
   <div class="form-group">
     <label for="pCategory"> <b><i>Choose Categroy </i></b> </label>
     <select class="form-control" id="pCategory"  name="pCategory">
@@ -304,9 +315,8 @@
 
             </thead>
             <tbody class="newImage">
-            <small>Press <b><i>F5</i></b> to see newly added pictures. </small>
+            <small>Press <b><i>Submit</i></b> to see newly added pictures. </small>
             <?php
-            
             foreach($images as $image){ ?>
                 <tr>
                     <td class="dropzoneimageClass" >
@@ -315,17 +325,14 @@
                     <td class ="dropzoneimageNameClass">
                         <?php echo $image->pic_name; ?>
                     </td>
-                     
                     <td>
                     <a class="btn btn-danger customwidth text-sil-bg mr-3 " href=  <?php echo (base_url("deleteimage/" .$image->id)); ?> role="button">Delete &nbsp;<i class="far fa-trash-alt"></i></a>
                     </td>
-                    
                 </tr><?php }?>    
             </tbody>
         </table>
     </div>
     </div>
-      
       <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  
         <button class="btn btn-primary" onClick="window.location.reload();">Upload</button>
@@ -333,7 +340,6 @@
     </div>
     </div>
   </div>
-
 <script>
   $('#editModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
@@ -365,7 +371,12 @@
   modal.find('.modal-body #productId ').val(prodId)
 })
 </script>
-
+<script>
+  //table row to href 
+$('td[data-href]').on("click", function() {
+    document.location = $(this).data('href');
+});
+</script>
 
 <?php
 if (isset($fromadd)){
