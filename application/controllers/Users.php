@@ -8,6 +8,7 @@ Class Users extends CI_Controller{
         parent::__construct();
         
         $this->load->model("user_model");
+        $this->load->model("image_model");
         $this->load->library('session');
     }
 
@@ -76,6 +77,7 @@ Class Users extends CI_Controller{
                 $viewData->fromlogin= true;
                 $this-> load-> model("user_product_model");
              $viewData->products=$this-> user_product_model->get_all();
+             $viewData->images=$this-> image_model->get_all();
                 $this->load->view("homepage_v",$viewData);
             }
 

@@ -21,6 +21,7 @@ class Home extends CI_Controller{
             $this-> load-> view("homepage_v",$viewData);
             
     }
+    //değişecek !!!
     public function trial(){
         
         $products = $this-> user_product_model->checkStatus();

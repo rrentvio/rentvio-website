@@ -28,7 +28,8 @@ class userProfile extends CI_Controller{
         $viewData= new stdClass();
         $viewData->user= $activeuser;
         if ( !empty($exp[1])){
-        echo$exp[1];
+        //echo$exp[1];
+        $viewData->rented = true;
         $this-> load-> model("user_product_model");
         $viewData->products=$this-> user_product_model->get_all(
             array(
@@ -38,7 +39,6 @@ class userProfile extends CI_Controller{
         }
         else {
             $this-> load-> model("user_product_model");
-            $viewData->rented = true;
             $viewData->products=$this-> user_product_model->get_all(
                 array(
                     "user_id" => $activeuser->id

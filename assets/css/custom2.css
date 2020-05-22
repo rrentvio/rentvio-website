@@ -23,11 +23,11 @@
 
 /* FONT TYPE FOR LOGO */
 @font-face {
-  font-family: myFirstFont;
+  font-family: AIFRAGME;
   src: url("../Fonts/AIFRAGME.TTF");
 }
 @font-face {
-  font-family: secondOne;
+  font-family: painter;
   src: url("../Fonts/Painter.ttf");
 }
 @font-face {
@@ -35,20 +35,20 @@
   src: url("../Fonts/Pangolin-Regular.ttf");
 }
 .diffont {
-  font-family: secondOne;
+  font-family: painter;
 }
 /* ------------- */
 .bgbetter {
   background-color: rgba(112, 112, 112, 0.8);
 }
 .text-deneme {
-  color: #ffa5a5 !important;
+  color: #D4AF37 !important; 
 }
 .text-deneme-bg {
   background-color: #b98080;
 }
 .text-ekle-bg {
-  background-color: #809252;
+  background-color: #D4AF37;
 }
 .text-sil-bg {
   background-color: #ff5252;
@@ -57,6 +57,7 @@
   background-color: #ffd252;
 }
 .text-pubrent-bg {
+  
   background-color: rgba(78, 151, 149, 0.801);
 }
 .fancy-font {

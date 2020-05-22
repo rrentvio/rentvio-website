@@ -66,11 +66,13 @@
               //echo base_url("giris"); echo"> Signin</a>"; 
               }
             ?>
-            <a  class="nav-link fancy-font d-none " data-toggle="modal" data-target="#signUp" data-whatever="buraya istediğin bir veriyi gir"  id="signup"> Sign in</a>
             </li>
     </ul>
           </nav>
-<div class="container bgbetter ">
+
+
+
+          <div class="container bgbetter ">
     <div class="row">
       
          <div class="col-md-12 ">
@@ -108,17 +110,10 @@
             <thead>
               <th class="text-white fancy-font font-weight-normal">Product Name</th>
               <th class="text-white fancy-font font-weight-normal">Price</th>
-              <th class="text-white fancy-font font-weight-normal">Product Decrition</th>
+              <th class="text-white fancy-font font-weight-normal">Product Description</th>
               <th class="text-white fancy-font font-weight-normal">Cathegory</th>
-              <th class="text-white fancy-font font-weight-normal text-center">Update</th>
+              <?php if(!isset($rented)) echo '<th class="text-white fancy-font font-weight-normal text-center">Update</th>'; ?> 
             </thead>
-            
-
-
-
-
-
-
             <?php foreach ($products as $product){?>
             <tbody>                    
                     <tr>
@@ -128,21 +123,21 @@
                         <td class="text-white fancy-font pointer" ><?php echo $product->product_description?></td>
                         <td class="text-white fancy-font pointer" ><?php echo $product->product_category?></td>
                         <td class="text-white fancy-font pointer" > 
-                        <button type="button" id="edit" class="btn btn-warning mr-3 text-edit-bg customwidth" data-toggle="modal" data-target="#editModal" 
+                        
+                        
+                        <button type="button" id="edit" class=" <?php if(isset($rented)) echo"d-none "?> btn btn-warning mr-3 text-edit-bg customwidth" data-toggle="modal" data-target="#editModal" 
                         data-prodId="<?php echo($product->id); ?>"
                         data-prodname="<?php echo($product->product_name); ?>"
                         data-proddesc="<?php echo($product->product_description); ?>"
                         data-prodprice="<?php echo($product->price); ?>" 
                         data-prodcat="<?php echo(catagory($product->product_category));?>" 
                         > Edit &nbsp; <i class="far fa-edit"></i></button>
-                            <a class="btn btn-danger customwidth text-sil-bg mr-3 " href=  <?php echo (base_url("deleteproductdb/" .$product->id)); ?> role="button">Delete &nbsp;<i class="far fa-trash-alt"></i></a> 
+                            <a class="<?php if(isset($rented)) echo"d-none "?>  btn btn-danger customwidth text-sil-bg mr-3 " href=  <?php echo (base_url("deleteproductdb/" .$product->id)); ?> role="button">Delete &nbsp;<i class="far fa-trash-alt"></i></a> 
                             <a  class="nav-link fancy-font d-none " data-toggle="modal"  data-prodId="<?php echo($product->id); ?>" data-target="#imageUpload"  id="ioad">hidden modal sender</a>
-                            <a type="button"  id="imagload" href="<?php echo base_url("fileupload/getImages/$product->id")?>" class=" btn btn-success customwidth mr-0">Pictures &nbsp; <i class="far fa-image"></i></a>
+                            <a type="button"  id="imagload" href="<?php echo base_url("fileupload/getImages/$product->id")?>" class="<?php if(isset($rented)) echo"d-none "?>  btn btn-success customwidth mr-0">Pictures &nbsp; <i class="far fa-image"></i></a>
                           </td>
                     </tr>
                 <?php }?>
-               
-                
             </tbody>
             </table> 
         </div>
@@ -340,6 +335,89 @@
     </div>
     </div>
   </div>
+
+
+<!-- User Profile edit modal -->
+
+
+<div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editModalLabel">Edit Product</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action=<?php echo(base_url("editproductdb/" .$user -> id)); ?> method="post">
+          <div class="form-group">
+            <input style=" visibility: hidden; display: none" type="text" class="form-control" name="productId" id="productId">
+          </div>  
+
+        <div class="form-group">
+            <label for="pName"> <b> <i> Product name </i></b> </label>
+            <input type="text" class="form-control" id="pName" name="pName" placeholder="Enter Product Name">
+            <?php if(isset($form_error)) {?>
+                    <small class="float-right"> <b> <?php echo form_error("pName") ?> </b> </small>
+                   <?php } ?>
+          </div>
+          
+          <div class="form-group">
+            <label for="pDescription">  <b> <i>Product Description </i></b></label>
+            <textarea class="form-control" id="pDescription" name="pDescription" rows="3"></textarea>
+            <?php if(isset($form_error)) {?>
+                    <small class="float-right"> <b> <?php echo form_error("pDescription") ?> </b> </small>
+                   <?php } ?>
+          </div>
+           
+          <div class="form-group">
+            <label for="pCategory"> <b><i>Choose Categroy </i></b> </label>
+            <select class="form-control" id="pCategory"  name="pCategory">
+                <option value="1">Fotoğraf & Kamera </option>
+                <option value="2">Kitap Dergi       </option>
+                <option value="3">Spor Ekipmanları  </option>
+                <option value="4">Bahçe & Yapı Market</option>
+                <option value="5">Teknik Elektronik </option>
+                <option value="6">Diğer Herşey      </option>   
+            </select>
+            <?php if(isset($form_error)) {?>
+                    <small class="float-right"> <b> <?php echo form_error("pCatagory") ?> </b> </small>
+                   <?php } ?>
+          </div>
+          <div class="form-group">
+            <label for="pPrice"> <b> <i>Price per hour </i></b> </label>
+            <input type="text" class="form-control" id="pPrice" name="pPrice" placeholder="EnterPrice ">
+            <?php if(isset($form_error)) {?>
+                    <small class="float-right"> <b> <?php echo form_error("pPrice") ?> </b> </small>
+                   <?php } ?>
+          </div>
+          <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="isPublish" name="isPublish">
+          <label class="custom-control-label" for="isPublish"> <b><i>Publish when appored </i></b> </label>
+          </div>
+          <br>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  
+        <button type="submit" class="btn btn-primary">Submit</button> 
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+  <!--Scriptleri LÜTFEN .js yapıp içine alırmısın ?  -->
+
+
 <script>
   $('#editModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
