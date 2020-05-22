@@ -39,7 +39,7 @@ public function getdetails($id){
         $viewData->product_images =array();
     }
     else{
-        print_r($pics);
+        //print_r($pics);
         $viewData->product_images =$pics;
     }
     $user_id= (reset($viewData->product_details)->user_id);
