@@ -18,6 +18,8 @@ Class Product extends CI_Controller{
 
 public function getdetails($id){
     //echo $id;
+    $user_list = $this -> session -> userdata("user_list");
+    $activeuser = $user_list[$id];
     $this->load->model("user_product_model");
     $this-> load-> model("image_model");
     $this->load->model("user_model");
@@ -42,9 +44,11 @@ public function getdetails($id){
     }
     $user_id= (reset($viewData->product_details)->user_id);
 
+    
+
     $viewData->user=$this-> user_model->get(
         array(
-            "id" => $user_id
+            "id" => $activeuser->id
          )
     );
     $this->load->view("product_v", $viewData);
