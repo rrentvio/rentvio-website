@@ -18,8 +18,8 @@ Class Product extends CI_Controller{
 
 public function getdetails($id){
     //echo $id;
-    $user_list = $this -> session -> userdata("user_list");
-    $activeuser = $user_list[$id];
+    //$user_list = $this -> session -> userdata("user_list");
+    //$activeuser = $user_list[$id];
     $this->load->model("user_product_model");
     $this-> load-> model("image_model");
     $this->load->model("user_model");
