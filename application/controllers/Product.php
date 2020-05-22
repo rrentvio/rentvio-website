@@ -48,7 +48,7 @@ public function getdetails($id){
 
     $viewData->user=$this-> user_model->get(
         array(
-            "id" => $activeuser->id
+            "id" => 1
          )
     );
     $this->load->view("product_v", $viewData);
