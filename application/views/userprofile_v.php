@@ -18,6 +18,7 @@
     <script src="<?php echo base_url("assets/dropzone/dropzone.js");?>"></script>
   </head>
 <body class=" bg-secondary" >
+  
 <img src="<?php echo base_url("assets/pictures/giris.jpg");?>" alt="" class="keke" srcset="">
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-10 mt-10 position-fixed wwww">
     <ul class="navbar-nav mr-auto">
@@ -70,7 +71,11 @@
     </ul>
           </nav>
 
-
+          <script type="text/javascript">
+    $(document).ready(function() {
+    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+});
+</script>
 
           <div class="container bgbetter ">
     <div class="row">
@@ -80,26 +85,26 @@
           <br><br><br><br><br>
           <div class="row">
           <div class="col-md-4">
-            <img src="<?php 
+          <a href=" <?php echo base_url("pedit/".md5($user -> email))?>"> <img src="<?php 
             if ($user->user_pic == null)
             echo base_url("assets/pictures/users/nousrpp.png");
             else echo ($user->user_pic);
-            ?>" class="userr-image float-right rounded-circle" alt="">  <!-- KULLANICI RESMİNİ BURAYA ÇEKildi ✅ -->
+            ?>" class="userr-image float-right rounded-circle" data-toggle="tooltip" data-placement="bottom" title="Edit Profile" alt=""> </a>
+              <!-- KULLANICI RESMİNİ BURAYA ÇEKildi ✅ -->
             </div>
             <div class="col-md-6">
               <h1 class="fancy-font text-left mt-3 ml-4"><?php 
             if (isset($user -> email)){
               echo '<a class=" fancy-font text-white"';
               echo base_url("profile/" .md5($user -> email)); 
-              echo ">",$user->full_name, "</a>";  ?> <i class="fas fa-cogs ml-4 text-white pointer" > </i> <br>  
-              <a href=" <?php echo base_url("pedit/".md5($user -> email))?>"> Bunu ayar işaretinin içine al yada istersen profil fotonun içinelink olarak 
-              ekle hover olunca yayar işareti gelsin oradan devam etisin </a>
+              echo ">",$user->full_name, "</a>";  ?> <br>  
+              
             <?php
             }
             else{              
               }
             ?>
-            
+         
           </h1>
           </div>
           </div>
@@ -118,14 +123,14 @@
             <tbody>                    
                     <tr>
                         <td data-href="<?php echo base_url( "product/".$product->id);  ?>"
-                         class="text-white fancy-font pointer"><?php echo $product->product_name?></td>
-                        <td class="text-white fancy-font pointer" ><?php echo $product->price?></td>
-                        <td class="text-white fancy-font pointer" ><?php echo $product->product_description?></td>
-                        <td class="text-white fancy-font pointer" ><?php echo $product->product_category?></td>
-                        <td class="text-white fancy-font pointer" > 
+                         class="text-white fancy-font pointer " style="width:8%"><?php echo $product->product_name?></td>
+                        <td class="text-white fancy-font pointer"style="width:20%" ><?php echo substr($product->product_description,0,20)?> ...</td>
+                        <td class="text-white fancy-font pointer"style="width:15%" ><?php echo $product->price?></td>
+                        <td class="text-white fancy-font pointer"style="width:15%" ><?php echo $product->product_category?></td>
+                        <td class="text-white fancy-font pointer text-center"style="width:47%"> 
                         
                         
-                        <button type="button" id="edit" class=" <?php if(isset($rented)) echo"d-none "?> btn btn-warning mr-3 text-edit-bg customwidth" data-toggle="modal" data-target="#editModal" 
+                        <button type="button" id="edit" class=" <?php if(isset($rented)) echo"d-none "?> btn btn-warning mr-3 text-edit-bg text-white customwidth" data-toggle="modal" data-target="#editModal" 
                         data-prodId="<?php echo($product->id); ?>"
                         data-prodname="<?php echo($product->product_name); ?>"
                         data-proddesc="<?php echo($product->product_description); ?>"
@@ -134,7 +139,7 @@
                         > Edit &nbsp; <i class="far fa-edit"></i></button>
                             <a class="<?php if(isset($rented)) echo"d-none "?>  btn btn-danger customwidth text-sil-bg mr-3 " href=  <?php echo (base_url("deleteproductdb/" .$product->id)); ?> role="button">Delete &nbsp;<i class="far fa-trash-alt"></i></a> 
                             <a  class="nav-link fancy-font d-none " data-toggle="modal"  data-prodId="<?php echo($product->id); ?>" data-target="#imageUpload"  id="ioad">hidden modal sender</a>
-                            <a type="button"  id="imagload" href="<?php echo base_url("fileupload/getImages/$product->id")?>" class="<?php if(isset($rented)) echo"d-none "?>  btn btn-success customwidth mr-0">Pictures &nbsp; <i class="far fa-image"></i></a>
+                            <a type="button"  id="imagload" href="<?php echo base_url("fileupload/getImages/$product->id")?>" class="<?php if(isset($rented)) echo"d-none "?>  btn text-pictures-bg text-white customwidth mr-0">Pictures &nbsp; <i class="far fa-image"></i></a>
                           </td>
                     </tr>
                 <?php }?>
@@ -513,6 +518,7 @@ function catagory($i){
 }
 ?>
 
+
   
 <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -529,6 +535,7 @@ function catagory($i){
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    
 </body>
 </html>
 

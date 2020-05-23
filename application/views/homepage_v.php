@@ -102,8 +102,8 @@
 
                   foreach ($products as $product){ ?>
                       <div class="col-md-4">
-                        <div class="jumbotron p-3 text-deneme-bg text-white text-center">
-                          <a    href=" <?php echo base_url( "product/".$product->id)?>">
+                        <div class="jumbotron p-3 text-deneme-bg text-white text-center ">
+                          <a  class="text-decoration-none"  href=" <?php echo base_url( "product/".$product->id)?>">
                           <div class="row pointer " >  <!-- BURAYA İD --> 
                             <div class="col-md-8 offset-1">
                               <img src="<?php
@@ -115,7 +115,7 @@
                                   }
                                     else{ $url = base_url("assets/pictures/nopic.png");} echo $url; ?> " alt="" class="no-image">
                               <br><br>
-                              <h6 class="text-light fancy-font text-left"><?php echo $product->product_name; ?></h6>
+                              <h6 class="text-light fancy-font text-left "><?php echo $product->product_name; ?></h6>
                               <hr>
                               <h6 class="text-light fancy-font text-left"><?php echo $product->price?>$ Per Hour</h6>
                               <hr>

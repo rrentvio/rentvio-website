@@ -51,10 +51,13 @@
   background-color: #d4af37;
 }
 .text-sil-bg {
-  background-color: #ff5252;
+  background-color: #af3f3f;
+}
+.text-pictures-bg {
+  background-color: #318847;
 }
 .text-edit-bg {
-  background-color: #ffd252;
+  background-color: #d3ac41;
 }
 .text-pubrent-bg {
   background-color: rgba(78, 151, 149, 0.801);
@@ -71,7 +74,7 @@
 
 /* for sliders */
 .slidecontainer {
-  width: 50%
+  width: 50%;
 }
 
 .slider {
@@ -81,9 +84,9 @@
   background: #d3d3d3;
   outline: none;
   opacity: 0.7;
-  border-radius: 5px;  
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+  border-radius: 5px;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
 }
 
 .slider:hover {
