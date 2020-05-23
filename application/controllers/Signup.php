@@ -7,6 +7,7 @@ class signUp extends CI_Controller{
         parent::__construct();
         $this->load->model("user_model");
         $this->load->model("user_product_model");
+        $this-> load-> model("image_model");
         
 
     }
@@ -27,9 +28,9 @@ class signUp extends CI_Controller{
 
         if ($this->form_validation->run() === FALSE){
             //echo validation_errors(); 
-            $this-> load-> model("user_product_model");
             $viewData= new stdClass();
             $viewData->products=$this-> user_product_model->get_all();
+            $viewData->images=$this-> image_model->get_all();
             $viewData->form_error = true;
             $viewData->fromsignup =true;
             $this->load->view("homepage_v",$viewData);
@@ -46,10 +47,10 @@ class signUp extends CI_Controller{
                 "password"      =>  md5($pass),
                 "user_name"     =>  $usrName
             );
-                print_r($newUser);
-                echo"<br>";       
+                //print_r($newUser);
+                //echo"<br>";       
                 $insert = $this->db->insert("users",$newUser);
-                echo"Buraya (burası signup controller )oto giriş eklenecek..";
+                //echo"Buraya (burası signup controller )oto giriş eklenecek..";
                 redirect(base_url("giris/"));            
         }}
 

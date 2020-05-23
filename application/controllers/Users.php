@@ -6,10 +6,12 @@ Class Users extends CI_Controller{
     public function __construct()
     {
         parent::__construct();
-        
+
+        $this->load->library('session');
         $this->load->model("user_model");
         $this->load->model("image_model");
-        $this->load->library('session');
+        $this-> load-> model("user_product_model");
+        $this-> load-> model("image_model");
     }
 
     public function index(){
@@ -44,8 +46,8 @@ Class Users extends CI_Controller{
             $viewData = new stdClass();
             $viewData->form_error = true;
             $viewData->fromlogin= true;
-            $this-> load-> model("user_product_model");
              $viewData->products=$this-> user_product_model->get_all();
+             $viewData->images=$this-> image_model->get_all();
             $this->load->view("homepage_v", $viewData);
         }
         else{

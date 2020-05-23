@@ -18,6 +18,8 @@ class Home extends CI_Controller{
         $viewData= new stdClass();           
                     $viewData->images=$this-> image_model->get_all();
             $viewData->products=$this-> user_product_model->get_all();
+            $this-> load-> model("image_model");
+            $viewData->images=$this-> image_model->get_all();
             $this-> load-> view("homepage_v",$viewData);
             
     }

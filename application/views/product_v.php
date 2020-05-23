@@ -70,11 +70,11 @@
             <?php
             }
             else{
-              echo'<a  class="nav-link fancy-font bgbetter" href="" data-toggle="modal" data-target="#signinModal" data-whatever="buraya istediğin bir veriyi gir"  id="sign"> Log in</a>';
+              echo'<a  class="nav-link fancy-font bgbetter" href="'.base_url("giris-yap").'" id="sign"> Log in</a>';
               //echo base_url("giris"); echo"> Signin</a>"; 
               }
             ?>
-            <a  class="nav-link fancy-font d-none " data-toggle="modal" data-target="#signUp" data-whatever="buraya istediğin bir veriyi gir"  id="signup"> Sign in</a>
+            <a  class="nav-link fancy-font d-none "  href="" data-toggle="modal" data-target="#signUp" data-whatever="buraya istediğin bir veriyi gir"  id="signup"> Sign in</a>
             </li>
     </ul>
   </nav>
@@ -232,8 +232,7 @@
         $description=$product_details->product_description;
         $category=$product_details->product_category;
         $renterid=$product_details->renter_id;
-        $uploaddate=$product_details->upload_date;        
-         
+        $uploaddate=$product_details->upload_date;            
 }
         
         ?>
@@ -260,19 +259,11 @@
              </h6>
         </div>
         <div class="col-md-3 text-center text-white">
-            <h6>Price Per Hour:
+            <h6>Price Per Day:
                  <br>
                   <?php 
                     echo $price;
                   ?> $
-             </h6>
-        </div>
-        <div class="col-md-3 text-center text-white">
-            <h6>Added By:
-                 <br>
-                  <?php 
-                    echo $postedby;
-                  ?>
              </h6>
         </div>
         <div class="col-md-3 text-center text-white">
@@ -283,24 +274,42 @@
                   ?>
              </h6>
         </div>
+        <div class="col-md-3 text-center text-white">
+            <h6>Added By:
+                 <br>
+                  <?php 
+                    echo $postedby;
+                  ?>
+             </h6>
+        </div>
+        
        
     </div>
     <hr class="hrforpview ">
 
-    <button type="button" class="btn btn-lg btn-block text-deneme-bg text-white fancy-font" data-toggle="modal"  data-target="#rentproduct">-- RENT NOW --</button>
+    <button type="button" class="btn btn-lg btn-block text-deneme-bg text-white fancy-font" data-toggle="modal"  
+    data-target=
+    <?php if(isset($renterid)){echo "#alreadyrented"; }
+    else echo("#rentproduct")?>
+    >-- RENT NOW --</button>
     <br>
 
     <div class="modal" tabindex="-1" id="rentproduct" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
+        <h5 class="modal-title">Rent Now!</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <p>BURAYI YARIN BİRLİKTE YAPARIZ KEKE.</p>
+          <div class="slidecontainer">
+            <input type="range" name="days" min="1" max="<?php echo date("t") ?>" value="1" class="slider" id="daySlider">
+            <p>I will rent this product for: <span id="dayVal"> days.</span></p>
+          </div>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Save changes</button>
@@ -310,6 +319,28 @@
   </div>
 </div>
     
+
+<div class="modal" tabindex="-1" id="alreadyrented" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">LOOOOOOOOOOOOOOOSER</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Geç kaldın Keke bu ürün kiralandı! </p>
+      
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="<?php echo base_url("assets/js/sliderjs.js"); ?> "></script>
 <script type="text/javascript">jssor_1_slider_init();
@@ -329,11 +360,21 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
-    <script>
-function goBack() {
-  window.history.back();
-}
-</script>
+      <script>
+        function goBack() {
+          window.history.back();
+        }
+      </script>
+              
+      <script>
+        var slider = document.getElementById("daySlider");
+        var output = document.getElementById("dayVal");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+          output.innerHTML = this.value;
+        }
+      </script>
 </body>
 </html>
 

@@ -107,10 +107,13 @@
                           <div class="row pointer " >  <!-- BURAYA İD --> 
                             <div class="col-md-8 offset-1">
                               <img src="<?php
+                                if(isset($images)){
                                 foreach($images as $image){
                                   if ($image->product_id == $product->id){
                                     $url = $image->pic_url;break;} 
-                                    else{ $url = base_url("assets/pictures/nopic.png");}} echo $url; ?> " alt="" class="no-image">
+                                    else{ $url = base_url("assets/pictures/nopic.png");}}
+                                  }
+                                    else{ $url = base_url("assets/pictures/nopic.png");} echo $url; ?> " alt="" class="no-image">
                               <br><br>
                               <h6 class="text-light fancy-font text-left"><?php echo $product->product_name; ?></h6>
                               <hr>
@@ -122,7 +125,6 @@
                         </div>
                       </div>
                   <?php  }?>
-
         </div>
     </div>
   </div>
