@@ -70,3 +70,4 @@ $route['dropzone/(:any)'] = "fileupload/dropzone/$1"; //dropzone deneme amaçlı
 $route['deleteimage/(:any)'] = "fileupload/deletedropzone/$1";
 $route['product/(:any)'] = "product/getdetails/$1";
 $route['pedit/(:any)'] = "profileedit/auth/$1";
+$route['pupdtusr/(:any)'] = "profileedit/ppupdate/$1";

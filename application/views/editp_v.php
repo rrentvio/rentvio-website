@@ -34,9 +34,9 @@
           <div class="card-body">
             <div class="e-profile">
               <div class="row">
-                <div class="col-12 col-sm-auto mb-3">
-                  <div class="mx-auto" style="width: 140px;">
-                  <img   style="height: 140px;" class="d-flex justify-content-center align-items-center rounded" src=" <?php echo $user->user_pic ?>" alt="">
+              <div class="col-12 col-sm-auto mb-3">
+                  <div class="mx-auto" style="height: 140px; width: 140px;"> <!-- resimi strech değilde düz olacak burdan ayarla kanka 140x140 box yapma --> 
+                  <img   style="height: 140px; width: 140px;" class="d-flex justify-content-center align-items-center rounded" src=" <?php echo $user->user_pic ?>" alt="">
                   </div>
                 </div>
                 <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
