@@ -203,46 +203,12 @@
             <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
         </div>
         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
-            <div>
-                <img data-u="image" src="img/031.jpg" />
-                <img data-u="thumb" src="img/031-s190x90.jpg" />
-            </div>
-            <div>
-                <img data-u="image" src="img/032.jpg" />
-                <img data-u="thumb" src="img/032-s190x90.jpg" />
-            </div>
-            <div>
-                <img data-u="image" src="img/033.jpg" />
-                <img data-u="thumb" src="img/033-s190x90.jpg" />
-            </div>
-            <div>
-                <img data-u="image" src="img/034.jpg" />
-                <img data-u="thumb" src="img/034-s190x90.jpg" />
-            </div>
-            <div>
-                <img data-u="image" src="img/035.jpg" />
-                <img data-u="thumb" src="img/035-s190x90.jpg" />
-            </div>
-            <div>
-                <img data-u="image" src="img/036.jpg" />
-                <img data-u="thumb" src="img/036-s190x90.jpg" />
-            </div>
-            <div>
-                <img data-u="image" src="img/037.jpg" />
-                <img data-u="thumb" src="img/037-s190x90.jpg" />
-            </div>
-            <div>
-                <img data-u="image" src="img/038.jpg" />
-                <img data-u="thumb" src="img/038-s190x90.jpg" />
-            </div>
-            <div>
-                <img data-u="image" src="img/039.jpg" />
-                <img data-u="thumb" src="img/039-s190x90.jpg" />
-            </div>
-            <div>
-                <img data-u="image" src="img/040.jpg" />
-                <img data-u="thumb" src="img/040-s190x90.jpg" />
-            </div>
+            
+            <?php if (isset($product_images)){
+                foreach($product_images as $image){ 
+                    echo '<div>
+                    <img data-u="image" src="'.$image->pic_url.'"/> <img data-u="thumb" src="'.$image->pic_url.'"/>   </div>';}}?>
+
         </div><a data-scale="0" href="https://www.jssor.com" style="display:none;position:absolute;">web animation</a>
         <!-- Thumbnail Navigator -->
         <div data-u="thumbnavigator" class="jssort101" style="position:absolute;left:0px;bottom:0px;width:980px;height:100px;background-color:#000;" data-autocenter="1" data-scale-bottom="0.75">
