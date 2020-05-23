@@ -52,5 +52,5 @@ public function getdetails($id){
          )
     );
     $this->load->view("product_v", $viewData);
-            }
+    }
 }
