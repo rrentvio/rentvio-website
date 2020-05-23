@@ -34,7 +34,6 @@
             else{              
               }
             ?>
-
         </li>
         <li class="nav-item">
             <div class="dropdown">
