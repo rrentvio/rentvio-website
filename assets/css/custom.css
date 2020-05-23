@@ -50,7 +50,7 @@ body::after {
  boyurunu ayarlamak amacı ile yazdım haberin olsun eğer comment ve altındaki
   css hala duruyorsa silmeden önce dropbox_v viewindeki table için bişeler ayarla öyle devam et :* love u  */
 
-.newImage {   
+.newImage {
   width: 80px;
   height: 80px;
 }
@@ -68,4 +68,9 @@ tr td:first-child {
 }
 .borderthickness {
   border: 6px solid rgb(177, 177, 177);
+}
+
+.productview {
+  width: 280px;
+  height: 280px;
 }
