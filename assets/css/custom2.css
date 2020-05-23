@@ -42,13 +42,13 @@
   background-color: rgba(112, 112, 112, 0.8);
 }
 .text-deneme {
-  color: #D4AF37 !important; 
+  color: #d4af37 !important;
 }
 .text-deneme-bg {
   background-color: #b98080;
 }
 .text-ekle-bg {
-  background-color: #D4AF37;
+  background-color: #d4af37;
 }
 .text-sil-bg {
   background-color: #ff5252;
@@ -57,7 +57,6 @@
   background-color: #ffd252;
 }
 .text-pubrent-bg {
-  
   background-color: rgba(78, 151, 149, 0.801);
 }
 .fancy-font {
@@ -65,4 +64,7 @@
 }
 .pointer {
   cursor: pointer;
+}
+.hrforpview {
+  border-top: 2px dashed pink;
 }

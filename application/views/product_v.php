@@ -81,7 +81,7 @@
   </nav>
   <div class="container card bgbetter">
 
-<div class="row">
+    <div class="row">
     <div class="col-md-10 offset-1 ">  <!-- // offset baştan kaç boşluk bırakıcağın ?> -->
     <br><br><br><br>  
     <script src="<?php echo base_url("assets/js/sliderjs.js"); ?> "></script>
@@ -135,7 +135,7 @@
 
             /*#region responsive code begin*/
 
-            var MAX_WIDTH = 500;
+            var MAX_WIDTH = 550;
 
             function ScaleSlider() {
                 var containerElement = jssor_1_slider.$Elmt.parentNode;
@@ -219,8 +219,98 @@
                 <path class="a" d="M11424,7719.7L5746,2041.9c-81.3-81.2-174.8-121.9-280.3-121.9c-105.6,0-199,40.8-280.3,121.9 l-609.1,609.2c-81.3,81.2-121.8,174.5-121.8,280.3c0,105.8,40.5,199,121.8,280.3l4788.4,4788.4l-4788.4,4788.5 c-81.3,81.2-121.8,174.7-121.8,280.1c0,105.7,40.5,199.2,121.8,280.4l609.2,609c81.2,81.3,174.7,121.8,280.3,121.8 c105.5,0,199-40.6,280.3-121.8l5677.7-5677.8c81.2-81.2,121.8-174.7,121.8-280.3C11545.5,7894.5,11505.2,7801.1,11424,7719.7z"></path>
             </svg>
         </div>
+                    
     </div>
+    <br><br>
 
+    <?php 
+    if (isset($product_details)){
+        $product_details= reset($product_details);
+        $id=$product_details->id;
+        $postedby=$product_details->user_id;
+        $name=$product_details->product_name;
+        $price=$product_details->price;
+        $description=$product_details->product_description;
+        $category=$product_details->product_category;
+        $renterid=$product_details->renter_id;
+        $uploaddate=$product_details->upload_date;        
+         
+}
+        
+        ?>
+    <h1 class="text-center text-white text-uppercase fancy-font">
+    <?php 
+    echo $name;
+
+    ?>
+    </h1>
+    <hr class="hrforpview ">
+    <h2 class="text-white fancy-font" >
+    <?php 
+    echo $description;
+    ?>
+    </h2>
+    <hr class="hrforpview ">
+    <div class="row">
+        <div class="col-md-3 text-center text-white">
+            <h6>Category:
+                 <br>
+                  <?php 
+                    echo $category;
+                  ?>
+             </h6>
+        </div>
+        <div class="col-md-3 text-center text-white">
+            <h6>Price Per Hour:
+                 <br>
+                  <?php 
+                    echo $price;
+                  ?> $
+             </h6>
+        </div>
+        <div class="col-md-3 text-center text-white">
+            <h6>Added By:
+                 <br>
+                  <?php 
+                    echo $postedby;
+                  ?>
+             </h6>
+        </div>
+        <div class="col-md-3 text-center text-white">
+            <h6>Addition Date:
+                 <br>
+                  <?php 
+                    echo $uploaddate;
+                  ?>
+             </h6>
+        </div>
+       
+    </div>
+    <hr class="hrforpview ">
+
+    <button type="button" class="btn btn-lg btn-block text-deneme-bg text-white fancy-font" data-toggle="modal"  data-target="#rentproduct">-- RENT NOW --</button>
+    <br>
+
+    <div class="modal" tabindex="-1" id="rentproduct" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>BURAYI YARIN BİRLİKTE YAPARIZ KEKE.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
 
 <script src="<?php echo base_url("assets/js/sliderjs.js"); ?> "></script>
 <script type="text/javascript">jssor_1_slider_init();
