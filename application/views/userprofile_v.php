@@ -48,7 +48,7 @@
             
           </li>
           <li class="nav-item" >
-          <button type="button"  id="productadd" class="btn text-ekle-bg fancy-font ml-4" data-toggle="modal"  data-target="#addProduct" >
+          <button type="button"  id="productadd" class="btn text-deneme-bg fancy-font ml-4 text-white" data-toggle="modal"  data-target="#addProduct" >
               Add Product &nbsp;&nbsp; <i class="fas fa-folder-plus fa-lg "></i>
             </button>
           </li>
@@ -113,21 +113,21 @@
             <br><br>
             <table class=" table table-hover text-deneme-bg ">
             <thead>
-              <th class="text-white fancy-font font-weight-normal">Product Name</th>
-              <th class="text-white fancy-font font-weight-normal">Price</th>
-              <th class="text-white fancy-font font-weight-normal">Product Description</th>
-              <th class="text-white fancy-font font-weight-normal">Cathegory</th>
-              <?php if(!isset($rented)) echo '<th class="text-white fancy-font font-weight-normal text-center">Update</th>'; ?> 
+              <th class="text-white fancy-font font-weight-normal lead">Product Name</th>
+              <th class="text-white fancy-font font-weight-normal lead">Product Description</th>
+              <th class="text-white fancy-font font-weight-normal lead">Price</th>
+              <th class="text-white fancy-font font-weight-normal lead">Cathegory</th>
+              <?php if(!isset($rented)) echo '<th class="text-white fancy-font font-weight-normal text-center lead">Update</th>'; ?> 
             </thead>
             <?php foreach ($products as $product){?>
             <tbody>                    
                     <tr>
                         <td data-href="<?php echo base_url( "product/".$product->id);  ?>"
-                         class="text-white fancy-font pointer " style="width:8%"><?php echo $product->product_name?></td>
-                        <td class="text-white fancy-font pointer"style="width:20%" ><?php echo substr($product->product_description,0,20)?> ...</td>
-                        <td class="text-white fancy-font pointer"style="width:15%" ><?php echo $product->price?></td>
+                         class="text-white fancy-font pointer " style="width:15%"><?php echo $product->product_name?></td>
+                        <td class="text-white fancy-font pointer"style="width:18%" ><?php echo substr($product->product_description,0,20)?> ...</td>
+                        <td class="text-white fancy-font pointer"style="width:12%" ><?php echo $product->price?> $</td>
                         <td class="text-white fancy-font pointer"style="width:15%" ><?php echo $product->product_category?></td>
-                        <td class="text-white fancy-font pointer text-center"style="width:47%"> 
+                        <td class="text-white fancy-font pointer text-center"style="width:40%"> 
                         
                         
                         <button type="button" id="edit" class=" <?php if(isset($rented)) echo"d-none "?> btn btn-warning mr-3 text-edit-bg text-white customwidth" data-toggle="modal" data-target="#editModal" 
