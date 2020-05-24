@@ -1,3 +1,16 @@
+<?php 
+    if (isset($product_details)){
+        $product_details= reset($product_details);
+        $id=$product_details->id;
+        $postedbyId=$product_details->user_id;
+        $name=$product_details->product_name;
+        $price=$product_details->price;
+        $description=$product_details->product_description;
+        $category=$product_details->product_category;
+        $renterid=$product_details->renter_id;
+        $uploaddate=$product_details->upload_date;    
+}
+        ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +20,8 @@
     <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css");?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom.css");?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom2.css");?>">
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/slider.css");?>">
+
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-10 mt-10 position-fixed wwww">
@@ -56,13 +71,9 @@
           <button class="btn btn-outline fancy-font text-deneme-bg text-white my-2 ml-2 my-sm-0" type="submit">Search</button>
         </form>
       </li>
-          
     </ul>  
-
-
     <ul class="navbar-nav ml-auto">
         <li class="nav-item text-deneme-bg active ">
-        
         <?php 
             if (isset($user -> email)){ 
               echo'<a class="nav-link fancy-font bgbetter" href=';
@@ -84,120 +95,20 @@
     <div class="col-md-10 offset-1 ">  <!-- // offset baştan kaç boşluk bırakıcağın ?> -->
     <br><br><br><br>  
     <script src="<?php echo base_url("assets/js/sliderjs.js"); ?> "></script>
-    <script type="text/javascript">
-        window.jssor_1_slider_init = function() {
-
-            var jssor_1_SlideshowTransitions = [
-              {$Duration:800,x:0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,x:-0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,x:-0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,x:0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,y:0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,y:-0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,y:-0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,y:0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,x:0.3,$Cols:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,x:0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,y:0.3,$Rows:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,y:0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,y:0.3,$Cols:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,y:-0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,x:0.3,$Rows:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,x:-0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$SlideOut:true,$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,$Delay:20,$Clip:3,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,$Delay:20,$Clip:3,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,$Delay:20,$Clip:12,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,$Delay:20,$Clip:12,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2}
-            ];
-
-            var jssor_1_options = {
-              $AutoPlay: 1,
-              $FillMode: 1,
-              $SlideshowOptions: {
-                $Class: $JssorSlideshowRunner$,
-                $Transitions: jssor_1_SlideshowTransitions,
-                $TransitionsOrder: 1
-              },
-              $ArrowNavigatorOptions: {
-                $Class: $JssorArrowNavigator$
-              },
-              $BulletNavigatorOptions: {
-                $Class: $JssorBulletNavigator$,
-                $SpacingX: 16,
-                $SpacingY: 16
-              }
-            };
-
-            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-
-            /*#region responsive code begin*/
-
-            var MAX_WIDTH = 550;
-
-            function ScaleSlider() {
-                var containerElement = jssor_1_slider.$Elmt.parentNode;
-                var containerWidth = containerElement.clientWidth;
-
-                if (containerWidth) {
-
-                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
-
-                    jssor_1_slider.$ScaleWidth(expectedWidth);
-                }
-                else {
-                    window.setTimeout(ScaleSlider, 30);
-                }
-            }
-
-            ScaleSlider();
-
-            $Jssor$.$AddEvent(window, "load", ScaleSlider);
-            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
-            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
-            /*#endregion responsive code end*/
-        };
-    </script>
-    <style>
-        /*jssor slider loading skin spin css*/
-        .jssorl-009-spin img {
-            animation-name: jssorl-009-spin;
-            animation-duration: 1.6s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-        }
-
-        @keyframes jssorl-009-spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        /*jssor slider bullet skin 131 css*/
-        .jssorb131 {position:absolute;}
-        .jssorb131 .i {position:absolute;cursor:pointer;}
-        .jssorb131 .i .b {fill:#000;fill-opacity:0.6;stroke:#fff;stroke-width:2000;stroke-miterlimit:10;stroke-opacity:0.7;}
-        .jssorb131 .i:hover .b {fill:#fff;fill-opacity:.5;stroke:#000;stroke-width:2000;stroke-opacity:0.7;}
-        .jssorb131 .iav .b {fill:#fff;stroke:#000;stroke-width:2000;fill-opacity:1;stroke-opacity:1;}
-        .jssorb131 .i.idn {opacity:0.3;}
-
-        /*jssor slider arrow skin 112 css*/
-        .jssora112 {display:block;position:absolute;cursor:pointer;}
-        .jssora112 .a {fill:#333;fill-opacity:.7;stroke:#fff;stroke-width:160;stroke-miterlimit:10;stroke-opacity:.7;}
-        .jssora112:hover {opacity:.8;}
-        .jssora112.jssora112dn {opacity:.4;}
-        .jssora112.jssora112ds {opacity:.3;pointer-events:none;}
-    </style>
+    <script src="<?php echo base_url("assets/js/slider2.js"); ?> "></script>
     <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:500px;height:400px;overflow:hidden;visibility:hidden;background-color:#000000;">
         <!-- Loading Screen -->
         <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
             <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
         </div>
         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:500px;height:400px;overflow:hidden;">
-        <?php if (isset($product_images)){
+        <?php if (!empty($product_images)){
                     foreach($product_images as $image){ 
                         echo '<div>
-                        <img data-u="image" src="'.$image->pic_url.'"/> <img data-u="thumb" src="'.$image->pic_url.'"/>   </div>';}}?>
+                        <img data-u="image" src="'.$image->pic_url.'"/> <img data-u="thumb" src="'.$image->pic_url.'"/>   </div>';}
+                      }else echo '<div>
+                      <img data-u="image" src="'.base_url("assets/pictures/nopic.png").'"/> <img data-u="thumb" src="'.base_url("assets/pictures/nopic.png").'"/>   </div>'
+                        ?>
         </div><a data-scale="0" href="https://www.jssor.com" style="display:none;position:absolute;">animation</a>
         <!-- Bullet Navigator -->
         <div data-u="navigator" class="jssorb131" style="position:absolute;bottom:16px;right:16px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
@@ -221,21 +132,6 @@
                     
     </div>
     <br><br>
-
-    <?php 
-    if (isset($product_details)){
-        $product_details= reset($product_details);
-        $id=$product_details->id;
-        $postedby=$product_details->user_id;
-        $name=$product_details->product_name;
-        $price=$product_details->price;
-        $description=$product_details->product_description;
-        $category=$product_details->product_category;
-        $renterid=$product_details->renter_id;
-        $uploaddate=$product_details->upload_date;            
-}
-        
-        ?>
     <h1 class="text-center text-white text-uppercase fancy-font">
     <?php 
     echo $name;
@@ -243,11 +139,12 @@
     ?>
     </h1>
     <hr class="hrforpview ">
-    <h2 class="text-white fancy-font" >
+    <h2 class="text-white fancy-font"> Description: </h2>
+    <h6 class="text-white fancy-font" >  
     <?php 
     echo $description;
     ?>
-    </h2>
+    </h6>
     <hr class="hrforpview ">
     <div class="row">
         <div class="col-md-3 text-center text-white">
@@ -278,7 +175,7 @@
             <h6>Added By:
                  <br>
                   <?php 
-                    echo $postedby;
+                    echo $postedbyName;
                   ?>
              </h6>
         </div>
@@ -287,11 +184,14 @@
     </div>
     <hr class="hrforpview ">
 
-    <button type="button" class="btn btn-lg btn-block text-deneme-bg text-white fancy-font" data-toggle="modal"  
-    data-target=
-    <?php if(isset($renterid)){echo "#alreadyrented"; }
-    else echo("#rentproduct")?>
-    >-- RENT NOW --</button>
+    <?php if(isset($renterid)){?>
+      <h5 class="text-center text-white fancy-font">Feel sorry to Tell you That But: </h5>
+      <h5 class="text-center text-white fancy-font" >This product already rented</h5>
+        <p class="text-center text-white fancy-font" >Check again in <?php echo $date  ?> </p>
+    <?php }
+    else echo('<button type="button" class="btn btn-lg btn-block text-deneme-bg text-white fancy-font" data-toggle="modal"  
+    data-target="#alreadyrented">-- RENT NOW --</button>')?>
+    
     <br>
 
     <div class="modal" tabindex="-1" id="rentproduct" role="dialog">
@@ -324,18 +224,17 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">LOOOOOOOOOOOOOOOSER</h5>
+        <h5 class="modal-title">Feel sorry to Tell you That But: </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Geç kaldın Keke bu ürün kiralandı! </p>
-      
+        
+
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>

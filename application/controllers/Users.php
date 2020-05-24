@@ -97,10 +97,11 @@ Class Users extends CI_Controller{
         //redirect(base_url("users/listt")); // kontrol amaçlı ileride alttakiyle değiştir. v8 
         redirect(base_url("homepage"));
     }
-
+    
     public function sil(){
         $this->session->unset_userdata("user_list");
     }
+    
     //listt function check amaçlı sonra sil  
     public function listt(){
         echo "users still online: "; 

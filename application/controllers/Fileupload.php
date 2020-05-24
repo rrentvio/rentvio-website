@@ -149,7 +149,8 @@ class fileupload extends CI_Controller{
 
         $insert = $this->db->where("id",$pId)->update("user_product",$editProduct);
         redirect(base_url("profile/"));
-        }}
+        }
+    }
 
     public function deleteProduct($did){
 
@@ -169,16 +170,12 @@ class fileupload extends CI_Controller{
                     "product_id" => $id
                  )
             );
-    $this->send($viewData);
-}
-
-
-//dropzone denneme amaçlı silinecekkk 
+        $this->send($viewData);
+    }
 
     public function deleteAll($pid){
         $this->db->where("product_id",$pid)->delete("images");    
     }   
-
 
     public function deletedropzone($id){
         $this->load->model("image_model");
@@ -215,8 +212,6 @@ class fileupload extends CI_Controller{
         }
 
     }
-
-    //Drop zone burada bitiyor...
 
 
     }

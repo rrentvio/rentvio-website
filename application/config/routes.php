@@ -73,3 +73,4 @@ $route['pedit/(:any)'] = "profileedit/auth/$1";
 $route['pupdtusr/(:any)'] = "profileedit/ppupdate/$1";
 $route['updtusrp/(:any)'] = "profileedit/passupdate/$1";
 $route['updtusrn/(:any)'] = "profileedit/nameupdate/$1";
+$route['deneme/(:any)'] = "product/date/$1";

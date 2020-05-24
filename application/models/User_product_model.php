@@ -14,4 +14,7 @@ class User_product_model extends CI_Model{
     public function checkStatus(){
         return $this->db->where("rented_till IS NOT NULL")->get("user_product")->result();
     } 
+    public function checkStatus2($where = array()){
+        return $this->db->where("")->get("user_product")->result();
+    }
 }
