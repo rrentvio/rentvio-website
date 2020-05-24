@@ -52,8 +52,9 @@ Class Product extends CI_Controller{
         $viewData->postedbyName=$this->renterName($id);
         $viewData->user=$this-> user_model->get(array("id" => $activeuserid));
         $this->load->view("product_v", $viewData);
+        $this->load->view("terms", $viewData);
+        
     }
-
     public function image($id){
         $pics=$this-> image_model->get_all(
             array(
@@ -72,5 +73,9 @@ Class Product extends CI_Controller{
         $product=$this-> user_product_model->get_all(array("id" => $id));
         $renter =$this-> user_model->get(array("id" => reset($product)->user_id));
         return $renter->full_name;
+    }
+
+    public function Rent($id){
+        echo "al senin olsun.";
     }
 }
