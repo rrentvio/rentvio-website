@@ -39,19 +39,19 @@ class fileupload extends CI_Controller{
     }
     public function catagory($i){
         if ($i == "1") {
-            return "Fotoğraf & Kamera";
+            return "Photograph and Video";
         } elseif ($i == "2") {
-            return "Kitap Dergi";
+            return "Book and Magazines";
         } elseif ($i == "3") {
-            return "Spor Ekipmanları";
+            return "Sport Equitments";
         }elseif ($i == "4") {
-            return "Bahçe & Yapı Market";
+            return "Home Improvemnet and Tools";
         }elseif ($i == "5") {
-            return "Teknik Elektronik";
+            return "Technical Electronics";
         }elseif ($i == "6") {
-            return "Diğer Herşey";
+            return "Everything Else";
         }
-
+        
     }
     public function isSet($i){
         if ($i== null&&$i==0&&$i=="0"&&$i==""){

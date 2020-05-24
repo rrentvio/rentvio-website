@@ -181,12 +181,12 @@
   <div class="form-group">
     <label for="pCategory"> <b><i>Choose Categroy </i></b> </label>
     <select class="form-control" id="pCategory"  name="pCategory">
-        <option value="1">Fotoğraf & Kamera </option>
-        <option value="2">Kitap Dergi       </option>
-        <option value="3">Spor Ekipmanları  </option>
-        <option value="4">Bahçe & Yapı Market</option>
-        <option value="5">Teknik Elektronik </option>
-        <option value="6">Diğer Herşey      </option>   
+        <option value="1">Photograph and Video </option>
+        <option value="2">Book and Magazines </option>
+        <option value="3">Sport Equitments </option>
+        <option value="4">Home Improvemnet and Tools </option>
+        <option value="5">Technical Electronics </option>
+        <option value="6">Everythin Else </option>   
     </select>
     <?php if(isset($form_error)) {?>
                     <small class="float-right"><?php echo form_error("pCategory") ?></small>
@@ -255,12 +255,12 @@
           <div class="form-group">
             <label for="pCategory"> <b><i>Choose Categroy </i></b> </label>
             <select class="form-control" id="pCategory"  name="pCategory">
-                <option value="1">Fotoğraf & Kamera </option>
-                <option value="2">Kitap Dergi       </option>
-                <option value="3">Spor Ekipmanları  </option>
-                <option value="4">Bahçe & Yapı Market</option>
-                <option value="5">Teknik Elektronik </option>
-                <option value="6">Diğer Herşey      </option>   
+                <option value="1">Photograph and Video </option>
+                <option value="2">Book and Magazines </option>
+                <option value="3">Sport Equitments </option>
+                <option value="4">Home Improvemnet and Tools </option>
+                <option value="5">Technical Electronics </option>
+                <option value="6">Everythin Else </option>   
             </select>
             <?php if(isset($form_error)) {?>
                     <small class="float-right"> <b> <?php echo form_error("pCatagory") ?> </b> </small>
@@ -379,12 +379,12 @@
           <div class="form-group">
             <label for="pCategory"> <b><i>Choose Categroy </i></b> </label>
             <select class="form-control" id="pCategory"  name="pCategory">
-                <option value="1">Fotoğraf & Kamera </option>
-                <option value="2">Kitap Dergi       </option>
-                <option value="3">Spor Ekipmanları  </option>
-                <option value="4">Bahçe & Yapı Market</option>
-                <option value="5">Teknik Elektronik </option>
-                <option value="6">Diğer Herşey      </option>   
+              <option value="1">Photograph and Video </option>
+              <option value="2">Book and Magazines </option>
+              <option value="3">Sport Equitments </option>
+              <option value="4">Home Improvemnet and Tools </option>
+              <option value="5">Technical Electronics </option>
+              <option value="6">Everythin Else </option>  
             </select>
             <?php if(isset($form_error)) {?>
                     <small class="float-right"> <b> <?php echo form_error("pCatagory") ?> </b> </small>
@@ -502,22 +502,21 @@ if (isset($formedit)){
   }
 
 function catagory($i){
-  if ($i == "Fotoğraf & Kamera") {
+  if ($i == "Photograph and Video ") {
       return "1";
-  } elseif ($i == "Kitap Dergi") {
+  } elseif ($i == "Book and Magazines") {
       return "2";
-  } elseif ($i == "Spor Ekipmanları") {
+  } elseif ($i == "Sport Equitments") {
       return "3";
-  }elseif ($i == "Bahçe & Yapı Market") {
+  }elseif ($i == "Home Improvemnet and Tools") {
       return "4";
-  }elseif ($i == "Teknik Elektronik") {
+  }elseif ($i == "Technical Electronics") {
       return "5";
-  }elseif ($i == "Diğer Herşey") {
+  }elseif ($i == "Everythin Else") {
       return "6";
   }
 }
 ?>
-
 
   
 <script

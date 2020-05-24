@@ -16,7 +16,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <?php echo(reset($product_details)->product_name);?> </title>
+    <title> <?php echo$name;?> </title>
     <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css");?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom.css");?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom2.css");?>">
@@ -61,7 +61,7 @@
                 <a class="dropdown-item fancy-font" href="#">Sport Equitments</a>
                 <a class="dropdown-item fancy-font" href="#">Home Improvemnet and Tools</a>
                 <a class="dropdown-item fancy-font" href="#">Technical Electronics</a>
-                <a class="dropdown-item fancy-font" href="#">Other Stuff</a>
+                <a class="dropdown-item fancy-font" href="#">Everything Else</a>
               </div>
             </div>
           </li>
@@ -206,7 +206,7 @@
       <div class="modal-body">
         <p>BURAYI YARIN BİRLİKTE YAPARIZ KEKE.</p>
           <div class="slidecontainer slidercss">
-            <input type="range" name="days" min="1" max="<?php echo date("t") ?>" value="1" class="slider" id="daySlider">
+            <input type="range" name="days" min="1" max="<?php echo date("t")?>" value="1" class="slider" id="daySlider">
             <p>I will rent this product for: <span id="dayVal"> days.</span> days</p>
           </div>
 
