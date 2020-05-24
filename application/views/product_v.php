@@ -190,7 +190,7 @@
         <p class="text-center text-white fancy-font" >Check again in <?php echo $date  ?> </p>
     <?php }
     else echo('<button type="button" class="btn btn-lg btn-block text-deneme-bg text-white fancy-font" data-toggle="modal"  
-    data-target="#alreadyrented">-- RENT NOW --</button>')?>
+    data-target="#rentproduct">-- RENT NOW --</button>')?>
     
     <br>
 
@@ -205,9 +205,9 @@
       </div>
       <div class="modal-body">
         <p>BURAYI YARIN BİRLİKTE YAPARIZ KEKE.</p>
-          <div class="slidecontainer">
+          <div class="slidecontainer slidercss">
             <input type="range" name="days" min="1" max="<?php echo date("t") ?>" value="1" class="slider" id="daySlider">
-            <p>I will rent this product for: <span id="dayVal"> days.</span></p>
+            <p>I will rent this product for: <span id="dayVal"> days.</span> days</p>
           </div>
 
       </div>
@@ -219,27 +219,6 @@
   </div>
 </div>
     
-
-<div class="modal" tabindex="-1" id="alreadyrented" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Feel sorry to Tell you That But: </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script src="<?php echo base_url("assets/js/sliderjs.js"); ?> "></script>
 <script type="text/javascript">jssor_1_slider_init();

@@ -75,3 +75,6 @@ tr td:first-child {
   width: 280px;
   height: 280px;
 }
+.slidecontainer {
+  width: 100% !important;
+}
