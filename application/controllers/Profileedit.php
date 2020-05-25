@@ -17,8 +17,7 @@ class Profileedit extends CI_Controller{
         }
         else $viewer= "settings";
         if ($viewer=="settings"){
-
-        
+            
         $user_list = $this -> session -> userdata("user_list");
         $activeuser = $user_list[$id];
         $viewData= new stdClass();

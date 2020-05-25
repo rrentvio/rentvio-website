@@ -60,7 +60,16 @@
           </li>
           <li>
             <form class="form-inline my-2 my-lg-0" action="<?php  echo base_url("home/searchbar")?>" method="post">
-        <input class="form-control fancy-font mr-sm-2 ml-3" type="search" name="searchBar" placeholder="Search" aria-label="Search">
+      <select id="inputState" class="form-control dropdown fancy-font " aria-haspopup="true" name=searchCategory >
+        <option value="*" selected>All produtcs</option>
+        <option value="Photograph and Video">Photograph and Video</option>
+        <option value="Book and Magazines">Book and Magazines</option>
+        <option value="Sport Equitments">Sport Equitments</option>
+        <option value="Home Improvemnet and Tools">Home Improvemnet and Tools</option>
+        <option value="Technical Electronics">Technical Electronics</option>
+        <option value="Everything Else">Everything Else</option>
+      </select>
+        <input class="form-control fancy-font mr-sm-2 ml-3" type="search" name="searchBar" <?php if(isset($fromsearch)){echo'value = "'.$fromsearch.'"';} ?> placeholder="Search" aria-label="Search">
           <button class="btn btn-outline fancy-font text-deneme-bg text-white my-2 ml-2 my-sm-0" type="submit">Search</button>
         </form>
       </li>
@@ -92,13 +101,19 @@
 
     <div class="row">
         <div class="col-md-10 offset-1 ">  <!-- // offset baştan kaç boşluk bırakıcağın ?> -->
-        <br>   <br><br><br> 
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          </div> 
+        <br>   <br><br><br>
+        <!-- Search error başlangıç -->  
+
+        <?php if(isset($fromsearch)){ ?>
+             <?php echo '
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>'.form_error("searchBar") .'</strong> You should check in your seach value above.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>';} ?>
+            
+          
         <h1 class="text-white diffont text-center fancy">Everything  &nbsp; You &nbsp; Need. &nbsp; All &nbsp; Right &nbsp; Here.</h1>
             <br>
             

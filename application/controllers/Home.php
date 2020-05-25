@@ -46,7 +46,7 @@ class Home extends CI_Controller{
         }
         
     }
-    public function homepage($id){          
+    public function homepage($id){
         $user_list = $this -> session -> userdata("user_list");
         if (isset( $user_list[$id])){
              $activeuser = $user_list[$id];
@@ -72,29 +72,52 @@ class Home extends CI_Controller{
 
     public function searchbar(){
         $this->load->library("form_validation");
-        $this->form_validation->set_rules("searchBar","Search-Bar","required|trim|alpha_numeric_spaces");
+        $this->form_validation->set_rules("searchBar","Search-Bar","trim|alpha_numeric_spaces");
         $this->form_validation->set_message(array( 
             "required"=> "<b> {field} </b> can not be empty!",
-            "alpha_numeric_spaces"=>"Dont use seachbar with symbols and stuff !"
+            "alpha_numeric_spaces"=>"Please Don't use seachbar with symbols !"
         ));
 
         if ($this->form_validation->run()=== FALSE){
             $viewData = new stdClass();
             $viewData->form_error = true;
-            $viewData->fromsearch= true;
+            $viewData->fromsearch= $this->input->post("searchBar");
             $viewData->products=$this-> user_product_model->get_all();
             $viewData->images=$this-> image_model->get_all();
             $this->load->view("homepage_v", $viewData);
         }
         else{
-                $seachWord = $this->input->post("searchBar");
-                print_r($seachWord);
+                $searchWord = $this->input->post("searchBar");
+                $category = $this->input->post("searchCategory");
+                $searchArray= explode(" ",$searchWord);
                 $viewData = new stdClass();
-                $viewData->products=$this-> user_product_model->get_all();
+                $result=$this-> user_product_model-> searchdb($searchArray);
+                $viewData->products = $this->catselector($result,$category);
                 $viewData->images=$this-> image_model->get_all();
-                //$this->load->view("homepage_v", $viewData);
+                $this->load->view("homepage_v", $viewData);
 
     }
 }
+
+public function catselector($resultarray,$category){
+ /*   foreach($resultarray as $result){
+        if($result->product_category==$category){
+            unset($resultarray->$result);
+        }
+        return $resultarray;
+    }*/
+    if ($category=="*"){
+        return $resultarray;
+    }
+    else{
+    $len = count($resultarray);
+    for ($i=0; $i<$len ;$i++){
+        if($resultarray[$i]->product_category!==$category){
+            unset($resultarray[$i]);
+                }
+            }
+    return $resultarray;
+        }
+    }
 
 }
