@@ -209,19 +209,21 @@ btn.disabled = !chk.checked;
   <div class="modal-dialog  modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Rent Now!</h5>
+        <h5 class="modal-title"> <i> Before you Rent! </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <label><input id = "chk" onchange= "toggle();" type="checkbox" name="checkbox" value="value"> I accept the terms and conditions</label>
-        <a href="" data-toggle="modal" data-target="#terms"> Terms and conditions. </a> 
-          <div class="slidecontainer slidercss">
-            <input type="range" name="days" min="1" max="<?php echo date("t")?>" value="1" class="slider" id="daySlider">
-            <p>I will rent this product for: <span id="dayVal"> days.</span> days</p>
-          </div>
-
+        <div>
+        <p>As a company, Rentivo aims to be the middleman for people who need shot term product rentals.
+           The safety and satisfaction of you and other users is important to us.
+            For these reasons, you must confirm the form before proceeding.
+            Thank you for your understanding...</p> 
+            <p class="text-sm-right"> Rentvio.</p>
+            </div>
+        <label><input id = "chk" onchange= "toggle();" type="checkbox" name="checkbox" value="value"> I have read and accept the terms and conditions.</label>
+        <a href="" data-toggle="modal" data-target="#terms"> <i> Terms and conditions </i> </a> 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" id="MY_ID" disabled type="submit">Proceed</button>
@@ -233,6 +235,26 @@ btn.disabled = !chk.checked;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  <div class="slidecontainer slidercss">
+            <input type="range" name="days" min="1" max="<?php echo date("t")?>" value="1" class="slider" id="daySlider">
+            <p>I will rent this product for: <span id="dayVal"> days.</span> days</p>
+          </div>
+          -->
 
 <!-- terms modal-->
 <div class="modal fade " id="terms" tabindex="-1" role="dialog" aria-labelledby="termsModal" aria-hidden="true">
