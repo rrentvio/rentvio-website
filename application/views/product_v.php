@@ -226,24 +226,12 @@ btn.disabled = !chk.checked;
         <a href="" data-toggle="modal" data-target="#terms"> <i> Terms and conditions </i> </a> 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="MY_ID" disabled type="submit">Proceed</button>
+        <a type="button" class="btn btn-primary" id="MY_ID" href="<?php echo base_url("payment/").$id ?> " disabled type="submit">Proceed  </a>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -261,7 +249,7 @@ btn.disabled = !chk.checked;
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="termsModal">RENTVİO TERMS AND CONDİTİONS</h4>
+        <h4 class="modal-title" id="termsModal">RENTVIO TERMS AND CONDITIONS</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

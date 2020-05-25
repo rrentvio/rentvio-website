@@ -52,8 +52,6 @@ Class Product extends CI_Controller{
         $viewData->postedbyName=$this->renterName($id);
         $viewData->user=$this-> user_model->get(array("id" => $activeuserid));
         $this->load->view("product_v", $viewData);
-        $this->load->view("terms", $viewData);
-        
     }
     public function image($id){
         $pics=$this-> image_model->get_all(
@@ -77,5 +75,26 @@ Class Product extends CI_Controller{
 
     public function Rent($id){
         echo "al senin olsun.";
+    }
+
+    public function getdetailsforpayment($id){
+        //echo $id;
+        $user_list = $this -> session -> userdata("user_list");
+        if(empty($user_list)){
+            $activeuserid=null;
+        }
+        else $activeuserid = reset($user_list)->id;
+        $viewData= new stdClass();
+        $viewData->product_details=$this-> user_product_model->get_all(
+                    array(
+                        "id" => $id
+                    )
+        );
+        
+        $viewData->date=$this->date($id);
+        $viewData->product_images =$this->image($id);
+        $viewData->postedbyName=$this->renterName($id);
+        $viewData->user=$this-> user_model->get(array("id" => $activeuserid));
+        $this->load->view("payment_v", $viewData);
     }
 }
