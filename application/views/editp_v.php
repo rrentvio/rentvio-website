@@ -21,6 +21,54 @@
   </head>
 <body>
 
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-10 mt-10 position-fixed wwww">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <?php 
+            if (isset($user -> email)){
+              echo'<a class="nav-link diffont h3 m-0 m-0 text-deneme " style="  padding: 0px 5px 0px 0px" href=';
+              echo base_url("homepage/".md5($user -> email));   echo("  >Rentvio<</a>");
+            }
+
+            else{
+              echo'<a class="nav-link text-bold diffont h3 m-0  text-deneme " style=" padding: 0px 5px 0px 0px" href=';
+              echo base_url()." > Rentvio<</a>";
+            }
+            ?>
+        </li>
+        <li class="nav-item">
+            <?php 
+            if (isset($user -> email)){
+              echo '<a class="nav-link fancy-font " href= ';
+              echo base_url("profile/" .md5($user -> email)); echo ">",$user->full_name,"</a>";  ?> 
+            <?php
+            }
+            else{              
+              }
+            ?>
+        </li>         
+    </ul>  
+
+
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item text-deneme-bg active ">
+        
+        <?php 
+            if (isset($user -> email)){ 
+              echo'<a class="nav-link fancy-font bgbetter" href=';
+              echo base_url("logout/" .md5($user -> email));?>  <?php echo">Log out</a>"; ?>
+            <?php
+            }
+            else{
+              echo'<a  class="nav-link fancy-font bgbetter" href="" data-toggle="modal" data-target="#signinModal" data-whatever="buraya istediğin bir veriyi gir"  id="sign"> Log in</a>';
+              //echo base_url("giris"); echo"> Signin</a>"; 
+              }
+            ?>
+            <a  class="nav-link fancy-font d-none " data-toggle="modal" data-target="#signUp" data-whatever="buraya istediğin bir veriyi gir"  id="signup"> Sign in</a>
+            </li>
+    </ul>
+  </nav>
+  <br><br><br><br><br><br>
 
 
 <div class="container">
@@ -101,12 +149,12 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col d-flex justify-content-end">
+                      <div class="col d-flex justify-content-end">                                    
                         <button class="btn btn-primary" type="submit">Save Changes</button>
                       </div>
                     </div>
                   </form>
-                  <button class="btn btn-danger d-flex justify-content-end" onclick="goBack()" >Go Back </button>
+                  
                 </div>
               </div>
             </div>
@@ -152,7 +200,7 @@ function goBack() {
 }
 </script>
 <script>
-  Dropzone.prototype.defaultOptions.dictMaxFilesExceeded = "You can only upload one picture silly:).";
+  Dropzone.prototype.defaultOptions.dictMaxFilesExceeded = "You can only upload one picture";
   Dropzone.options.ppic = {
     maxFiles:1,
     init: function () {

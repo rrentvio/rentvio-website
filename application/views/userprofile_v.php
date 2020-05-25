@@ -417,9 +417,6 @@
 
 
 
-
-
-
   <!--Scriptleri LÜTFEN .js yapıp içine alırmısın ?  -->
 
 
