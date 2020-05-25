@@ -43,22 +43,8 @@
             ?>
 
         </li>
-        <li class="nav-item">
-            <div class="dropdown">
-              <button class="btn btn-outline-light fancy-font dropdown-toggle col-12 xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                All Products
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> 
-                <a class="dropdown-item fancy-font" href="#">Photograph and Video</a>
-                <a class="dropdown-item fancy-font" href="#">Book and Magazines</a>
-                <a class="dropdown-item fancy-font" href="#">Sport Equitments</a>
-                <a class="dropdown-item fancy-font" href="#">Home Improvemnet and Tools</a>
-                <a class="dropdown-item fancy-font" href="#">Technical Electronics</a>
-                <a class="dropdown-item fancy-font" href="#">Everything Else</a>
-              </div>
-            </div>
-          </li>
-          <li>
+       
+          <li class="nav-item ml-3">
             <form class="form-inline my-2 my-lg-0" action="<?php  echo base_url("home/searchbar")?>" method="post">
       <select id="inputState" class="form-control dropdown fancy-font " aria-haspopup="true" name=searchCategory >
         <option value="*" selected>All produtcs</option>
