@@ -203,8 +203,10 @@ btn.disabled = !chk.checked;
     
     <br>
 
-    <div class="modal" tabindex="-1" id="rentproduct" role="dialog">
-  <div class="modal-dialog" role="document">
+
+    <!-- rent modal-->
+    <div  class="modal fade" tabindex="-1" id="rentproduct" role="dialog">
+  <div class="modal-dialog  modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Rent Now!</h5>
@@ -213,7 +215,6 @@ btn.disabled = !chk.checked;
         </button>
       </div>
       <div class="modal-body">
-        <p>BURAYI YARIN BİRLİKTE YAPARIZ KEKE.</p>
         <label><input id = "chk" onchange= "toggle();" type="checkbox" name="checkbox" value="value"> I accept the terms and conditions</label>
         <a href="" data-toggle="modal" data-target="#terms"> Terms and conditions. </a> 
           <div class="slidecontainer slidercss">
@@ -223,7 +224,7 @@ btn.disabled = !chk.checked;
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="MY_ID" disabled type="submit">Save changes</button>
+        <button type="button" class="btn btn-primary" id="MY_ID" disabled type="submit">Proceed</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -244,9 +245,6 @@ btn.disabled = !chk.checked;
         </button>
       </div>
       <div class="modal-body" >
-        <!--<iframe style="height: 600px;"  src="<?php echo base_url("assets/terms.php")?>" class=" embed-responsive" frameborder="0"></iframe>-->
-        
-
         <div class="tlid-input input">
 <div class="source-wrap">
 <div class="input-full-height-wrapper tlid-input-full-height-wrapper">
