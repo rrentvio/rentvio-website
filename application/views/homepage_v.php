@@ -9,11 +9,10 @@
     <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css");?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom.css");?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom2.css");?>">
-    
-    
-
   </head>
   <body class=" bg-secondary">
+
+
     <img src="<?php echo base_url("assets/pictures/giris.jpg");?>" alt="" class="keke" srcset="">
 
 
@@ -49,7 +48,7 @@
               <button class="btn btn-outline-light fancy-font dropdown-toggle col-12 xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
               </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> 
                 <a class="dropdown-item fancy-font" href="#">Photograph and Video</a>
                 <a class="dropdown-item fancy-font" href="#">Book and Magazines</a>
                 <a class="dropdown-item fancy-font" href="#">Sport Equitments</a>
@@ -60,8 +59,8 @@
             </div>
           </li>
           <li>
-            <form class="form-inline my-2 my-lg-0">
-        <input class="form-control fancy-font mr-sm-2 ml-3" type="search" placeholder="Search" aria-label="Search">
+            <form class="form-inline my-2 my-lg-0" action="<?php  echo base_url("home/searchbar")?>" method="post">
+        <input class="form-control fancy-font mr-sm-2 ml-3" type="search" name="searchBar" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline fancy-font text-deneme-bg text-white my-2 ml-2 my-sm-0" type="submit">Search</button>
         </form>
       </li>
@@ -87,12 +86,19 @@
             </li>
     </ul>
   </nav>
+  
 
   <div class="container card bgbetter">
 
     <div class="row">
         <div class="col-md-10 offset-1 ">  <!-- // offset baştan kaç boşluk bırakıcağın ?> -->
-        <br>   <br><br><br>  
+        <br>   <br><br><br> 
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          </div> 
         <h1 class="text-white diffont text-center fancy">Everything  &nbsp; You &nbsp; Need. &nbsp; All &nbsp; Right &nbsp; Here.</h1>
             <br>
             

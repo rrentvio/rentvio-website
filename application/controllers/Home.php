@@ -16,7 +16,8 @@ class Home extends CI_Controller{
 
     public function index(){
         $viewData= new stdClass();           
-                    $viewData->images=$this-> image_model->get_all();
+
+            $viewData->images=$this-> image_model->get_all();
             $viewData->products=$this-> user_product_model->get_all();
             $this-> load-> model("image_model");
             $viewData->images=$this-> image_model->get_all();
@@ -68,5 +69,32 @@ class Home extends CI_Controller{
             $this-> load-> view("homepage_v",$viewData);
         }
     }
+
+    public function searchbar(){
+        $this->load->library("form_validation");
+        $this->form_validation->set_rules("searchBar","Search-Bar","required|trim|alpha_numeric_spaces");
+        $this->form_validation->set_message(array( 
+            "required"=> "<b> {field} </b> can not be empty!",
+            "alpha_numeric_spaces"=>"Dont use seachbar with symbols and stuff !"
+        ));
+
+        if ($this->form_validation->run()=== FALSE){
+            $viewData = new stdClass();
+            $viewData->form_error = true;
+            $viewData->fromsearch= true;
+            $viewData->products=$this-> user_product_model->get_all();
+            $viewData->images=$this-> image_model->get_all();
+            $this->load->view("homepage_v", $viewData);
+        }
+        else{
+                $seachWord = $this->input->post("searchBar");
+                print_r($seachWord);
+                $viewData = new stdClass();
+                $viewData->products=$this-> user_product_model->get_all();
+                $viewData->images=$this-> image_model->get_all();
+                //$this->load->view("homepage_v", $viewData);
+
+    }
+}
 
 }
