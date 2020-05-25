@@ -24,6 +24,19 @@
 
 </head>
 <body>
+<script>
+
+function toggle(){
+setTimeout(function(){
+var btn = document.getElementById("MY_ID");
+var chk = document.getElementById("chk");
+
+btn.disabled = !chk.checked;
+},500);
+}
+</script>
+
+
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-10 mt-10 position-fixed wwww">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -201,8 +214,8 @@
       </div>
       <div class="modal-body">
         <p>BURAYI YARIN BİRLİKTE YAPARIZ KEKE.</p>
-
-        <a href="" data-toggle="modal" data-target="#terms"> I have read the terms and conditions. </a>
+        <label><input id = "chk" onchange= "toggle();" type="checkbox" name="checkbox" value="value"> I accept the terms and conditions</label>
+        <a href="" data-toggle="modal" data-target="#terms"> Terms and conditions. </a> 
           <div class="slidecontainer slidercss">
             <input type="range" name="days" min="1" max="<?php echo date("t")?>" value="1" class="slider" id="daySlider">
             <p>I will rent this product for: <span id="dayVal"> days.</span> days</p>
@@ -210,7 +223,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" id="MY_ID" disabled type="submit">Save changes</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -225,92 +238,70 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="termsModal">Modal title</h5>
+        <h4 class="modal-title" id="termsModal">RENTVİO TERMS AND CONDİTİONS</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body" >
         <!--<iframe style="height: 600px;"  src="<?php echo base_url("assets/terms.php")?>" class=" embed-responsive" frameborder="0"></iframe>-->
-        <p style="text-align: center;"><strong>Rental Of Goods Agreement</strong></p>
-        <p style="text-align: center;"><strong>Work in progress!</strong></p>
+        
 
-<p>This Rental Of Goods Agreement, hereinafter referred to as "Agreement," is entered into and made effective as of the date set forth at the end of this document by and between the following parties:</p>
-<p>"  <b> <?php echo $postedbyName; ?> </b>", an individual, with a principal place of business at the following address:</p>
-<p> <b> #ProviderAdress </b> </p>
-<p>and <b> <?php echo $user->full_name; ?> </b>, an individual, with a principal place of business at the following address:</p>
-<p> <b> #RenterAddress</b> </p>
-<p>Hereinafter, "Provider" will refer to and be used to describe the following party: " b> <?php echo $user->full_name; ?> </b>". "Renter" will refer to and be used to describe the following party: <b> <?php echo $postedbyName; ?> </b>. Provider and Renter may be referred to individually as "Party" and collectively as the "Parties."</p>
-<p><em><br /> RECITALS:</em></p>
-<p><em>WHEREAS, Provider wishes to offer for rent a certain Good, as defined below;</em></p>
-<p><em>WHEREAS, Renter wishes to rent such Good from Provider;</em></p>
-<p><em>NOW, therefore, in consideration of the promises and covenants contained herein, as well as other good and valuable consideration (the receipt and sufficiency of which is hereby acknowledged), the Parties do hereby agree as follows:</em></p>
-<p><strong><br /> <br /> Article 1 - RENTAL OF ITEM:</strong></p>
-<p>Provider hereby agrees to provide, and Renter agrees to rent, the following:</p>
-<p><b> <?php echo $name; ?> </b> <br><br> <b> <?php echo $description; ?> </b> (the "Good")</p>   
-<p>The transaction between Provider and Renter will hereinafter be described as the "Rental."</p>
-<p><strong><br /> Article 2 - DURATION OF RENTAL:</strong></p>
-<p>The Rental will begin on 05/24/2020 ("Start Date") and end on 05/31/2020 ("End Date").</p>
-<p>Renter will acquire the Good at the following time on the Start Date ("Start Time"): <b> <?php print_r(date("Y-m-d")) ?> </b>. Renter will return the Good at the following time on the End Date ("End Time"): <b> <span id="dateVal"></span>  </b>.</p>
-<p><strong><br /> Article 3 - PRICE:</strong></p>
-<p>For the rental of the Good Renter agrees to pay and Provider agrees to accept the following amount:</p>
-<p>$99,999 (ninety-nine thousand nine hundred ninety-nine US dollars), per day from the Start Date to the End Date of the Rental. (In sum, the "Rental Price".) This Rental Price is exclusive of any applicable taxes.</p>
-<p>The Provider and the Renter each acknowledge the sufficiency of the Rental Price as consideration. Unless otherwise explicitly agreed to by each of the parties, any sales tax or other similar tax, such as use or excise tax applicable to the Rental of the Good will be paid by the Renter.</p>
-<p><strong><br /> Article 4 - DEPOSIT:</strong></p>
-<p>A deposit of the following amount is required: $8,888 (eight thousand eight hundred eighty-eight US dollars) ("Deposit"). The Deposit will be due on 05/24/2020.</p>
-<p>After the Rental is entirely completed and the Good is returned to Provider, Renter will get the Deposit back in total.</p>
-<p><strong><br /> Article 5 - PAYMENT:</strong></p>
-<p>The Rental Price will be paid in only one of the following methods of payment:</p>
-<p>#paymentMethod</p>
-<p>Payment of the full Rental Price will be due prior to the Start Date of the Rental.</p>
-<p><strong><br /> Article 6 - ACQUISITION OF GOOD:</strong></p>
-<p>The Good will be transferred from the Provider to the Renter for the Rental as follows:</p>
-<p>#Provider will deliver the good to renters address</p>
-<p><strong><br /> Article 7 - RISK OF LOSS:</strong></p>
-<p>Risk of loss for the Good will be entirely with the Renter. Renter is responsible for any and all damage of or to the Good and hereby agrees to pay Provider the full cost of any repair and/or replacement. Provider will assess the cost, at Provider's sole and exclusive discretion, and will provide Renter with an invoice to be paid immediately.</p>
-<p><strong><br /> Article 8 - INSPECTION:</strong></p>
-<p>Renter acknowledges that Renter has had the opportunity to fully inspect the Good and has found the Good suitable for the purpose required. Renter further acknowledges and agrees that Renter understands the proper use of the Good and that Renter will notify Provider immediately in case the Good becomes unsuitable or unsafe for use. In such instance, Renter will immediately discontinue use of the Good and Provider will replace the Good if possible. However, in no circumstance is Provider responsible for any damage, delay, or incidental or consequential damages caused by any form of interruption of use for the Good.</p>
-<p><strong><br /> Article 9 - DISCLAIMER OF WARRANTY:</strong></p>
-<p>Provider and Renter each agree that the Good is being rented "as is" and that Provider hereby expressly disclaims any and all warranties of quality, whether express or implied, including but not limited the warranties of merchantability and fitness for a particular purpose. Renter acknowledges that it is relying solely on its own investigations, inspections and/or examinations and has not been induced by the Provider or any of Provider's agents or representatives making any statements as to the quality or condition of the Good.</p>
-<p><strong><br /> Article 10 - LIMITATION OF LIABILITY:</strong></p>
-<p>Renter agrees to hold Provider harmless for any damage or injuries caused as a result of any negligence on Renter's part. In no event will Provider's liability exceed the total amount paid by Renter to Provider for the Rental of the Good for any cause of action or future claim. Renter hereby acknowledges and agrees, as above, that Provider is not liable for any special, indirect, consequential or punitive damages, including but not limited to lost profits and/or loss of business, arising out of or relating to this Agreement in any way.</p>
-<p><strong><br /> Article 11 - PROHIBITED USAGE:</strong></p>
-<p>Only lawful uses of the Good is permitted. Renter hereby agrees not to use the Good for any illegal purpose or in any illegal manner, or if use of the Good would be unsafe.</p>
-<p><strong><br /> Article 12 - GENERAL PROVISIONS:</strong></p>
-<ol>
-<li>A) GOVERNING LAW: This Agreement shall be governed in all respects by the laws of the state of Alabama and any applicable federal law. Both Parties consent to jurisdiction under the state and federal courts within the state of Alabama. The Parties agree that this choice of law, venue, and jurisdiction provision is not permissive, but rather mandatory in nature.</li>
-<li>B) LANGUAGE: All communications made or notices given pursuant to this Agreement shall be in the English language.</li>
-<li>C) ASSIGNMENT: This Agreement, or the rights granted hereunder, may not be assigned, sold, leased or otherwise transferred in whole or part by either Party.</li>
-<li>D) AMENDMENTS: This Agreement may only be amended in writing signed by both Parties.</li>
-<li>E) NO WAIVER: None of the terms of this Agreement shall be deemed to have been waived by any act or acquiescence of either Party. Only an additional written agreement can constitute waiver of any of the terms of this Agreement between the Parties. No waiver of any term or provision of this Agreement shall constitute a waiver of any other term or provision or of the same provision on a future date. Failure of either Party to enforce any term of this Agreement shall not constitute waiver of such term or any other term.</li>
-<li>F) SEVERABILITY: If any provision or term of this Agreement is held to be unenforceable, then this Agreement will be deemed amended to the extent necessary to render the otherwise unenforceable provision, and the rest of the Agreement, valid and enforceable. If a court declines to amend this Agreement as provided herein, the invalidity or unenforceability of any provision of this Agreement shall not affect the validity or enforceability of the remaining terms and provisions, which shall be enforced as if the offending term or provision had not been included in this Agreement.</li>
-<li>G) ENTIRE AGREEMENT: This Agreement constitutes the entire agreement between the Parties and supersedes any prior or contemporaneous understandings, whether written or oral.</li>
-<li>H) HEADINGS: Headings to this Agreement are for convenience only and shall not be construed to limit or otherwise affect the terms of this Agreement.</li>
-<li>I) COUNTERPARTS: This Agreement may be executed in counterparts, all of which shall constitute a single agreement. If the dates set forth at the end of this document are different, this Agreement is to be considered effective as of the date that both Parties have signed the agreement, which may be the later date.</li>
-<li>J) FORCE MAJEURE/EXCUSE: Neither Party is liable to the other for any failure to perform due to causes beyond its reasonable control including, but not limited to, acts of God, acts of civil authorities, acts of military authorities, riots, embargoes, acts of nature and natural disasters, and other acts which may be due to unforeseen circumstances. Provider is not liable for any delivery delay or non-performance caused by labor or transportation disputes or shortage, material delays, or delays or non-performance caused by any of Provider's suppliers.</li>
-<li>K) NOTICES ELECTRONIC COMMUNICATIONS PERMITTED: Any notice to be given under this Agreement shall be in writing and shall be sent by first class mail or air mail to the address of the relevant Party set out at the head of this Agreement. Notices may also be sent via email to the relevant email address set out below, if any, or other email address as that Party may from time to time notify to the other Party in accordance with this clause.</li>
-</ol>
-<p>The relevant email contact information for the Parties is as follows:</p>
-<p>Provider:</p>
-<p>#provideremail</p>
-<p>Renter:</p>
-<p>#renterEmail</p>
-<p>Notices sent as above shall be deemed to have been received 3 working days after the day of posting (in the case of inland first class mail), or 7 working days after the date of posting (in the case of air mail). In the case of email, notices shall be deemed to have been received the next working day after sending.</p>
-<p>In proving the giving of a notice it shall be sufficient to prove that the notice was left, or that the envelope containing the notice was properly addressed and posted, or that the applicable means of telecommunication was addressed and dispatched, and dispatch of the transmission was confirmed and/or acknowledged as the case may be.</p>
-<p><strong><em><br /> EXECUTION:</em></strong></p>
-<p>Name: "#ProviderName"</p>
-<p>Signature: _________________________</p>
-<p>Date:#todaysdate</p>
-<p>&nbsp;</p>
-<p><br /> <br /> Name: #RenterName</p>
-<p>Signature: _________________________</p>
-<p>Date:#todaysdate</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+        <div class="tlid-input input">
+<div class="source-wrap">
+<div class="input-full-height-wrapper tlid-input-full-height-wrapper">
+<div class="source-input">
+<div class="source-footer-wrap source-or-target-footer">
+<div class="character-count tlid-character-count">
+<div class="cc-ctr normal">&nbsp;</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tlid-results-container results-container">
+<div class="tlid-result result-dict-wrapper">
+<div class="result tlid-copy-target">
+<div class="text-wrap tlid-copy-target">
+<div class="result-shield-container tlid-copy-target" style="text-align: center;" tabindex="0"><strong><span class="tlid-translation translation" lang="en"><span class="" title="">The lessee accepts and undertakes that the commercial activity described in the leased item will be in compliance with the following principles.</span> <span class="" title="">The tenant's commercial activities will be as follows:</span></span></strong></div>
+<div class="result-shield-container tlid-copy-target" style="text-align: center;" tabindex="0">&nbsp;</div>
+<div class="result-shield-container tlid-copy-target" style="text-align: center;" tabindex="0"><strong><span class="tlid-translation translation" lang="en"><span class="" title="">&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;<br /></span></span></strong></div>
+<div class="result-shield-container tlid-copy-target" style="text-align: center;" tabindex="0">&nbsp;</div>
+<div class="result-shield-container tlid-copy-target" style="text-align: left;" tabindex="0">
+<div class="tlid-input input">&nbsp;</div>
+<div class="tlid-results-container results-container">
+<div class="tlid-result result-dict-wrapper">
+<div class="result tlid-copy-target">
+<div class="result-header">&nbsp;</div>
+<div class="text-wrap tlid-copy-target">
+<div class="result-shield-container tlid-copy-target" tabindex="0"><span class="tlid-translation translation" lang="en"><span title=""><strong>A-&nbsp;</strong>Tenant rented the rented place as a business.</span> <span title="">The tenant cannot change the business name without the written permission of the Lessor.</span> <span class="" title="">The tenant must obtain written permission from the Lessor for misuse.</span> <span class="" title="">In the event that the Lessor does not give permission, the Tenant cannot claim that the right has been abused or claim damage.</span> <span class="" title="">The tenant has accepted and committed that breach of this provision is the reason for the definitive release.</span></span></div>
+<div class="result-shield-container tlid-copy-target" tabindex="0">&nbsp;</div>
+<div class="result-shield-container tlid-copy-target" tabindex="0"><span class="tlid-translation translation" lang="en"><span class="" title=""><strong>B-</strong> The tenant is obliged to ensure that the necessary cash register, Business (opening) license, and tax plates are kept on her behalf and that he/she gives a copy when requested by the Lessor.</span></span></div>
+<div class="result-shield-container tlid-copy-target" tabindex="0">&nbsp;</div>
+<div class="result-shield-container tlid-copy-target" tabindex="0"><span class="tlid-translation translation" lang="en"><span class="" title=""><strong>C-</strong> Even if the tenant belongs to his/her, he/she does not have the right to benefit from his/her own company with another business name.</span></span></div>
+<div class="result-shield-container tlid-copy-target" tabindex="0">&nbsp;</div>
+<div class="result-shield-container tlid-copy-target" tabindex="0"><span class="tlid-translation translation" lang="en"><span class="" title=""><strong>D-</strong> The tenant cannot enter into any lease, rent a booth, or collect rent directly or indirectly by allocating space to certain brands, either partially or fully.</span></span></div>
+<div class="result-shield-container tlid-copy-target" tabindex="0">&nbsp;</div>
+<div class="result-shield-container tlid-copy-target" tabindex="0"><span class="tlid-translation translation" lang="en"><span class="" title=""><strong>E-</strong> The lessee cannot trade on behalf of someone else in the rented place or item.</span></span></div>
+<div class="result-shield-container tlid-copy-target" tabindex="0">&nbsp;</div>
+<div class="result-shield-container tlid-copy-target" tabindex="0"><span class="tlid-translation translation" lang="en"><span class="" title=""><strong>F-</strong> The tenant already accepts the tenancy of other tenants in the building, and that they will continue their commercial activities in both the same business line and different business lines, and he will not make any complaints or responsibility against the Lessor in this regard without considering the other tenants in the building as a competitor. accepts, declares and undertakes in advance.</span></span></div>
+<div class="result-shield-container tlid-copy-target" tabindex="0">&nbsp;</div>
+<div class="result-shield-container tlid-copy-target" tabindex="0"><span class="tlid-translation translation" lang="en"><span class="" title=""><strong>G-</strong> The permit given by the Lessor in order to determine the work to be done by the Tenant by this Lease Agreement or to be amended or to make additions in the future does not require any guarantee or attempt by the Lessor in terms of providing the necessary administrative permissions for the implementation of these activities. As such, the Lessor assumes no responsibility in the event that such permissions are not granted or canceled. Even if the tenant cannot obtain the necessary permits, he will continue to pay the rent and will fulfill any contractual obligations. It should be stated in order not to leave a place in any hesitation that the fact that the tenant does not take action for any reason, especially the failure to obtain the relevant permissions, cannot be accepted as the justification for the termination of the Convention.</span></span></div>
+<div class="result-shield-container tlid-copy-target" tabindex="0">&nbsp;</div>
+<div class="result-shield-container tlid-copy-target" tabindex="0"><span class="tlid-translation translation" lang="en"><span class="" title=""><strong>H-</strong> All kinds of use other than the purpose of allocation constitute a contradiction to the contract, and due to contradiction to the contract, the Lessor may request the eviction of the Tenant. In this case, the Lessor shall apply to the judiciary and use the right to deprive the Lessee of the services provided by the person. In the event that the lessee causes the Contract to be terminated due to this article, the "Penal Clause" amount of $ 250 becomes due. The tenant is obliged to pay all these Criminal Charges in cash and once. The Lessee accepts and Undertakes that under no circumstances will the Criminal Charter demand prostitution and criticism.</span></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
