@@ -36,7 +36,7 @@
         </div>
     </div> <!-- End -->
 
-    <div class="container bgbetter ">
+    <div class="container card bgbetterforced" >
         <br><br>
     <div class="row mx-md-n5">
         <div class="col px-md-5">
@@ -53,7 +53,7 @@
           <br><br>
           
         </div>
-        <div class="col px-md-5 rounded ">
+        <div class="col px-md-5 ">
             <div class="card ">
                 <div class="card-header">
                     <div class="bg-light shadow-sm pt-4 pl-2 pr-2 pb-2">

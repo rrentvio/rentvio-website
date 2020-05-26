@@ -41,6 +41,9 @@
 .bgbetter {
   background-color: rgba(112, 112, 112, 0.8);
 }
+.bgbetterforced {
+  background-color: rgba(112, 112, 112, 0.8) !important;
+}
 .text-deneme {
   color: #d98080 !important;
 }
