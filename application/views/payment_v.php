@@ -40,6 +40,7 @@
         <br><br>
     <div class="row mx-md-n5">
         <div class="col px-md-5">
+            <a href=" <?php echo base_url( "product/".$id)?>"><i class="fas fa-undo-alt fa-2x text-white"></i></a>
           <h2 class="text-center text-light " >Product Info: <?php echo$name ?> </h2>
           <div class="text-center "> <?php echo $imgpic; ?> </div>
           <h3 class="font-italic text-light " >Description </h3> <br>
