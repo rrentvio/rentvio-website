@@ -30,16 +30,16 @@
   <body>
   <img src="<?php echo base_url("assets/pictures/giris.jpg");?>" alt="" class="keke" srcset="">
     <!-- For demo purpose -->
-    <div class="row mb-4">
-        <div class="col-lg-8 mx-auto text-center">
-            <h1 class="display-3 text-white bold">Payment</h1>
-        </div>
-    </div> <!-- End -->
+    <br><br>
+            <h1 class="display-3 text-white bold text-center">Payment</h1>
+            <br><br>
+   
 
     <div class="container card bgbetterforced" >
         <br><br>
     <div class="row mx-md-n5">
         <div class="col px-md-5">
+            <a href=" <?php echo base_url( "product/".$id)?>"><i class="fas fa-undo-alt fa-2x text-white"></i></a>
           <h2 class="text-center text-light " >Product Info: <?php echo$name ?> </h2>
           <div class="text-center "> <?php echo $imgpic; ?> </div>
           <h3 class="font-italic text-light " >Description </h3> <br>
