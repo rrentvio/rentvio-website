@@ -223,7 +223,9 @@
         <a href="" data-toggle="modal" data-target="#terms"> <i> Terms and conditions </i> </a> 
       </div>
       <div class="modal-footer">
-        <a type="button" class="btn btn-primary" id="MY_ID" href="<?php echo base_url("payment/").$id ?> " disabled type="submit">Proceed  </a>
+        <form action=" <?php echo base_url("payment/").$id ?> ">
+        <button  class="btn btn-primary" id="MY_ID" disabled type="submit">Proceed  </button>
+        </form>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -327,15 +329,15 @@
 </script>
 
 <script>
-            function toggle(){
-            setTimeout(function(){
-            var btn = document.getElementById("MY_ID");
-            var chk = document.getElementById("chk");
-            
-            btn.disabled = !chk.checked;
-            },500);
-            }
+    function toggle(){
+    setTimeout(function(){
+    var btn = document.getElementById("MY_ID");
+    var chk = document.getElementById("chk");
+    btn.disabled = !chk.checked;
+    },500);
+    }
 </script>
+
 </body>
 </html>
 
