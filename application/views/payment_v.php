@@ -36,7 +36,7 @@
         </div>
     </div> <!-- End -->
 
-    <div class="container bgbetter ">
+    <div class="container card bgbetterforced" >
         <br><br>
     <div class="row mx-md-n5">
         <div class="col px-md-5">
@@ -53,7 +53,7 @@
           <br><br>
           
         </div>
-        <div class="col px-md-5 rounded ">
+        <div class="col px-md-5 ">
             <div class="card ">
                 <div class="card-header">
                     <div class="bg-light shadow-sm pt-4 pl-2 pr-2 pb-2">
@@ -111,6 +111,10 @@
                         <h6 class="pb-2">Select your paypal account type</h6>
                         <div class="form-group "> <label class="radio-inline"> <input type="radio" name="optradio" checked> Domestic </label> <label class="radio-inline"> <input type="radio" name="optradio" class="ml-5">International </label></div>
                         <p> <button type="button" class="btn btn-primary "><i class="fab fa-paypal mr-2"></i> Log into my Paypal</button> </p>
+                        <div class="form-group">
+                                <h3 class="text-center">Total Cost</h3>
+                                <h6 class="text-center" id="totalcost2"> </h6>
+                                </div> 
                         <p class="text-muted"> Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
                     </div> <!-- End -->
                     <!-- bank transfer info -->
@@ -125,6 +129,10 @@
                                 <option>Low Budget Imaginery Bank</option>
                                 <option>Imaginery Goverment Bank</option>
                             </select> </div>
+                            <div class="form-group">
+                                <h3 class="text-center">Total Cost</h3>
+                                <h6 class="text-center" id="totalcost3"> </h6>
+                                </div> 
                         <div class="form-group">
                             <p> <button type="button" class="btn btn-primary "><i class="fas fa-mobile-alt mr-2"></i> Proceed Pyment</button> </p>
                         </div>
@@ -152,12 +160,17 @@
         output.innerHTML = slider.value;
         var someDate = new Date();
         document.getElementById('totalcost').innerHTML = <?php echo $price;?>+" $" ;
+        document.getElementById('totalcost2').innerHTML = <?php echo $price;?>+" $" ;
+        document.getElementById('totalcost3').innerHTML = <?php echo $price;?>+" $" ;
+        
         slider.oninput = function() {
             output.innerHTML = this.value;
             
             var totalprice = slider.value*<?php echo $price?>;
-            console.log(totalprice+"$");
-            document.getElementById('totalcost').innerHTML = totalprice+" $";
+            var rounded = totalprice.toFixed(2);
+            document.getElementById('totalcost').innerHTML = rounded+" $";
+            document.getElementById('totalcost2').innerHTML = rounded+" $";
+            document.getElementById('totalcost3').innerHTML = rounded+" $";
             document.getElementById('dateVal').innerHTML = slider.value;
         }
     </script>
