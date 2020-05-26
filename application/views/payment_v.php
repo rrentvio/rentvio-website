@@ -53,7 +53,7 @@
           <br><br>
           
         </div>
-        <div class="px-md-5">
+        <div class="col px-md-5 rounded ">
             <div class="card ">
                 <div class="card-header">
                     <div class="bg-light shadow-sm pt-4 pl-2 pr-2 pb-2">
@@ -134,7 +134,7 @@
                         <!-- End -->
                     </div>
                 </div>
-            </div>
+            </div> <br> <br>
         </div>
     </div>
 
