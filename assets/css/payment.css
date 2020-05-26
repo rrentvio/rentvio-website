@@ -16,3 +16,8 @@ input[type="radio"] {
 .opacitiyforpayment {
   opacity: 0.9;
 }
+.payment-image{
+  width: 120px ;
+  height: 120px;
+  object-fit: fill;
+}

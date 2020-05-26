@@ -11,8 +11,6 @@ class Payment extends CI_Controller{
 
     }
     
-    //dropzone deneme amaçlı silinecekk
-
 
     public function index(){
         $this-> load-> view("paymnet_v");

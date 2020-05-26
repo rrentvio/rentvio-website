@@ -8,14 +8,15 @@
         $description=$product_details->product_description;
         $category=$product_details->product_category;
         $renterid=$product_details->renter_id;
-        $uploaddate=$product_details->upload_date;    
-}
+        $uploaddate=$product_details->upload_date;}
         ?>
+
+        
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
     <title> <?php echo$name;?> </title>
     <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css");?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom.css");?>">
@@ -24,19 +25,6 @@
 
 </head>
 <body>
-<script>
-
-function toggle(){
-setTimeout(function(){
-var btn = document.getElementById("MY_ID");
-var chk = document.getElementById("chk");
-
-btn.disabled = !chk.checked;
-},500);
-}
-</script>
-
-
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-10 mt-10 position-fixed wwww">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -198,8 +186,17 @@ btn.disabled = !chk.checked;
       <h5 class="text-center text-white fancy-font" >This product already rented</h5>
         <p class="text-center text-white fancy-font" >Check again in <?php echo $date  ?> </p>
     <?php }
-    else echo('<button type="button" class="btn btn-lg btn-block text-deneme-bg text-white fancy-font" data-toggle="modal"  
-    data-target="#rentproduct">-- RENT NOW --</button>')?>
+    else{ 
+        if(!isset($user)){
+          echo('<a type="button" class="btn btn-lg btn-block text-deneme-bg text-white fancy-font" href="'.base_url("giris-yap").'" >-- Log-in for Rent --</a>');
+        } 
+        else{
+          echo('<button type="button" class="btn btn-lg btn-block text-deneme-bg text-white fancy-font" data-toggle="modal"  
+          data-target="#rentproduct">-- Rent Now! --</button>');
+        }
+      }
+    
+   ?>
     
     <br>
 
@@ -232,17 +229,6 @@ btn.disabled = !chk.checked;
     </div>
   </div>
 </div>
-
-
-
-
-
-
-<!--  <div class="slidecontainer slidercss">
-            <input type="range" name="days" min="1" max="<?php echo date("t")?>" value="1" class="slider" id="daySlider">
-            <p>I will rent this product for: <span id="dayVal"> days.</span> days</p>
-          </div>
-          -->
 
 <!-- terms modal-->
 <div class="modal fade " id="terms" tabindex="-1" role="dialog" aria-labelledby="termsModal" aria-hidden="true">
@@ -318,8 +304,7 @@ btn.disabled = !chk.checked;
     
 
 <script src="<?php echo base_url("assets/js/sliderjs.js"); ?> "></script>
-<script type="text/javascript">jssor_1_slider_init();
-    </script>
+<script type="text/javascript">jssor_1_slider_init();</script>
 <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -339,22 +324,19 @@ btn.disabled = !chk.checked;
         function goBack() {
           window.history.back();
         }
-      </script>
-              
-      <script>
-        var slider = document.getElementById("daySlider");
-        var output = document.getElementById("dayVal");
-        output.innerHTML = slider.value;
-      
-        var someDate = new Date();
-         
-        slider.oninput = function() {
-          output.innerHTML = this.value;
+</script>
 
-          document.getElementById('dateVal').innerHTML =slider.value;
-          console(slider.value);
-        }
-      </script>
+<script>
+            function toggle(){
+            setTimeout(function(){
+            var btn = document.getElementById("MY_ID");
+            var chk = document.getElementById("chk");
+            
+            btn.disabled = !chk.checked;
+            },500);
+            }
+</script>
 </body>
 </html>
+
 
