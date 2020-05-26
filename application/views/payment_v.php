@@ -30,8 +30,8 @@
   <body>
   <img src="<?php echo base_url("assets/pictures/giris.jpg");?>" alt="" class="keke" srcset="">
     <!-- For demo purpose -->
-    <div class="row mb-4">
-        <div class="col-lg-8 mx-auto text-center">
+    <div class=" mb-4">
+        <div class="mx-auto text-center">
             <h1 class="display-3 text-white bold">Payment</h1>
         </div>
     </div> <!-- End -->
@@ -84,16 +84,24 @@
                                         <div class="form-group"> <label><span class="hidden-xs">
                                                     <h6>Expiration Date</h6>
                                                 </span></label>
-                                            <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
+                                            <div class="input-group">
+                                            <select class="form-control "  placeholder="MM">
+                                                <option>01</option> <option>02</option> <option>03</option> <option>04</option> <option>05</option> <option>06</option>
+                                                <option>07</option> <option>08</option> <option>09</option> <option>10</option> <option>11</option> <option>12</option>
+                                            </select>
+                                            <select class="form-control "  placeholder="YY">
+                                                <option>2020</option> <option>2021</option> <option>2022</option> 
+                                                <option>2023</option> <option>2024</option> <option>2025</option>
+                                                <option>2026</option> <option>2027</option> <option>2028</option>
+                                            </select>
+                                        </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
                                                 <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
-                                            </label> <input type="text" required class="form-control"> </div>
-                                            
+                                            </label> <input type="text"  maxlength="3" required class="form-control"> </div>                                            
                                     </div>
-                                   
                                 </div>
                                 <div class="form-group">
                                 <h3 class="text-center">Total Cost</h3>
