@@ -7,9 +7,19 @@
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom.css");?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/custom2.css");?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/payment.css");?>">
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/successmodal.css");?>">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <!-- necesery php for better naming (aşağı taşıma canıms) -->
   <?php 
     if (isset($product_details)){
@@ -156,10 +166,35 @@
         </div>
     </div>
 
+    <?php if(isset($success)){
+        echo '<script>
+                $(document).ready(function(){
+                    $("#myModal").modal("show");
+                });
+         </script>';}?>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-                 
+<!-- Modal HTML -->
+<div id="myModal" class="modal fade">
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="icon-box">
+					<i class="material-icons">&#xE876;</i>
+				</div>				
+				<h4 class="modal-title">Awesome!</h4>	
+			</div>
+			<div class="modal-body">
+				<p class="text-center">Your transaction has been confirmed!</p>
+			</div>
+			<div class="modal-footer">
+				<a  href="<?php echo  base_url(); ?>" class="btn btn-success btn-block" > Go back to home page </a>
+			</div>
+		</div>
+	</div>
+</div>     
+
+
+
     <script>
         var slider = document.getElementById("daySlider");
         var output = document.getElementById("dayVal");
@@ -180,17 +215,12 @@
             document.getElementById('rentDays').value= days;
             document.getElementById('dateVal').innerHTML = slider.value;
         }
-        
     </script>
     
 
 
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   
     <script>
         $(function() {
         $('[data-toggle="tooltip"]').tooltip();

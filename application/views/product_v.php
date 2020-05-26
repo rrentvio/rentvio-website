@@ -10,8 +10,6 @@
         $renterid=$product_details->renter_id;
         $uploaddate=$product_details->upload_date;}
         ?>
-
-        
 <!DOCTYPE html>
 <html lang="en">
 <head>
