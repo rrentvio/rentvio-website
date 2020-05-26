@@ -13,7 +13,6 @@ Class Users extends CI_Controller{
         $this-> load-> model("user_product_model");
         $this-> load-> model("image_model");
     }
-
     public function index(){
         $user_list=  $this->session->userdata("user_list");
         if ( $user_list){

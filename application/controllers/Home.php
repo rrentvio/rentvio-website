@@ -13,8 +13,27 @@ class Home extends CI_Controller{
     
     //dropzone deneme amaçlı silinecekk
 
+    public function makeitnull($id){
+        $editproduct           = array(
+            "renter_id"     =>  null,
+            "rented_till"   =>  null
+        );
+        $this->db->where("id",$id)->update("user_product",$editproduct);
+    }
 
+    public function checkproducts(){
+    
+        $products=$this-> user_product_model->get_all();
+        $currentDate=date("Y-m-d");
+        foreach($products as $product ){   
+            $date= $product->rented_till;
+            if ($date==$currentDate){
+                $this->makeitnull($product->id);
+            }
+        }
+    }
     public function index(){
+        $this->checkproducts();
         $viewData= new stdClass();           
 
             $viewData->images=$this-> image_model->get_all();

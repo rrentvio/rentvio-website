@@ -69,14 +69,16 @@
                     <div class="tab-content">
                         <!-- credit card info-->
                         <div id="credit-card" class="tab-pane fade show active pt-3">
-                            <form role="form">
+                            <form role="form" action="<?php echo base_url("confirm/".$user->id); ?>" method="post">
+                            <input id="prodId" name="prodId" type="hidden" value="<?php echo($id)?>">
+                            <input id="rentDays" name="rentDays" type="hidden" value="default">
                                 <div class="form-group"> <label for="username">
                                         <h6>Card Owner</h6>
                                     </label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control "> </div>
                                 <div class="form-group"> <label for="cardNumber">
                                         <h6>Card number</h6>
                                     </label>
-                                    <div class="input-group"> <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control " required>
+                                    <div class="input-group"> <input minlength="16" maxlength="16" type="text" pattern="\d*" name="cardNumber" placeholder="Valid card number" class="form-control " required>
                                         <div class="input-group-append"> <span class="input-group-text text-muted"> <i class="fab fa-cc-visa mx-1"></i> <i class="fab fa-cc-mastercard mx-1"></i> <i class="fab fa-cc-amex mx-1"></i> </span> </div>
                                     </div>
                                 </div>
@@ -101,7 +103,7 @@
                                     <div class="col-sm-4">
                                         <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
                                                 <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
-                                            </label> <input type="text"  maxlength="3" required class="form-control"> </div>                                            
+                                            </label> <input input minlength="3" maxlength="3" type="text" pattern="\d*" required class="form-control"> </div>                                            
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -109,10 +111,9 @@
                                 <h6 class="text-center" id="totalcost"> </h6>
                                 </div> 
                                                                                                   
-                                <div class="card-footer"> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm"> Confirm Payment </button>
-                                
+                                <div class="card-footer"> <button type="submit" class="subscribe btn btn-primary btn-block shadow-sm"> Confirm Payment </button>
+
                             </form>
-                            
                         </div>
                     </div> <!-- End -->
                     <!-- Paypal info -->
@@ -156,10 +157,6 @@
     </div>
 
 
-
-
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
                  
@@ -174,14 +171,16 @@
         
         slider.oninput = function() {
             output.innerHTML = this.value;
-            
             var totalprice = slider.value*<?php echo $price?>;
             var rounded = totalprice.toFixed(2);
+            var days = slider.value;
             document.getElementById('totalcost').innerHTML = rounded+" $";
             document.getElementById('totalcost2').innerHTML = rounded+" $";
             document.getElementById('totalcost3').innerHTML = rounded+" $";
+            document.getElementById('rentDays').value= days;
             document.getElementById('dateVal').innerHTML = slider.value;
         }
+        
     </script>
     
 

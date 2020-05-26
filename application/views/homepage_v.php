@@ -92,7 +92,7 @@
                 <strong>How to use Seach Bar </strong> You can search keywords with whitespace between them,
                 yo can also sellect category from left side of the seach bar.
                 if you sellect one category and enter keyword this will show all relevant products with specified category.
-                Enjoy rentvio... 
+                Enjoy rentvio...
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
