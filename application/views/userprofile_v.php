@@ -124,9 +124,9 @@
                     <tr>
                         <td data-href="<?php echo base_url( "product/".$product->id);  ?>"
                          class="text-white fancy-font pointer " style="width:14%"><?php echo $product->product_name?></td>
-                        <td class="text-white fancy-font pointer"style="width:16%" ><?php echo substr($product->product_description,0,18)?> ...</td>
-                        <td class="text-white fancy-font pointer"style="width:8%" ><?php echo $product->price?> $</td>
-                        <td class="text-white fancy-font pointer"style="width:20%" ><?php echo $product->product_category?></td>
+                        <td data-href="<?php echo base_url( "product/".$product->id);  ?>" class="text-white fancy-font pointer"style="width:16%" ><?php echo substr($product->product_description,0,18)?> ...</td>
+                        <td data-href="<?php echo base_url( "product/".$product->id);  ?>" class="text-white fancy-font pointer"style="width:8%" ><?php echo $product->price?> $</td>
+                        <td data-href="<?php echo base_url( "product/".$product->id);  ?>" class="text-white fancy-font pointer"style="width:20%" ><?php echo $product->product_category?></td>
                         <td class="text-white fancy-font pointer text-center"style="width:38%"> 
                         
                         
