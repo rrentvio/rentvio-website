@@ -191,8 +191,9 @@ class fileupload extends CI_Controller{
     }
 
     public function dropzone($pid){
+        //echo $pid;
 
-        $config["allowed_types"] = "jpg|gif|png|webm";
+        $config["allowed_types"] = "jpg|gif|png|jpeg";
         $config["upload_path"] ="product_images/";
 
         $this->load->library("upload",$config);

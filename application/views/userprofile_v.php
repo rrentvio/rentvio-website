@@ -311,7 +311,7 @@
             <thead>
                 <th>Preview</th>
                 <th>File Name</th>
-                <th>???????</th>
+                <th>Remove</th>
 
             </thead>
             <tbody class="newImage">
@@ -320,10 +320,10 @@
             foreach($images as $image){ ?>
                 <tr>
                     <td class="dropzoneimageClass" >
-                        <img class=" newImage  " src="<?php echo $image->pic_url;?>" alt="uff.sss">
+                        <img class=" newImage  " src="<?php echo $image->pic_url;?>" alt="Picture URL">
                     </td>
                     <td class ="dropzoneimageNameClass">
-                        <?php echo $image->pic_name; ?>
+                        <?php echo substr($image->pic_name,0,15)."..."; ?>
                     </td>
                     <td>
                     <a class="btn btn-danger customwidth text-sil-bg mr-3 " href=  <?php echo (base_url("deleteimage/" .$image->id)); ?> role="button">Delete &nbsp;<i class="far fa-trash-alt"></i></a>
@@ -335,7 +335,7 @@
     </div>
       <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  
-        <button class="btn btn-primary" onClick="window.location.reload();">Upload</button>
+        <a  type ="button" class="btn btn-primary"  href="<?php echo(base_url("profile/".md5($user->email))); ?> ">Upload</a>
       </div>
     </div>
     </div>
