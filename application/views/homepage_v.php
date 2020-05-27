@@ -120,7 +120,7 @@
                         <div class="jumbotron p-3 text-deneme-bg text-white text-center ">
                           <a  class="text-decoration-none"  href=" <?php echo base_url( "product/".$product->id)?>">
                           <div class="row pointer " >  <!-- BURAYA İD --> 
-                            <div class="col-md-8 offset-1">
+                            <div class="col">
                               <img src="<?php
                                 if(isset($images)){
                                 foreach($images as $image){
@@ -128,13 +128,13 @@
                                     $url = $image->pic_url;break;} 
                                     else{ $url = base_url("assets/pictures/nopic.png");}}
                                   }
-                                    else{ $url = base_url("assets/pictures/nopic.png");} echo $url; ?> " alt="" class="no-image">
+                                    else{ $url = base_url("assets/pictures/nopic.png");} echo $url; ?> " alt="" class="no-image rounded">
                               <br><br>
-                              <h6 class="text-light fancy-font text-left "><?php echo $product->product_name; ?></h6>
+                              <h6 class="text-light fancy-font  text-center "><?php echo $product->product_name; ?></h6>
                               <hr>
-                              <h6 class="text-light fancy-font text-left"><?php echo $product->price?>$ Per Hour</h6>
+                              <h6 class="text-light fancy-font text-center"><?php echo $product->price?>$ Per Hour</h6>
                               <hr>
-                              <h6 class="text-light fancy-font text-left"><?php echo $product->product_category?></h6>
+                              <h6 class="text-light fancy-font text-center "><?php echo $product->product_category?></h6>
                             </div>
                           </div></a>
                         </div>

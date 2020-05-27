@@ -123,11 +123,11 @@
             <tbody>                    
                     <tr>
                         <td data-href="<?php echo base_url( "product/".$product->id);  ?>"
-                         class="text-white fancy-font pointer " style="width:14%"><?php echo $product->product_name?></td>
-                        <td data-href="<?php echo base_url( "product/".$product->id);  ?>" class="text-white fancy-font pointer"style="width:16%" ><?php echo substr($product->product_description,0,18)?> ...</td>
-                        <td data-href="<?php echo base_url( "product/".$product->id);  ?>" class="text-white fancy-font pointer"style="width:8%" ><?php echo $product->price?> $</td>
-                        <td data-href="<?php echo base_url( "product/".$product->id);  ?>" class="text-white fancy-font pointer"style="width:20%" ><?php echo $product->product_category?></td>
-                        <td class="text-white fancy-font pointer text-center"style="width:38%"> 
+                         class="text-white fancy-font pointer "><?php echo $product->product_name?></td>
+                        <td data-href="<?php echo base_url( "product/".$product->id);  ?>" class="text-white fancy-font pointer" ><?php echo substr($product->product_description,0,18)?> ...</td>
+                        <td data-href="<?php echo base_url( "product/".$product->id);  ?>" class="text-white fancy-font pointer" ><?php echo $product->price?> $</td>
+                        <td data-href="<?php echo base_url( "product/".$product->id);  ?>" class="text-white fancy-font pointer" ><?php echo $product->product_category?></td>
+                        <td class="text-white fancy-font pointer text-center <?php if(isset($rented)) echo"d-none "?>"> 
                         
                         
                         <button type="button" id="edit" class=" <?php if(isset($rented)) echo"d-none "?> btn btn-warning mr-3 text-edit-bg text-white customwidth" data-toggle="modal" data-target="#editModal" 

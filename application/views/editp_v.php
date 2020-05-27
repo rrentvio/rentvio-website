@@ -117,7 +117,7 @@
                           <div class="col">
                             <div class="form-group">
                               <label>Current Password</label>
-                              <input class="form-control" name="oldpass" type="password" placeholder="••••••">
+                              <input class="form-control" name="oldpass" type="password" placeholder="••••••" required>
                               <?php if(isset($form_error)) {?>
                                   <small class="float-right"><?php echo form_error("oldpass") ?></small>
                               <?php } ?>
@@ -128,7 +128,7 @@
                           <div class="col">
                             <div class="form-group">
                               <label>New Password</label>
-                              <input class="form-control" name="newpass"type="password" placeholder="••••••">
+                              <input class="form-control" name="newpass"type="password" placeholder="••••••" required>
                               <?php if(isset($form_error)) {?>
                                   <small class="float-right"><?php echo form_error("newpass") ?></small>
                               <?php } ?>
@@ -139,7 +139,7 @@
                           <div class="col">
                             <div class="form-group">
                               <label>Confirm <span class="d-none d-xl-inline">Password</span></label>
-                              <input class="form-control" name ="passconfirm" type="password" placeholder="••••••"></div>
+                              <input class="form-control" name ="passconfirm" type="password" placeholder="••••••" required></div>
                               <input class="form-control d-none" type="text" name="referance"  value="<?php echo ($user->id) ?>">
                               <?php if(isset($form_error)) {?>
                                   <small class="float-right"><?php echo form_error("pasconfirm") ?></small>
