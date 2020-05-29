@@ -1,4 +1,8 @@
-_windows
-colors.scheme.xml
-debugger.xml
-.idea
+
+*.jpg
+product_images/Screenshot_6.png
+*.png
+*.png
+*.png
+*.jpeg
+*.png

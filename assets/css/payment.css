@@ -1,0 +1,23 @@
+.nav-pills .nav-link {
+  color: rgb(94, 94, 94);
+}
+
+.nav-pills .nav-link.active {
+  color: rgb(255, 0, 0);
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+.bold {
+  font-weight: bold;
+}
+.opacitiyforpayment {
+  opacity: 0.9;
+}
+.payment-image{
+  width: 120px ;
+  height: 120px;
+  object-fit: fill;
+}

@@ -7,14 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=chrome">
     <title>Login</title>
     <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css");?>">
-    <link rel="stylesheet" href="<?php echo base_url("assets\css\custom.css");?>">
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/custom.css");?>">
 </head>
 <body>
-
-
-<h3 class="text-center">Giriş</h3>
-<hr>
-
 
 <div class="container giriskutusu">
 
@@ -38,11 +33,25 @@
                    <br>
                    <hr>
                 </div>
+                <?php if (isset($userconfirm)){ ?>
+                <div class="text-center">
+                     <p class=  "font-weight-bold text-danger" >  <?php print_r( $userconfirm[0]->conferror); ?> </p> </div>
+                <?php } ?>
                 <button type="submit" class=" btn btn-primary  btn-block ">Giriş</button>
                 <br>
             </form>
-        </div>
 
+    
+            <div class="text-center" >
+            <p >Hala bir hesabın yokmu ? </p>
+            </div>
+            <div >
+            <a class="btn btn-danger btn-block " href=  <?php echo (base_url("signup")); ?> role="button">Kayıt ol</a>
+            </div>
+            
+            <br>
+        </div>
+      
     </div>
 
 </div>
