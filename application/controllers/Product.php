@@ -19,7 +19,6 @@ Class Product extends CI_Controller{
             )
             );
         $rented_till= reset($product_details)->rented_till;
-        //echo $rented_till;
         $datetime1 = date_create($rented_till);
         $currentDate=date_create(date("Y-m-d-h"));
         $interval = date_diff($datetime1, $currentDate);
@@ -32,7 +31,6 @@ Class Product extends CI_Controller{
         $return =($interval->d.$day.$interval->h.$hour); 
         return $return;
     }
-    
     public function getdetails($id){
         //echo $id;
         $user_list = $this -> session -> userdata("user_list");
@@ -72,7 +70,6 @@ Class Product extends CI_Controller{
         $renter =$this-> user_model->get(array("id" => reset($product)->user_id));
         return $renter->full_name;
     }
-
     public function getdetailsforpayment($id){
         $user_list = $this -> session -> userdata("user_list");
         if(empty($user_list)){

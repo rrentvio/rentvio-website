@@ -29,6 +29,7 @@ class Profileedit extends CI_Controller{
              )
         );
         $this->load->view("edits_v", $viewData);}    
+        
         if ($viewer=="password"){
             $user_list = $this -> session -> userdata("user_list");
             $activeuser = $user_list[$id];
@@ -42,8 +43,7 @@ class Profileedit extends CI_Controller{
             );
             $this->load->view("editp_v", $viewData);} 
         }
-
-
+        
     public function ppupdate($id){
         $config["allowed_types"] = "jpg|gif|png|webm";
         $config["upload_path"] ="assets/pictures/users";

@@ -214,6 +214,5 @@ class fileupload extends CI_Controller{
 
     }
 
-
     }
 

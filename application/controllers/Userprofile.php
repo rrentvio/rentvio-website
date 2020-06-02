@@ -19,7 +19,6 @@ class userProfile extends CI_Controller{
             redirect(base_url("homepage"));
         }
     }
-    
     public function profile($id){      
         $exp= explode("%20",$id);
         $id=$exp[0];
@@ -48,24 +47,6 @@ class userProfile extends CI_Controller{
         
         
         $this->load->view("userprofile_v", $viewData);
-    }
-
-    
-
-    public function addProduct($id){        
-        $user_list = $this -> session -> userdata("user_list");
-        $activeuser = $user_list[$id];
-        $viewData= new stdClass();
-        $viewData->user= $activeuser;
-        $this-> load-> model("user_product_model");
-
-         $viewData->products=$this-> user_product_model->get_all(
-            array(
-                "user_id" => $activeuser->id
-             )
-        );
-        $this->load->view("addproduct", $viewData);
-        
     }
 
 }

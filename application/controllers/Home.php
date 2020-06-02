@@ -11,7 +11,15 @@ class Home extends CI_Controller{
 
     }
     
-    //dropzone deneme amaçlı silinecekk
+    public function index(){
+        $this->checkproducts();
+        $viewData= new stdClass();           
+            $viewData->images=$this-> image_model->get_all();
+            $viewData->products=$this-> user_product_model->get_all();
+            $this-> load-> model("image_model");
+            $viewData->images=$this-> image_model->get_all();
+            $this-> load-> view("homepage_v",$viewData);
+    }
 
     public function makeitnull($id){
         $editproduct           = array(
@@ -32,40 +40,9 @@ class Home extends CI_Controller{
             }
         }
     }
-    public function index(){
-        $this->checkproducts();
-        $viewData= new stdClass();           
 
-            $viewData->images=$this-> image_model->get_all();
-            $viewData->products=$this-> user_product_model->get_all();
-            $this-> load-> model("image_model");
-            $viewData->images=$this-> image_model->get_all();
-            $this-> load-> view("homepage_v",$viewData);
-            
-    }
-
-    public function trial(){
-        
-        $products = $this-> user_product_model->checkStatus();
-        $currentDate=date("Y-m-d");
-        echo$currentDate;
-        $currentDate = explode('-', $currentDate);
-
-        echo("<br>");
-        foreach($products as $product){
-            $product_date= explode("-",$product->rented_till);
-            $y= (int)$product_date[0]-(int)$currentDate[0];
-            $m= (int)$product_date[1]-(int)$currentDate[1];
-            $d= (int)$product_date[2]-(int)$currentDate[2];
-            $inDays = $y*365+$m*30+$d; 
-            echo($inDays." days till lease expiry date! <br>");
-
-            echo("<small>Please obey the terms and conditions for your own good... </small>");
-            echo("<br>");
-        }
-        
-    }
     public function homepage($id){
+        $this->checkproducts();
         $user_list = $this -> session -> userdata("user_list");
         if (isset( $user_list[$id])){
              $activeuser = $user_list[$id];
@@ -88,7 +65,6 @@ class Home extends CI_Controller{
             $this-> load-> view("homepage_v",$viewData);
         }
     }
-
     public function searchbar(){
         $this->load->library("form_validation");
         $this->form_validation->set_rules("searchBar","Search-Bar","trim|alpha_numeric_spaces");
@@ -115,28 +91,27 @@ class Home extends CI_Controller{
                 $viewData->images=$this-> image_model->get_all();
                 $this->load->view("homepage_v", $viewData);
 
-    }
-}
-
-public function catselector($resultarray,$category){
- /*   foreach($resultarray as $result){
-        if($result->product_category==$category){
-            unset($resultarray->$result);
-        }
-        return $resultarray;
-    }*/
-    if ($category=="*"){
-        return $resultarray;
-    }
-    else{
-    $len = count($resultarray);
-    for ($i=0; $i<$len ;$i++){
-        if($resultarray[$i]->product_category!==$category){
-            unset($resultarray[$i]);
-                }
             }
-    return $resultarray;
+    }
+    public function catselector($resultarray,$category){
+        /*   foreach($resultarray as $result){
+            if($result->product_category==$category){
+                unset($resultarray->$result);
+            }
+            return $resultarray;
+        }*/
+        if ($category=="*"){
+            return $resultarray;
         }
+        else{
+        $len = count($resultarray);
+        for ($i=0; $i<$len ;$i++){
+            if($resultarray[$i]->product_category!==$category){
+                unset($resultarray[$i]);
+                    }
+                }
+        return $resultarray;
+            }
     }
 
 }
