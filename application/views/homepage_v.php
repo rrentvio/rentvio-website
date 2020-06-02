@@ -50,7 +50,7 @@
         <option value="*" selected>All produtcs</option>
         <option value="Photograph and Video">Photograph and Video</option>
         <option value="Book and Magazines">Book and Magazines</option>
-        <option value="Sport Equitments">Sport Equitments</option>
+        <option value="Sport Equipments">Sport Equipments</option>
         <option value="Home Improvemnet and Tools">Home Improvemnet and Tools</option>
         <option value="Technical Electronics">Technical Electronics</option>
         <option value="Everything Else">Everything Else</option>

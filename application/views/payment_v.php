@@ -127,18 +127,25 @@
                         </div>
                     </div> <!-- End -->
                     <!-- Paypal info -->
-                    <div id="paypal" class="tab-pane fade pt-3">
+                    <div id="paypal" class="tab-pane fade pt-3">  
+                    <form role="form" action="<?php echo base_url("confirm/".$user->id); ?>" method="post">
+                        <input id="prodId" name="prodId" type="hidden" value="<?php echo($id)?>">
+                        <input id="rentDays" name="rentDays" type="hidden" value="default">
                         <h6 class="pb-2">Select your paypal account type</h6>
                         <div class="form-group "> <label class="radio-inline"> <input type="radio" name="optradio" checked> Domestic </label> <label class="radio-inline"> <input type="radio" name="optradio" class="ml-5">International </label></div>
-                        <p> <button type="button" class="btn btn-primary "><i class="fab fa-paypal mr-2"></i> Log into my Paypal</button> </p>
+                        <button type="submit" class="subscribe btn btn-primary btn-block shadow-sm"> Pay with Paypal </button>
                         <div class="form-group">
                                 <h3 class="text-center">Total Cost</h3>
                                 <h6 class="text-center" id="totalcost2"> </h6>
                                 </div> 
                         <p class="text-muted"> Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
+                        </form>
                     </div> <!-- End -->
                     <!-- bank transfer info -->
                     <div id="net-banking" class="tab-pane fade pt-3">
+                    <form role="form" action="<?php echo base_url("confirm/".$user->id); ?>" method="post">
+                        <input id="prodId" name="prodId" type="hidden" value="<?php echo($id)?>">
+                        <input id="rentDays" name="rentDays" type="hidden" value="default">
                         <div class="form-group "> <label for="Select Your Bank">
                                 <h6>Select your Bank</h6>
                             </label> <select class="form-control" id="ccmonth">
@@ -154,8 +161,9 @@
                                 <h6 class="text-center" id="totalcost3"> </h6>
                                 </div> 
                         <div class="form-group">
-                            <p> <button type="button" class="btn btn-primary "><i class="fas fa-mobile-alt mr-2"></i> Proceed Pyment</button> </p>
+                            <button type="submit" class="subscribe btn btn-primary btn-block shadow-sm"> Proceed Payment</button>
                         </div>
+                        </form>
                         <p class="text-muted">Note: After clicking on the button, you will be directed to a secure gateway for payment. 
                             After completing the payment process, you will be redirected back to the website to view details of your order. </p>
                         </div> <!-- End -->

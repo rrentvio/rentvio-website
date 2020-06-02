@@ -57,7 +57,7 @@
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item fancy-font" href="#">Photograph and Video</a>
                 <a class="dropdown-item fancy-font" href="#">Book and Magazines</a>
-                <a class="dropdown-item fancy-font" href="#">Sport Equitments</a>
+                <a class="dropdown-item fancy-font" href="#">Sport Equipments</a>
                 <a class="dropdown-item fancy-font" href="#">Home Improvemnet and Tools</a>
                 <a class="dropdown-item fancy-font" href="#">Technical Electronics</a>
                 <a class="dropdown-item fancy-font" href="#">Everything Else</a>
