@@ -178,15 +178,15 @@
                         <div class="text-center">
                             <p class=  " text-danger" >  <?php print_r( $userconfirm); ?> </p> </div>
                         <?php } ?>
-                        <button type="submit" class=" btn btn-primary  btn-block ">Giriş</button>
+                        <button type="submit" class=" btn btn-primary  btn-block ">Login</button>
                         <br>
                     </form>
 
                     <div class="text-center" >
-                    <p >Hala bir hesabın yokmu ? </p>
+                    <p >Don't you have an account ? </p>
                     </div>
                     <div >
-                    <a class="btn btn-danger btn-block " data-target="#signUp" data-dismiss="modal" data-toggle="modal" href="#signUp" role="button">Kayıt ol</a> 
+                    <a class="btn btn-danger btn-block " data-target="#signUp" data-dismiss="modal" data-toggle="modal" href="#signUp" role="button">Sign in</a> 
                     </div>
                     <br>
               </div>
@@ -247,11 +247,11 @@
        <br>
        <hr>
     </div>  
-    <button type="submit" class=" btn btn-primary  btn-block ">Kayıt ol</button>
+    <button type="submit" class=" btn btn-primary  btn-block ">Sign in</button>
     <br>
     </form>
     <div class="text-center" >
-    <p >Zaten bir hesabın var mı ? </p>
+    <p >Already have an account ? </p>
     </div>
     <div >
     <a class="btn btn-danger btn-block text-white" data-target="#signinModal" data-dismiss="modal" data-toggle="modal" role="button">Log in</a> 

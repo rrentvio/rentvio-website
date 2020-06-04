@@ -49,7 +49,7 @@
               }
             ?>
         </li>
-        <li class="nav-item">
+        <li class="nav-item d-none">
             <div class="dropdown">
               <button class="btn btn-outline-light fancy-font dropdown-toggle col-12 xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
@@ -64,7 +64,7 @@
               </div>
             </div>
           </li>
-          <li>
+          <li class="d-none"  >
             <form class="form-inline my-2 my-lg-0">
         <input class="form-control fancy-font mr-sm-2 ml-3" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline fancy-font text-deneme-bg text-white my-2 ml-2 my-sm-0" type="submit">Search</button>
