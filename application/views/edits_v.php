@@ -200,8 +200,8 @@ function goBack() {
 </script>
 <script>
   Dropzone.prototype.defaultOptions.dictMaxFilesExceeded = "You can only upload one picture silly:).";
-  Dropzone.prototype.defaultOptions.dictDefaultMessage = "Drag and Drop your profile pic <br> <small> Please drop only one image!</small>";
-  Dropzone.options.ppic = {
+  Dropzone.prototype.defaultOptions.dictDefaultMessage = "Drag and Drop your profile pic <br> <small> Please drop only one image! <br> Only .png .jpeg .gif types allowed!</small>";
+    Dropzone.options.ppic = {
     maxFiles:1,
     init: function () {
       this.hiddenFileInput.removeAttribute('multiple');
