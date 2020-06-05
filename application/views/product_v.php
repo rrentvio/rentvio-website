@@ -49,7 +49,7 @@
               }
             ?>
         </li>
-        <li class="nav-item">
+        <li class="nav-item d-none">
             <div class="dropdown">
               <button class="btn btn-outline-light fancy-font dropdown-toggle col-12 xd" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
@@ -57,14 +57,14 @@
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item fancy-font" href="#">Photograph and Video</a>
                 <a class="dropdown-item fancy-font" href="#">Book and Magazines</a>
-                <a class="dropdown-item fancy-font" href="#">Sport Equitments</a>
+                <a class="dropdown-item fancy-font" href="#">Sport Equipments</a>
                 <a class="dropdown-item fancy-font" href="#">Home Improvemnet and Tools</a>
                 <a class="dropdown-item fancy-font" href="#">Technical Electronics</a>
                 <a class="dropdown-item fancy-font" href="#">Everything Else</a>
               </div>
             </div>
           </li>
-          <li>
+          <li class="d-none"  >
             <form class="form-inline my-2 my-lg-0">
         <input class="form-control fancy-font mr-sm-2 ml-3" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline fancy-font text-deneme-bg text-white my-2 ml-2 my-sm-0" type="submit">Search</button>

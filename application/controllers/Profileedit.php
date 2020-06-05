@@ -29,6 +29,7 @@ class Profileedit extends CI_Controller{
              )
         );
         $this->load->view("edits_v", $viewData);}    
+        
         if ($viewer=="password"){
             $user_list = $this -> session -> userdata("user_list");
             $activeuser = $user_list[$id];
@@ -42,8 +43,7 @@ class Profileedit extends CI_Controller{
             );
             $this->load->view("editp_v", $viewData);} 
         }
-
-
+        
     public function ppupdate($id){
         $config["allowed_types"] = "jpg|gif|png|webm";
         $config["upload_path"] ="assets/pictures/users";
@@ -73,7 +73,7 @@ class Profileedit extends CI_Controller{
          } else {
             $is_unique =  '';
          }
-         $this->form_validation->set_rules('email', 'User Name', 'required|trim|valid_email'.$is_unique);
+         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email'.$is_unique);
         $this->form_validation->set_rules("username","UserName","required|trim|min_length[4]|max_length[12]".$is_unique);
         $this->form_validation->set_rules("name","FullName","required");
         $this->form_validation->set_message(array( 
@@ -196,7 +196,7 @@ class Profileedit extends CI_Controller{
                 }
                 $user_list[md5($user -> email)] =$user;                              //(her koşulda )userlistin içine yeni user değerlerini ekle.
                 $this->session->set_userdata("user_list", $user_list);          // bir sonraki session için userlist arrayini user_data da update et 
-                redirect((base_url("homepage/" .md5($user -> email) )));  }   
+                redirect((base_url("profile/" .md5($user -> email) )));  }   
 
     }
 

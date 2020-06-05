@@ -12,7 +12,10 @@ class Payment extends CI_Controller{
 
     }
     
-
+    public function index(){
+        $this->load->view("dropbox_v");  
+    }
+    
     public function addb($id){
         $productid = $this->input->post("prodId");
         $rentDays = $this->input->post("rentDays");
@@ -64,7 +67,6 @@ class Payment extends CI_Controller{
         $renter =$this-> user_model->get(array("id" => reset($product)->user_id));
         return $renter->full_name;
     }
-
     public function getdetailsforpayment($id){
         $user_list = $this -> session -> userdata("user_list");
         if(empty($user_list)){

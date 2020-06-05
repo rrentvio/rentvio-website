@@ -43,7 +43,7 @@ class fileupload extends CI_Controller{
         } elseif ($i == "2") {
             return "Book and Magazines";
         } elseif ($i == "3") {
-            return "Sport Equitments";
+            return "Sport Equipments";
         }elseif ($i == "4") {
             return "Home Improvemnet and Tools";
         }elseif ($i == "5") {
@@ -151,14 +151,12 @@ class fileupload extends CI_Controller{
         redirect(base_url("profile/"));
         }
     }
-
     public function deleteProduct($did){
 
         $this->db->where("id",$did)->delete("user_product");
         $this->deleteAll($did);
         redirect(base_url("profile/"));
     }
-    
     public function getImages($id){
         $viewData= new stdClass();
         $viewData->imageget= true;
@@ -172,11 +170,9 @@ class fileupload extends CI_Controller{
             );
         $this->send($viewData);
     }
-
     public function deleteAll($pid){
         $this->db->where("product_id",$pid)->delete("images");    
     }   
-
     public function deletedropzone($id){
         $this->load->model("image_model");
         $a=$this-> image_model->get_all(
@@ -189,7 +185,6 @@ class fileupload extends CI_Controller{
         $this->db->where("id",$id)->delete("images");
         $this->getImages($pid);    
     }
-
     public function dropzone($pid){
         //echo $pid;
 
@@ -213,7 +208,5 @@ class fileupload extends CI_Controller{
         }
 
     }
-
-
     }
 

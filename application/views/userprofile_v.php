@@ -90,7 +90,6 @@
             echo base_url("assets/pictures/users/nousrpp.png");
             else echo ($user->user_pic);
             ?>" class="userr-image float-right rounded-circle" data-toggle="tooltip" data-placement="bottom" title="Edit Profile" alt=""> </a>
-              <!-- KULLANICI RESMİNİ BURAYA ÇEKildi ✅ -->
             </div>
             <div class="col-md-6">
               <h1 class="fancy-font text-left mt-3 ml-4"><?php 
@@ -183,7 +182,7 @@
     <select class="form-control" id="pCategory"  name="pCategory">
         <option value="1">Photograph and Video </option>
         <option value="2">Book and Magazines </option>
-        <option value="3">Sport Equitments </option>
+        <option value="3">Sport Equipments </option>
         <option value="4">Home Improvemnet and Tools </option>
         <option value="5">Technical Electronics </option>
         <option value="6">Everythin Else </option>   
@@ -201,9 +200,9 @@
     
   </div>
 
-  <div class="custom-control custom-switch">
+  <div class="custom-control d-none custom-switch">
   <input type="checkbox" class="custom-control-input" id="pPublish" name="pPublish">
-  <label class="custom-control-label" for="pPublish"> <b><i>Publish when appored </i></b> </label>
+  <label class="custom-control-label " for="pPublish"> <b><i>Publish when appored </i></b> </label>
     </div>
     <br>
     </div>
@@ -257,7 +256,7 @@
             <select class="form-control" id="pCategory"  name="pCategory">
                 <option value="1">Photograph and Video </option>
                 <option value="2">Book and Magazines </option>
-                <option value="3">Sport Equitments </option>
+                <option value="3">Sport Equipments </option>
                 <option value="4">Home Improvemnet and Tools </option>
                 <option value="5">Technical Electronics </option>
                 <option value="6">Everythin Else </option>   
@@ -273,9 +272,9 @@
                     <small class="float-right"> <b> <?php echo form_error("pPrice") ?> </b> </small>
                    <?php } ?>
           </div>
-          <div class="custom-control custom-switch">
+          <div class="custom-control d-none custom-switch">
           <input type="checkbox" class="custom-control-input" id="isPublish" name="isPublish">
-          <label class="custom-control-label" for="isPublish"> <b><i>Publish when appored </i></b> </label>
+          <label class="custom-control-label " for="isPublish"> <b><i>Publish when appored </i></b> </label>
           </div>
           <br>
       </div>
@@ -381,7 +380,7 @@
             <select class="form-control" id="pCategory"  name="pCategory">
               <option value="1">Photograph and Video </option>
               <option value="2">Book and Magazines </option>
-              <option value="3">Sport Equitments </option>
+              <option value="3">Sport Equipments </option>
               <option value="4">Home Improvemnet and Tools </option>
               <option value="5">Technical Electronics </option>
               <option value="6">Everythin Else </option>  
@@ -397,7 +396,7 @@
                     <small class="float-right"> <b> <?php echo form_error("pPrice") ?> </b> </small>
                    <?php } ?>
           </div>
-          <div class="custom-control custom-switch">
+          <div class="custom-control d-none custom-switch">
           <input type="checkbox" class="custom-control-input" id="isPublish" name="isPublish">
           <label class="custom-control-label" for="isPublish"> <b><i>Publish when appored </i></b> </label>
           </div>
@@ -503,7 +502,7 @@ function catagory($i){
       return "1";
   } elseif ($i == "Book and Magazines") {
       return "2";
-  } elseif ($i == "Sport Equitments") {
+  } elseif ($i == "Sport Equipments") {
       return "3";
   }elseif ($i == "Home Improvemnet and Tools") {
       return "4";
