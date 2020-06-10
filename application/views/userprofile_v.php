@@ -122,7 +122,7 @@
             <tbody>                    
                     <tr>
                         <td data-href="<?php echo base_url( "product/".$product->id);  ?>"
-                         class="text-white fancy-font pointer "><?php echo $product->product_name?></td>
+                         class="text-white fancy-font pointer "><?php echo substr($product->product_name,0,22) ?>...</td>
                         <td data-href="<?php echo base_url( "product/".$product->id);  ?>" class="text-white fancy-font pointer" ><?php echo substr($product->product_description,0,18)?> ...</td>
                         <td data-href="<?php echo base_url( "product/".$product->id);  ?>" class="text-white fancy-font pointer" ><?php echo $product->price?> $</td>
                         <td data-href="<?php echo base_url( "product/".$product->id);  ?>" class="text-white fancy-font pointer" ><?php echo $product->product_category?></td>
@@ -164,7 +164,7 @@
     <form action=<?php echo(base_url("addproductdb/" .$user -> id)); ?> method="post">
   <div class="form-group">
     <label for="pName"> <b> <i>Product name</i></b> </label>
-    <input type="text" class="form-control" id="pName" name="pName" placeholder="Enter Product Name">
+    <input type="text" class="form-control" id="pName" name="pName" placeholder="Enter Product Name" required > 
     <?php if(isset($form_error)) {?>
                     <small class="float-right"><?php echo form_error("pName") ?></small>
                    <?php } ?>
@@ -185,22 +185,22 @@
         <option value="3">Sport Equipments </option>
         <option value="4">Home Improvemnet and Tools </option>
         <option value="5">Technical Electronics </option>
-        <option value="6">Everythin Else </option>   
+        <option value="6">Everything Else </option>   
     </select>
     <?php if(isset($form_error)) {?>
                     <small class="float-right"><?php echo form_error("pCategory") ?></small>
                    <?php } ?>
   </div>
   <div class="form-group">
-    <label for="pPrice"> <b> <i>Price per hour </i></b> </label>
-    <input type="text" class="form-control" id="pPrice" name="pPrice" placeholder="EnterPrice ">
+    <label for="pPrice"> <b> <i>Price per Day </i></b> </label>
+    <input type="text" class="form-control" id="pPrice" name="pPrice" placeholder="EnterPrice " required>
     <?php if(isset($form_error)) {?>
                     <small class="float-right"> <b> <?php echo form_error("pPrice") ?> </b> </small>
                    <?php } ?>
     
   </div>
 
-  <div class="custom-control d-none custom-switch">
+  <div class="custom-control  d-none custom-switch">
   <input type="checkbox" class="custom-control-input" id="pPublish" name="pPublish">
   <label class="custom-control-label " for="pPublish"> <b><i>Publish when appored </i></b> </label>
     </div>
@@ -237,7 +237,7 @@
 
         <div class="form-group">
             <label for="pName"> <b> <i> Product name </i></b> </label>
-            <input type="text" class="form-control" id="pName" name="pName" placeholder="Enter Product Name">
+            <input type="text" class="form-control" id="pName" name="pName" placeholder="Enter Product Name" required>
             <?php if(isset($form_error)) {?>
                     <small class="float-right"> <b> <?php echo form_error("pName") ?> </b> </small>
                    <?php } ?>
@@ -259,15 +259,15 @@
                 <option value="3">Sport Equipments </option>
                 <option value="4">Home Improvemnet and Tools </option>
                 <option value="5">Technical Electronics </option>
-                <option value="6">Everythin Else </option>   
+                <option value="6">Everything Else </option>   
             </select>
             <?php if(isset($form_error)) {?>
                     <small class="float-right"> <b> <?php echo form_error("pCatagory") ?> </b> </small>
                    <?php } ?>
           </div>
           <div class="form-group">
-            <label for="pPrice"> <b> <i>Price per hour </i></b> </label>
-            <input type="text" class="form-control" id="pPrice" name="pPrice" placeholder="EnterPrice ">
+            <label for="pPrice"> <b> <i>Price per Day </i></b> </label>
+            <input type="text" class="form-control" id="pPrice" name="pPrice" placeholder="EnterPrice " required>
             <?php if(isset($form_error)) {?>
                     <small class="float-right"> <b> <?php echo form_error("pPrice") ?> </b> </small>
                    <?php } ?>
@@ -341,8 +341,6 @@
   </div>
 
 
-<!-- User Profile edit modal -->
-
 
 <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -361,7 +359,7 @@
 
         <div class="form-group">
             <label for="pName"> <b> <i> Product name </i></b> </label>
-            <input type="text" class="form-control" id="pName" name="pName" placeholder="Enter Product Name">
+            <input type="text" class="form-control" id="pName" name="pName" placeholder="Enter Product Name" required>
             <?php if(isset($form_error)) {?>
                     <small class="float-right"> <b> <?php echo form_error("pName") ?> </b> </small>
                    <?php } ?>
@@ -383,15 +381,15 @@
               <option value="3">Sport Equipments </option>
               <option value="4">Home Improvemnet and Tools </option>
               <option value="5">Technical Electronics </option>
-              <option value="6">Everythin Else </option>  
+              <option value="6">Everything Else </option>  
             </select>
             <?php if(isset($form_error)) {?>
                     <small class="float-right"> <b> <?php echo form_error("pCatagory") ?> </b> </small>
                    <?php } ?>
           </div>
           <div class="form-group">
-            <label for="pPrice"> <b> <i>Price per hour </i></b> </label>
-            <input type="text" class="form-control" id="pPrice" name="pPrice" placeholder="EnterPrice ">
+            <label for="pPrice"> <b> <i>Price per Day </i></b> </label>
+            <input type="text" class="form-control" id="pPrice" name="pPrice" placeholder="EnterPrice " required>
             <?php if(isset($form_error)) {?>
                     <small class="float-right"> <b> <?php echo form_error("pPrice") ?> </b> </small>
                    <?php } ?>
@@ -498,7 +496,7 @@ if (isset($formedit)){
   }
 
 function catagory($i){
-  if ($i == "Photograph and Video ") {
+  if ($i == "Photograph and Video") {
       return "1";
   } elseif ($i == "Book and Magazines") {
       return "2";
@@ -508,7 +506,7 @@ function catagory($i){
       return "4";
   }elseif ($i == "Technical Electronics") {
       return "5";
-  }elseif ($i == "Everythin Else") {
+  }elseif ($i == "Everything Else") {
       return "6";
   }
 }

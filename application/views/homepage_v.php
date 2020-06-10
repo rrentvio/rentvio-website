@@ -130,7 +130,13 @@
                                   }
                                     else{ $url = base_url("assets/pictures/nopic.png");} echo $url; ?> " alt="" class="no-image rounded">
                               <br><br>
-                              <h6 class="text-light fancy-font  text-center "><?php echo $product->product_name; ?></h6>
+                              <h6 class="text-light fancy-font  text-center "><?php 
+                              if  (strlen($product->product_name)>32 ){
+                                echo substr($product->product_name,0,32);
+                                echo("...");
+                              }
+                              else echo $product->product_name;
+                               ?></h6>
                               <hr>
                               <h6 class="text-light fancy-font text-center"><?php echo $product->price?>$ Per Hour</h6>
                               <hr>
