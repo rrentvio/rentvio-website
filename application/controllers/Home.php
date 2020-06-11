@@ -77,6 +77,9 @@ class Home extends CI_Controller{
             $viewData = new stdClass();
             $viewData->form_error = true;
             $viewData->fromsearch= $this->input->post("searchBar");
+            $user_list = $this -> session -> userdata("user_list");
+            $activeuser = reset($user_list)->id;
+            $viewData->user= $activeuser;   
             $viewData->products=$this-> user_product_model->get_all();
             $viewData->images=$this-> image_model->get_all();
             $this->load->view("homepage_v", $viewData);
@@ -85,7 +88,10 @@ class Home extends CI_Controller{
                 $searchWord = $this->input->post("searchBar");
                 $category = $this->input->post("searchCategory");
                 $searchArray= explode(" ",$searchWord);
+                $user_list = $this -> session -> userdata("user_list");
+                $activeuser = reset($user_list);
                 $viewData = new stdClass();
+                $viewData->user= $activeuser;
                 $result=$this-> user_product_model-> searchdb($searchArray);
                 $viewData->products = $this->catselector($result,$category);
                 $viewData->images=$this-> image_model->get_all();
