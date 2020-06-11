@@ -89,7 +89,10 @@ class Home extends CI_Controller{
                 $category = $this->input->post("searchCategory");
                 $searchArray= explode(" ",$searchWord);
                 $user_list = $this -> session -> userdata("user_list");
-                $activeuser = reset($user_list);
+                if (isset($user_list)){
+                    $activeuser = reset($user_list);
+                }
+                else $activeuser = null;
                 $viewData = new stdClass();
                 $viewData->user= $activeuser;
                 $result=$this-> user_product_model-> searchdb($searchArray);
