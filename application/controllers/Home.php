@@ -78,7 +78,11 @@ class Home extends CI_Controller{
             $viewData->form_error = true;
             $viewData->fromsearch= $this->input->post("searchBar");
             $user_list = $this -> session -> userdata("user_list");
-            $activeuser = reset($user_list)->id;
+            $user_list = $this -> session -> userdata("user_list");
+                if (isset($user_list)){
+                    $activeuser = reset($user_list);
+                }
+                else $activeuser = null;
             $viewData->user= $activeuser;   
             $viewData->products=$this-> user_product_model->get_all();
             $viewData->images=$this-> image_model->get_all();
